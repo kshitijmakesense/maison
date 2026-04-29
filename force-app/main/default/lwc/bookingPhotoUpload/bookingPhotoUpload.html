@@ -1,0 +1,148 @@
+<template>
+
+    <div class={containerClass}>
+
+        <!-- 🔥 INTERNAL USER -->
+<template if:true={isInternalUser}>
+    <div class="slds-box slds-theme_default slds-m-top_medium">
+
+        <!-- 🔥 SPINNER -->
+        <template if:true={isUploading}>
+            <div class="spinner-overlay">
+                <lightning-spinner alternative-text="Uploading"></lightning-spinner>
+            </div>
+        </template>
+
+        <div class="photo-container">
+
+            <!-- 🔹 UPLOAD -->
+            <div class="photo-upload-right">
+                <button class="menu-btn" onclick={triggerFileInput}>
+                    Upload Photos
+                </button>
+
+                <input type="file"
+                       multiple
+                       accept="image/*"
+                       onchange={handleFileChange}
+                       hidden />
+            </div>
+
+            <!-- 🔹 HEADER + ACTIONS -->
+            <template if:true={photos.length}>
+                <div class="slds-grid slds-grid_align-spread slds-m-bottom_small slds-wrap">
+
+                    <div class="slds-text-heading_small slds-m-bottom_x-small">
+                        📸 Event Photos ({photos.length})
+                    </div>
+
+                    <div class="slds-button-group" role="group">
+                        <lightning-button label="View All" onclick={openGallery}></lightning-button>
+                        <lightning-button label="Download All" onclick={handleDownloadAll}></lightning-button>
+                        <lightning-button label="Delete All" variant="destructive-text" onclick={handleDeleteAll}></lightning-button>
+                    </div>
+
+                </div>
+            </template>
+
+        </div> <!-- ✅ CLOSE photo-container -->
+
+    </div> <!-- ✅ CLOSE slds-box -->
+</template>
+
+
+        <!-- 🔥 PORTAL USER -->
+        <template if:false={isInternalUser}>
+            <template if:true={isUploading}>
+    <div class="spinner-overlay">
+        <lightning-spinner alternative-text="Uploading"></lightning-spinner>
+    </div>
+</template>
+            <div class="photo-container">
+                <!-- UPLOAD BUTTON -->
+                <div class="photo-upload-right">
+                  <button class="menu-btn" onclick={triggerFileInput}>
+    Upload Photos
+</button>
+
+<input type="file"
+       multiple
+       accept="image/*"
+       onchange={handleFileChange}
+       hidden />
+                </div>
+
+                <!-- SUMMARY -->
+                <template if:true={photos.length}>
+                    <div class="photo-summary">
+
+                       <div class="photo-header">
+    📸 Event Photos ({photos.length})
+
+    <button class="menu-btn" onclick={openGallery}>
+        View All
+    </button>
+              <button class="menu-btn" onclick={handleDownloadAll}>
+    Download All
+</button>
+<button class="menu-btn danger" onclick={handleDeleteAll}>
+    Delete All
+</button>
+</div>
+
+                        <!-- PHOTO GRID -->
+
+
+                    </div>
+                </template>
+
+            </div>
+        </template>
+         <template if:true={showGallery}>
+    <section class="modal-backdrop">
+        <div class="gallery-modal">
+
+            <div class="gallery-header">
+                <span>📸 All Photos ({photos.length})</span>
+                <button class="close-btn" onclick={closeGallery}>✖</button>
+            </div>
+  
+            <div class="gallery-grid">
+                <template for:each={photos} for:item="photo">
+                    <div key={photo.id} class="gallery-card">
+
+                        <img src={photo.url}
+                             data-id={photo.id}
+                             onclick={handlePreview}/>
+
+                        <div class="gallery-actions">
+                            <button data-id={photo.id} onclick={handleDownload}>⬇</button>
+                            <button data-id={photo.id} onclick={handleRemove}>🗑</button>
+                        </div>
+
+                    </div>
+                </template>
+            </div>
+
+        </div>
+    </section>
+</template>
+
+        <!-- 🔥 IMAGE PREVIEW MODAL -->
+        <template if:true={showModal}>
+            <section class="modal-backdrop">
+                <div class="modal-content">
+
+                    <img src={modalImage} class="modal-img"/>
+
+                    <button class="close-btn" onclick={closeModal}>
+                        ✖ Close
+                    </button>
+
+                </div>
+            </section>
+        </template>
+
+    </div>
+
+</template>

@@ -1,0 +1,114 @@
+<template>
+    <lightning-card>
+
+        <!-- Error -->
+        <template if:true={error}>
+            <div class="slds-text-color_error slds-p-around_medium">
+                Failed to load invoice.
+            </div>
+        </template>
+
+        <!-- No Invoice Found -->
+        <template if:true={noInvoice}>
+            <div class="slds-p-around_medium">
+                No invoice found for this record.
+            </div>
+        </template>
+
+        <!-- Invoice Content -->
+        <template if:true={invoice}>
+            <div class="back-container">
+    <button class="back-btn" onclick={handleBack}>⬅ Back</button>
+</div>
+
+            <!-- ===== Section 1: Invoice Information ===== -->
+            <div class="section">
+                <h2 class="section-title">Invoice Information</h2>
+
+                <div class="info-grid">
+                    
+                    <div class="info-item">
+                        <label>Xero Invoice Number</label>
+                        <div>{invoice.Xero_Invoice_Number__c}</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Event Title</label>
+                        <div>{invoice.Event_Title__c}</div>
+                    </div>
+
+                   <!-- <div class="info-item">
+                        <label>Account</label>
+                        <div class="record-link"
+                            data-id={invoice.Account__c}
+                            onclick={navigateToRecord}>
+                            {invoice.Account__r.Name}
+                        </div>
+                    </div>-->
+
+                    <div class="info-item">
+                        <label>Quote</label>
+                        <div class="record-link"
+                            data-id={invoice.Quote__c}
+                            onclick={navigateToRecord}>
+                            {invoice.Quote__r.Name}
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Xero URL</label>
+                        <a href={invoice.Xero_URL__c} target="_blank"> Open in Xero</a>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Order Created?</label>
+                        <div><div>{orderCreatedLabel}</div>
+</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ===== Section 2: Pricing & Status ===== -->
+            <div class="section">
+                <h2 class="section-title">Pricing & Status</h2>
+
+                <div class="info-grid">
+
+                    <div class="info-item">
+                        <label>Total Amount Including Tax</label>
+                        <div>${invoice.Total_Amount__c}</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Total Tax Amount</label>
+                        <div>${invoice.Total_Tax_amount__c}</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Amount Due</label>
+                        <div>${invoice.Amount_Due__c}</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Amount Paid</label>
+                        <div>${invoice.Amount_Paid__c}</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Payment Status</label>
+                        <div>{invoice.Payment_Status__c}</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Last Payment Date</label>
+                        <div>{invoice.Last_Payment_Date__c}</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </template>
+
+    </lightning-card>
+</template>

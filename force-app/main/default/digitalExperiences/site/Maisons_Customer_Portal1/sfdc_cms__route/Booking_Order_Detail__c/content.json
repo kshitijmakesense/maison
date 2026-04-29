@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Booking Order Detail",
+  "contentBody" : {
+    "activeViewId" : "Booking_Order_Detail",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "detail-801",
+    "urlPrefix" : "order"
+  },
+  "urlName" : "booking-order-detail"
+}

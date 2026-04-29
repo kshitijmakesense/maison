@@ -1,0 +1,71 @@
+.dashboard-card {
+    background: #f9fafb;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Headers */
+.title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.subtitle {
+    margin-bottom: 1.5rem;
+    color: #6b7280;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.tabs div {
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #374151;
+    background: #e5e7eb;
+}
+
+.tabs .active {
+    background: #2563eb;
+    color: white;
+}
+
+/* Card */
+.booking-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.event-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+}
+
+.details p {
+    margin: 0.2rem 0;
+}
+
+.budget {
+    color: #10b981;
+    font-weight: bold;
+}

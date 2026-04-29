@@ -1,0 +1,25 @@
+<template>
+    <template if:true={showToast}>
+        <div class={toastClass} role="alert">
+            <div class="toast-content">
+                <lightning-icon 
+                    icon-name={toastIcon} 
+                    size="small" 
+                    variant="inverse"
+                    class="toast-icon">
+                </lightning-icon>
+                <div class="toast-text">
+                    <h3 class="toast-title">{toastTitle}</h3>
+                    <p class="toast-message">{toastMessage}</p>
+                </div>
+                <button class="close-button" onclick={closeToast} title="Close">
+                    <lightning-icon 
+                        icon-name="utility:close" 
+                        size="x-small" 
+                        variant="inverse">
+                    </lightning-icon>
+                </button>
+            </div>
+        </div>
+    </template>
+</template>

@@ -1,0 +1,56 @@
+.layout {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar-container {
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #1e1d1b;
+    z-index: 10;
+}
+
+
+
+.layout {
+    display: flex;
+    height: auto;
+    min-height: 100vh;
+}
+
+/* LEFT FIXED SIDEBAR */
+.sidebar-container {
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #1e1d1b;
+    z-index: 10;
+}
+
+/* RIGHT CONTENT — NO INTERNAL SCROLLING */
+.content-area {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+
+    /* IMPORTANT FIX */
+    height: auto;
+    min-height: 100vh;
+
+    overflow: visible;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+
+/* PAGE should scroll, not the content-area */
+html,
+body {
+    overflow-y: scroll;
+    height: auto;
+}

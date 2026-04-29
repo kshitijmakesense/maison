@@ -1,0 +1,251 @@
+/* =========================================
+   SEARCH BAR
+========================================= */
+.search-row {
+    margin-bottom: 1rem;
+}
+
+.search-row lightning-input {
+    width: 100%;
+}
+
+/* =========================================
+   FILTER ROW
+========================================= */
+.filters-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-box {
+    background: #ffffff;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    min-width: 200px;
+    flex: 1;
+}
+
+/* Heading inside filter box */
+.filter-heading {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 0.9rem;
+}
+
+.dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dropdown-arrow {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Expandable date container */
+.date-range-container {
+    margin-top: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+/* =========================================
+   CARD STYLING
+========================================= */
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem 1.7rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+}
+
+/* Card left side (enquiry details) */
+.left {
+    flex: 1;
+}
+
+.title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.6rem;
+    color: #111827;
+}
+
+.left p {
+    margin: 0.15rem 0;
+    color: #374151;
+    font-size: 0.95rem;
+}
+
+/* Card right side (button) */
+.right {
+    display: flex;
+    align-items: center;
+}
+
+.right lightning-button {
+    --slds-c-button-brand-color-background: #2563eb;
+}
+
+.section {
+    margin-top: 1rem;
+}
+
+.section-label {
+    font-weight: 600;
+    color: #6b7280;
+    margin-bottom: 0.2rem;
+}
+
+.service-pill {
+    background: #f3f4f6;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-right: 6px;
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 0.85rem;
+}
+
+.budget-box {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.budget-label {
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.budget-value {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #111827;
+}
+
+.action-row {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.action-icon {
+    cursor: pointer;
+}
+
+.quote-btn {
+    --slds-c-button-brand-outline-color-border: #2563eb;
+    --slds-c-button-brand-outline-text-color: #2563eb;
+}
+
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* 🟡 DRAFT = Yellow */
+.status-badge.draft {
+    background: #fff8db;
+    color: #8a6d00;
+    border: 1px solid #e6d88b;
+}
+
+/* 🟢 COMPLETED = Green */
+.status-badge.completed {
+    background: #e8f7ed;
+    color: #0b7a23;
+    border: 1px solid #8ad6a0;
+}
+
+/* 🔴 CANCELLED = Red */
+.status-badge.cancelled {
+    background: #fdeaea;
+    color: #c62828;
+    border: 1px solid #e19b9b;
+}
+
+/* 🔵 OTHER = Blue */
+.status-badge.other {
+    background: #e6f0ff;
+    color: #0b3fa8;
+    border: 1px solid #8bb3e6;
+}
+
+
+.record-type {
+    font-size: 12px;
+    font-weight: 600;
+    color: #5c6f82;
+    margin-top: -6px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+
+.pagination-row {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.page-info {
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+    
+    .filters-row {
+        flex-direction: column;
+    }
+
+    .filter-box {
+        width: 100%;
+    }
+
+    .card {
+        flex-direction: column;
+    }
+
+    .right {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 0.8rem;
+    }
+}

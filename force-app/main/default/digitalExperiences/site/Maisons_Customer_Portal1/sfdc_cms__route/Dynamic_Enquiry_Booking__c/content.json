@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Dynamic Enquiry Booking",
+  "contentBody" : {
+    "activeViewId" : "Dynamic_Enquiry_Booking",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-dynamic-enquiry-booking",
+    "urlPrefix" : "dynamic-enquiry-booking"
+  },
+  "urlName" : "dynamic-enquiry-booking"
+}

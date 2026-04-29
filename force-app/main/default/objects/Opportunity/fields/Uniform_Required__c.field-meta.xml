@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Uniform_Required__c</fullName>
+    <label>Uniform Required</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Black Shirt</fullName>
+                <default>false</default>
+                <label>Black Shirt</label>
+            </value>
+            <value>
+                <fullName>Black Shirt + Black Tie</fullName>
+                <default>false</default>
+                <label>Black Shirt + Black Tie</label>
+            </value>
+            <value>
+                <fullName>Black Shirt + Black Tie + Black Vest</fullName>
+                <default>false</default>
+                <label>Black Shirt + Black Tie + Black Vest</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>White Shirt</fullName>
+                <default>false</default>
+                <label>White Shirt</label>
+            </value>
+            <value>
+                <fullName>White Shirt + Black Tie</fullName>
+                <default>false</default>
+                <label>White Shirt + Black Tie</label>
+            </value>
+            <value>
+                <fullName>White Shirt + Black Tie + Black Vest</fullName>
+                <default>false</default>
+                <label>White Shirt + Black Tie + Black Vest</label>
+            </value>
+            <value>
+                <fullName>Suit</fullName>
+                <default>false</default>
+                <label>Suit</label>
+            </value>
+            <value>
+                <fullName>TBC</fullName>
+                <default>false</default>
+                <label>TBC</label>
+            </value>
+            <value>
+                <fullName>Custom</fullName>
+                <default>false</default>
+                <label>Custom</label>
+            </value>
+            <value>
+                <fullName>Black Suit + White Shirt + Tie</fullName>
+                <default>false</default>
+                <label>Black Suit + White Shirt + Tie</label>
+            </value>
+            <value>
+                <fullName>Black T-shirt + Jeans</fullName>
+                <default>false</default>
+                <label>Black T-shirt + Jeans</label>
+            </value>
+            <value>
+                <fullName>Black Shirt + White Sneakers</fullName>
+                <default>false</default>
+                <label>Black Shirt + White Sneakers</label>
+            </value>
+            <value>
+                <fullName>Client supplying uniform. Staff to wear own sneakers.</fullName>
+                <default>false</default>
+                <label>Client supplying uniform. Staff to wear own sneakers.</label>
+            </value>
+            <value>
+                <fullName>Black t shirt, Black pants, Sneakers (white requested)</fullName>
+                <default>false</default>
+                <label>Black t shirt, Black pants, Sneakers (white requested)</label>
+            </value>
+            <value>
+                <fullName>Provided</fullName>
+                <default>false</default>
+                <label>Provided</label>
+            </value>
+            <value>
+                <fullName>Jeans, black tee.</fullName>
+                <default>false</default>
+                <label>Jeans, black tee.</label>
+            </value>
+            <value>
+                <fullName>White T-shirt + Black Pants</fullName>
+                <default>false</default>
+                <label>White T-shirt + Black Pants</label>
+            </value>
+            <value>
+                <fullName>All Black</fullName>
+                <default>false</default>
+                <label>All Black</label>
+            </value>
+            <value>
+                <fullName>black pants</fullName>
+                <default>false</default>
+                <label>black pants</label>
+            </value>
+            <value>
+                <fullName>White T-Shirt</fullName>
+                <default>false</default>
+                <label>White T-Shirt</label>
+            </value>
+            <value>
+                <fullName>Bowtie</fullName>
+                <default>false</default>
+                <label>Bowtie</label>
+            </value>
+            <value>
+                <fullName>Maison en Blanc</fullName>
+                <default>false</default>
+                <label>Maison en Blanc</label>
+            </value>
+            <value>
+                <fullName>Maison en Noir</fullName>
+                <default>false</default>
+                <label>Maison en Noir</label>
+            </value>
+            <value>
+                <fullName>vest</fullName>
+                <default>false</default>
+                <label>vest</label>
+            </value>
+            <value>
+                <fullName>jeans</fullName>
+                <default>false</default>
+                <label>jeans</label>
+            </value>
+            <value>
+                <fullName>Black T-shirt + Black Pants</fullName>
+                <default>false</default>
+                <label>Black T-shirt + Black Pants</label>
+            </value>
+            <value>
+                <fullName>Maison en Noir (Black Business Shirt, Black Business Pants, Black Business shoes)</fullName>
+                <default>false</default>
+                <label>Maison en Noir (Black Business Shirt, Black Business Pants, Black Business shoes)</label>
+            </value>
+            <value>
+                <fullName>Maison Noir &amp; Blanc (White Business Shirt, Black Tie, Black Waistcoat, Black Business Pants, Black Business shoes)</fullName>
+                <default>false</default>
+                <label>Maison Noir &amp; Blanc (White Business Shirt, Black Tie, Black Waistcoat, Black Business Pants, Black Business shoes)</label>
+            </value>
+            <value>
+                <fullName>Maison Provence (White t-shirt or White business shirt, Light beige pants, White sneakers)</fullName>
+                <default>false</default>
+                <label>Maison Provence (White t-shirt or White business shirt, Light beige pants, White sneakers)</label>
+            </value>
+            <value>
+                <fullName>Maison en Blanc (White Business Shirt, Black Business Pants, Black Business shoes)</fullName>
+                <default>false</default>
+                <label>Maison en Blanc (White Business Shirt, Black Business Pants, Black Business shoes)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,5 @@
+{
+  "apiName" : "All_Recent_Activity",
+  "type" : "sfdc_cms__view",
+  "path" : "views"
+}

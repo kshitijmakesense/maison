@@ -1,0 +1,134 @@
+<template>
+    <div class="page-container">
+      
+        <p class="page-subtitle">Review and digitally sign your service proposals</p>
+
+        <template if:true={quotes}>
+           <template for:each={paginatedQuotes} for:item="q">
+
+                <div key={q.quoteId} class="card">
+
+                    <!-- TITLE -->
+                    <h2 class="quote-title">{q.title}</h2>
+
+                    <!-- DETAILS -->
+                    <div class="details">
+                        <p><strong>Proposal:</strong> {q.quoteNumber}</p>
+                        <p><strong>Event Date:</strong> {q.formattedEvent}</p>
+                        <p><strong>Services:</strong> {q.services}</p>
+                        <p><strong>Created:</strong> {q.formattedCreated}</p>
+                    </div>
+
+                    <hr>
+
+                    <!-- TOTAL + STATUS -->
+                    <div class="bottom-row">
+                        <div>
+                            <p class="total-label">Total Investment</p>
+                            <p class="total-value">{q.formattedInvestment}</p>
+                        </div>
+
+                        <div class="status">
+                            <span class="status-text">{q.status}</span>
+                        </div>
+                    </div>
+
+                    <!-- ACTION BUTTONS -->
+                  <div class="buttons">
+
+    <!-- VIEW DETAILS -->
+    <button 
+        class="secondary-btn" 
+        data-id={q.quoteId}
+        onclick={handleViewDetails}
+    >
+        View Details
+    </button>
+
+    <!-- SIGN PROPOSAL (only for eligible statuses) -->
+   <template if:true={q.showSignButton}>
+    <button 
+        class="primary-btn"
+        onclick={handleSignClick}>
+        ✍ Sign Proposal
+    </button>
+</template>
+
+</div>
+
+                </div>
+                
+            </template>
+            <!-- PAGINATION -->
+<div class="pagination">
+
+    <!-- PREVIOUS -->
+    <button 
+        class="page-btn" 
+        onclick={handlePrevious} 
+       disabled={isPrevDisabled}
+>
+        ◀ Previous
+    </button>
+
+    <!-- PAGE NUMBERS -->
+  <template for:each={totalPagesArray} for:item="pg">
+    <button
+        key={pg.number}
+        class={pg.className}
+        data-page={pg.number}
+        onclick={handlePageClick}>
+        {pg.number}
+    </button>
+</template>
+
+
+    <!-- NEXT -->
+    <button 
+        class="page-btn" 
+        onclick={handleNext} 
+        disabled={isNextDisabled}
+>
+        Next ▶
+    </button>
+
+</div>
+
+        </template>
+    </div>
+
+    <!-- SIGN EMAIL PROVIDER MODAL -->
+<template if:true={showEmailModal}>
+    <div class="modal-backdrop"></div>
+    <div class="modal">
+        <h2>Select your email provider</h2>
+
+        <div class="email-options">
+
+            <button class="email-btn gmail"
+                onclick={openGmail}>
+                Gmail
+            </button>
+
+            <button class="email-btn outlook"
+                onclick={openOutlook}>
+                Outlook / Hotmail
+            </button>
+
+            <button class="email-btn yahoo"
+                onclick={openYahoo}>
+                Yahoo Mail
+            </button>
+
+            <button class="email-btn generic"
+                onclick={openMailApp}>
+                Open Email App
+            </button>
+
+        </div>
+
+        <button class="close-btn" onclick={closeModal}>Close</button>
+    </div>
+</template>
+
+</template>

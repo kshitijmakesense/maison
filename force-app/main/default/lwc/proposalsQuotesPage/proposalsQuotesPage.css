@@ -1,0 +1,8 @@
+.page-title {
+    font-size: 2rem;
+    font-weight: 100;
+    margin-bottom: 1rem;
+    color: #1e1d1b;
+    font-family: 'Georgia', serif; /* matches Maison style */
+    text-decoration: none;
+}

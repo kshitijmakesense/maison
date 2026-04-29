@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "User Related List",
+  "contentBody" : {
+    "activeViewId" : "User_Related_List",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "relatedlist-005",
+    "urlPrefix" : "user"
+  },
+  "urlName" : "user-related-list"
+}

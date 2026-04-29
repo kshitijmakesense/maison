@@ -1,0 +1,131 @@
+<template>
+    <lightning-card title="User Details" icon-name="standard:user">
+        <div slot="actions">
+            <lightning-button-icon 
+                if:true={hasData}
+                icon-name="utility:refresh" 
+                alternative-text="Refresh"
+                onclick={handleRefresh}
+                disabled={isLoading}>
+            </lightning-button-icon>
+        </div>
+
+        <!-- Loading State -->
+        <template if:true={isLoading}>
+            <div class="slds-text-align_center slds-p-around_medium">
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                <p class="slds-m-top_small">Loading user details...</p>
+            </div>
+        </template>
+
+        <!-- No Record ID State -->
+        <template if:true={noRecordId}>
+            <div class="slds-p-around_medium">
+                <div class="slds-text-align_center">
+                    <lightning-icon 
+                        icon-name="utility:info" 
+                        alternative-text="Info" 
+                        size="small" 
+                        variant="warning">
+                    </lightning-icon>
+                    <p class="slds-p-top_small">No user record found. Please navigate to a user detail page.</p>
+                </div>
+            </div>
+        </template>
+
+        <!-- Success State - Display Data -->
+        <template if:true={hasData}>
+            <div class="slds-p-around_medium">
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <!-- Name Field -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-bottom_small">
+                        <div class="field-label">Name</div>
+                        <div class="field-value">
+                            <template if:true={name}>
+                                {name}
+                            </template>
+                            <template if:false={name}>
+                                <span class="empty-value">—</span>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Sender Email Field -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-bottom_small">
+                        <div class="field-label">Sender Email</div>
+                        <div class="field-value">
+                            <template if:true={senderEmail}>
+                                <lightning-formatted-email value={senderEmail}></lightning-formatted-email>
+                            </template>
+                            <template if:false={senderEmail}>
+                                <span class="empty-value">—</span>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Phone Field -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-bottom_small">
+                        <div class="field-label">Phone</div>
+                        <div class="field-value">
+                            <template if:true={phone}>
+                                <lightning-formatted-phone value={phone}></lightning-formatted-phone>
+                            </template>
+                            <template if:false={phone}>
+                                <span class="empty-value">—</span>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Company Name Field -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-bottom_small">
+                        <div class="field-label">Company Name</div>
+                        <div class="field-value">
+                            <template if:true={companyName}>
+                                {companyName}
+                            </template>
+                            <template if:false={companyName}>
+                                <span class="empty-value">—</span>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Address Field -->
+                    <div class="slds-col slds-size_1-of-1 slds-p-bottom_small">
+                        <div class="field-label">Address</div>
+                        <div class="field-value">
+                            <template if:true={address}>
+                                {address}
+                            </template>
+                            <template if:false={address}>
+                                <span class="empty-value">—</span>
+                            </template>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <!-- Error State -->
+        <template if:true={hasError}>
+            <div class="slds-p-around_medium">
+                <div class="slds-text-align_center">
+                    <lightning-icon 
+                        icon-name="utility:error" 
+                        alternative-text="Error" 
+                        size="small" 
+                        variant="error">
+                    </lightning-icon>
+                    <p class="slds-p-top_small slds-text-color_error">
+                        {errorMessage}
+                    </p>
+                    <lightning-button 
+                        label="Try Again" 
+                        variant="brand" 
+                        onclick={handleRefresh}
+                        class="slds-m-top_small">
+                    </lightning-button>
+                </div>
+            </div>
+        </template>
+    </lightning-card>
+</template>

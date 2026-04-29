@@ -1,0 +1,51 @@
+<template>
+    <template if:true={data}>
+        <div class="activities-row">
+
+            <!-- Active Quotes -->
+            <div class="activity-card">
+                <div class="activity-title">
+                    <span class="check-icon">✔</span>
+                    Active Quotes
+                </div>
+                <div class="activity-value">
+                    {data.activeQuotes}
+                </div>
+            </div>
+
+            <!-- Upcoming Bookings -->
+            <div class="activity-card">
+                <div class="activity-title">
+                    <span class="check-icon">✔</span>
+                    Upcoming Bookings
+                </div>
+                <div class="activity-value">
+                    {data.upcomingBookings}
+                </div>
+            </div>
+
+            <!-- Pending Invoices -->
+            <div class="activity-card">
+                <div class="activity-title">
+                    <span class="check-icon">✔</span>
+                    Pending Invoices
+                </div>
+                <div class="activity-value">
+                    {data.pendingInvoices}
+                </div>
+            </div>
+
+            <!-- Total Outstanding -->
+            <div class="activity-card">
+                <div class="activity-title">
+                    <span class="check-icon">✔</span>
+                    Total Outstanding
+                </div>
+                <div class="activity-value">
+                    ${formattedOutstanding}
+                </div>
+            </div>
+
+        </div>
+    </template>
+</template>

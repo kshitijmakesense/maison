@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supplier_Category__c</fullName>
+    <label>Supplier Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ice</fullName>
+                <default>false</default>
+                <label>Ice</label>
+            </value>
+            <value>
+                <fullName>Event Supplies</fullName>
+                <default>false</default>
+                <label>Event Supplies</label>
+            </value>
+            <value>
+                <fullName>Food Supplies</fullName>
+                <default>false</default>
+                <label>Food Supplies</label>
+            </value>
+            <value>
+                <fullName>Drinks Supplies</fullName>
+                <default>false</default>
+                <label>Drinks Supplies</label>
+            </value>
+            <value>
+                <fullName>Caterers</fullName>
+                <default>false</default>
+                <label>Caterers</label>
+            </value>
+            <value>
+                <fullName>Uniforms</fullName>
+                <default>false</default>
+                <label>Uniforms</label>
+            </value>
+            <value>
+                <fullName>Coffee</fullName>
+                <default>false</default>
+                <label>Coffee</label>
+            </value>
+            <value>
+                <fullName>Bar Equipment</fullName>
+                <default>false</default>
+                <label>Bar Equipment</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

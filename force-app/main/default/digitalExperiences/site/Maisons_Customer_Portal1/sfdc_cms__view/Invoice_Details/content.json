@@ -1,0 +1,67 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Invoice Details",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"1c799331-2e55-49b7-9dcb-18a8301ba6ef\",\"columns\":[{\"UUID\":\"0d37304b-3995-4158-82bc-23544e43b52c\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : { },
+              "definition" : "c:invoiceDetailPage",
+              "id" : "a978fc33-bd2b-4ee0-9633-20e6a03e8b22",
+              "type" : "component"
+            } ],
+            "id" : "0d37304b-3995-4158-82bc-23544e43b52c",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "1c799331-2e55-49b7-9dcb-18a8301ba6ef",
+          "type" : "component"
+        } ],
+        "id" : "8ee413eb-ad22-47ee-adb5-2ac60b4e6677",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Invoice Details",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "3b17393b-0810-4f82-b386-1da68e4704a9",
+          "type" : "component"
+        } ],
+        "id" : "bda87899-9376-4347-9713-dbd662a10951",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "5f457eb6-fa06-4f37-8d00-eb0ca8808026",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-invoice-details"
+  },
+  "urlName" : "invoice-details"
+}

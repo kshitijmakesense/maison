@@ -1,0 +1,25 @@
+<template>
+    <section class="outstanding-card">
+        <div class="content">
+            <div class="left">
+                <div class="title">Total Outstanding Balance</div>
+
+                <div class="amount">
+                    ${formattedAmount}
+                </div>
+
+                <div class="sub">
+                    {invoiceCount} invoice requires immediate attention
+                </div>
+            </div>
+
+            <div class="right">
+                <img
+                    src={icon}
+                    alt="Outstanding"
+                    class="icon"
+                />
+            </div>
+        </div>
+    </section>
+</template>

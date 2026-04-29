@@ -1,0 +1,60 @@
+<template>
+    <div class="timeline-container">
+
+        <!-- Header with 'View All' -->
+        <div class="timeline-header-row">
+            <h3 class="timeline-header">Recent Activity</h3>
+
+            <a class="view-all-link" onclick={handleViewAll}>
+                View All →
+            </a>
+        </div>
+
+        <!-- Activities List (only first 3) -->
+        <template if:true={activitiesToShow}>
+            <ul class="timeline-list">
+                <template for:each={activitiesToShow} for:item="act">
+                    <li key={act.Id} class="timeline-item" onclick={handleNavigate} data-id={act.Id} data-type={act.Type}>
+
+                        <div class="timeline-left">
+                            <div class="timeline-icon" style={act.iconStyle}>
+                               <lightning-icon
+    icon-name={act.iconData.iconName}
+    size="x-small"
+    alternative-text={act.Type}
+    class="activity-icon"
+></lightning-icon>
+
+                            </div>
+
+                            <div class="timeline-content">
+                                <p class="activity-subject">
+                                    {act.Name} - {act.Status}
+                                </p>
+                                <p class="record-type-badge">{act.Type}</p>
+
+                                <template if:true={act.LineItems}>
+                                    <p class="activity-lineitems">{act.LineItems}</p>
+                                </template>
+
+                                <p class="activity-details">{act.ActivityDate}</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-right">
+                            <template if:true={act.FormattedAmount}>
+                                <p class="activity-amount">{act.FormattedAmount}</p>
+                            </template>
+                            <p class="activity-timeago">{act.TimeAgo}</p>
+                        </div>
+
+                    </li>
+                </template>
+            </ul>
+        </template>
+
+        <template if:false={activitiesToShow}>
+            <p class="no-activity">No recent activities found.</p>
+        </template>
+    </div>
+</template>

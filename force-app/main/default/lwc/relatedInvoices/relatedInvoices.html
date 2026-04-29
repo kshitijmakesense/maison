@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Related Invoices">
+
+        <template if:true={error}>
+            <div class="slds-text-color_error slds-p-around_medium">
+                Error loading invoices.
+            </div>
+        </template>
+
+        <template if:true={invoices}>
+            <template if:true={invoices.length}>
+                <lightning-datatable
+                    key-field="Id"
+                    data={invoices}
+                    columns={columns}
+                    hide-checkbox-column="true">
+                </lightning-datatable>
+            </template>
+
+            <template if:false={invoices.length}>
+                <div class="slds-p-around_medium">
+                    No invoices found for this enquiry.
+                </div>
+            </template>
+        </template>
+
+    </lightning-card>
+</template>

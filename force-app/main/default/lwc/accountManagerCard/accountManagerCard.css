@@ -1,0 +1,74 @@
+.manager-card {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    max-width: 850px;
+    margin: auto;
+}
+
+.manager-header h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.manager-body {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eef2f7;
+}
+
+.avatar-box {
+    background: #f0f4ff;
+    padding: 1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-box .name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111827;
+}
+
+.info-box .title {
+    font-size: 0.95rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.detail {
+    font-size: 0.9rem;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.footer {
+    padding-top: 1rem;
+}
+
+.contact-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: #f0f6ff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #1d4ed8;
+    cursor: pointer;
+}
+
+.no-manager {
+    text-align: center;
+    padding: 1rem;
+    color: #9ca3af;
+    font-style: italic;
+}

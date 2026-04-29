@@ -1,0 +1,67 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Dynamic Enquiry Booking",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"b0157292-9356-4106-bc1f-3c763fa72471\",\"columns\":[{\"UUID\":\"739334c8-8d00-4f4e-bae9-9a36300971c5\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : { },
+              "definition" : "c:dynamicEnquiryBookingPage",
+              "id" : "b041b6dc-74f0-48ba-822e-bbb1271d6dea",
+              "type" : "component"
+            } ],
+            "id" : "739334c8-8d00-4f4e-bae9-9a36300971c5",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "b0157292-9356-4106-bc1f-3c763fa72471",
+          "type" : "component"
+        } ],
+        "id" : "782f7022-786e-4b4b-958f-b0f65fd757d7",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Dynamic Enquiry Booking",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "2c6f6b26-b274-463d-bf4c-782695a9078a",
+          "type" : "component"
+        } ],
+        "id" : "74d008df-1ce2-4da3-837d-ecb80be20c85",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "c918830e-f4ab-48c2-bf27-8387661e15fe",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-dynamic-enquiry-booking"
+  },
+  "urlName" : "dynamic-enquiry-booking"
+}

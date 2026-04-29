@@ -1,0 +1,455 @@
+<template>
+    <div class="past-events-container">
+        <h1 class="title">Past Events</h1>
+
+        <!-- Loading Spinner -->
+        <template if:true={isLoading}>
+            <div class="spinner-container">
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </div>
+        </template>
+
+        <!-- Error Message -->
+        <template if:true={error}>
+            <div class="error-message">
+                <p>{error}</p>
+            </div>
+        </template>
+
+        <!-- Events Table -->
+        <template if:false={isLoading}>
+            <template if:true={events.length}>
+                <div class="table-container">
+                    <!-- Table Header -->
+                    <div class="table-header">
+                        <div class="header-cell event-details-col">Event Details</div>
+                        <div class="header-cell venue-col">Venue</div>
+                        <div class="header-cell date-col">Event Date</div>
+                        <div class="header-cell guests-col">Guests</div>
+                        <div class="header-cell amount-col">Amount</div>
+                        <div class="header-cell actions-col">Actions</div>
+                    </div>
+
+                    <!-- Table Body -->
+                    <template for:each={events} for:item="event">
+                        <div key={event.Id} class="table-row">
+                            <div class="table-cell event-details-col">
+                                <div class="event-name">{event.Occasion__c}</div>
+                                
+                            </div>
+                            <div class="table-cell venue-col">
+                                <div class="venue-line">{event.venueFirstLine}</div>
+                                <div class="venue-line secondary">{event.venueSecondLine}</div>
+                            </div>
+                            <div class="table-cell date-col">
+                                {event.formattedDate}
+                            </div>
+                            <div class="table-cell guests-col">
+                                {event.Number_of_Guests__c}
+                            </div>
+                            <div class="table-cell amount-col">
+                                {event.formattedAmount}
+                            </div>
+                            <div class="table-cell actions-col">
+                      <!--<lightning-button-menu
+                                alternative-text="Actions"
+                                icon-name="utility:chevrondown"
+                                menu-alignment="right"
+                                onselect={handleActionSelect}
+                                data-id={event.Id}
+                                 variant="border-filled"
+                                  label="Actions"
+                            >
+                                <lightning-menu-item label="View Details" value="view" data-id={event.Id}></lightning-menu-item>
+                                <lightning-menu-item label="Reorder" value="reorder" data-id={event.Id}></lightning-menu-item>
+
+                                <template if:true={event.isRated}>
+                                    <lightning-menu-item label="Edit Rating" value="rating" data-id={event.Id}></lightning-menu-item>
+                                </template>
+                                <template if:false={event.isRated}>
+                                    <lightning-menu-item label="Rate Staff" value="rating" data-id={event.Id}></lightning-menu-item>
+                                </template>
+
+                                <lightning-menu-item label="Give Feedback" value="feedback" data-id={event.Id}></lightning-menu-item>
+                            </lightning-button-menu>-->
+                            <div class="custom-dropdown">
+<button class="dropdown-btn" data-id={event.Id} onclick={toggleMenu}>
+    <span>Actions</span>
+    <span class="arrow">▾</span>
+</button>
+
+   <template if:true={event.showMenu}>
+        <div class="dropdown-menu" onclick={stopPropagation}>
+            <div data-action="view" data-id={event.Id} onclick={handleActionSelect}>View Details</div>
+            <div data-action="reorder" data-id={event.Id} onclick={handleActionSelect}>Reorder</div>
+           <div data-action="rating" data-id={event.Id} onclick={handleActionSelect}>
+              {event.ratingLabel}
+            </div>
+            <div data-action="feedback" data-id={event.Id} onclick={handleActionSelect}>
+                {event.feedbackLabel}
+            </div>
+        </div>
+    </template>
+</div>
+                        </div>
+                        </div>
+                    </template>
+                </div>
+
+                <!-- Pagination -->
+                <template if:true={showPagination}>
+                    <div class="pagination-container">
+                        <div class="pagination-info">
+                            {paginationInfo}
+                        </div>
+                        <div class="pagination-controls">
+                            <button 
+                                class="pagination-btn" 
+                                onclick={handlePrevious}
+                                disabled={isPreviousDisabled}>
+                                Previous
+                            </button>
+                            <span class="page-number">Page {pageNumber} of {totalPages}</span>
+                            <button 
+                                class="pagination-btn" 
+                                onclick={handleNext}
+                                disabled={isNextDisabled}>
+                                Next
+                            </button>
+                        </div>
+                    </div>
+                </template>
+            </template>
+
+            <!-- No Records Message -->
+            <template if:false={events.length}>
+                <div class="no-records">
+                    <lightning-icon icon-name="utility:event" size="large"></lightning-icon>
+                    <p>No past events found</p>
+                </div>
+            </template>
+        </template>
+
+        <!-- Reorder Modal -->
+<template if:true={showReorderModal}>
+    <section role="dialog" class="slds-modal slds-fade-in-open maison-modal">
+        <div class="slds-modal__container">
+
+            <!-- HEADER -->
+            <header class="slds-modal__header maison-header">
+                <h2>Repeat Booking</h2>
+               
+            </header>
+
+               <!-- BODY -->
+             <div class="slds-modal__content maison-body">
+
+
+<template for:each={sections} for:item="section">
+
+    <div key={section.label} class="section-container">
+
+        <!-- HEADER -->
+        <div class="custom-section-header">
+            Enquiry Details
+        </div>
+
+        <div class="two-col-grid">
+
+            <template for:each={section.fields} for:item="field">
+
+                <div key={field.apiName}>
+
+                    <!-- LABEL -->
+     <label class="custom-label">
+    {field.label}
+    <template if:true={field.required}>
+        <span class="required">*</span>
+    </template>
+</label>
+                    <!-- MULTI PICKLIST -->
+                    <template if:true={field.isMultiPicklist}>
+                        <lightning-dual-listbox
+                            variant="label-hidden"
+                            options={field.options}
+                            value={field.value}
+                            data-field={field.apiName}
+                            onchange={handleDynamicChange}>
+                        </lightning-dual-listbox>
+                    </template>
+
+                    <!-- PICKLIST -->
+                    <template if:false={field.isMultiPicklist}>
+                        <template if:true={field.isPicklist}>
+                            <lightning-combobox
+                                variant="label-hidden"
+                                value={field.value}
+                                options={field.options}
+                                required={field.required}
+                                data-field={field.apiName}
+                                onchange={handleDynamicChange}>
+                            </lightning-combobox>
+                        </template>
+                    </template>
+
+                    <!-- TEXTAREA -->
+                    <template if:false={field.isMultiPicklist}>
+                        <template if:false={field.isPicklist}>
+                            <template if:true={field.isTextarea}>
+                                <lightning-textarea
+                                    variant="label-hidden"
+                                    value={field.value}
+                                    data-field={field.apiName}
+                                    onchange={handleDynamicChange}>
+                                </lightning-textarea>
+                            </template>
+                        </template>
+                    </template>
+
+                    <!-- TEXT -->
+                    <template if:false={field.isMultiPicklist}>
+                        <template if:false={field.isPicklist}>
+                            <template if:false={field.isTextarea}>
+                                <template if:true={field.isText}>
+                                    <lightning-input
+                                        variant="label-hidden"
+                                        value={field.value}
+                                        required={field.required}
+                                        data-field={field.apiName}
+                                        onchange={handleDynamicChange}>
+                                    </lightning-input>
+                                </template>
+                            </template>
+                        </template>
+                    </template>
+
+                    <!-- NUMBER -->
+                    <template if:true={field.isNumber}>
+                        <lightning-input
+                            variant="label-hidden"
+                            type="number"
+                            value={field.value}
+                            data-field={field.apiName}
+                            onchange={handleDynamicChange}>
+                        </lightning-input>
+                    </template>
+
+                    <!-- DATE -->
+                    <template if:true={field.isDate}>
+                        <lightning-input
+                            variant="label-hidden"
+                            type="date"
+                            value={field.value}
+                            data-field={field.apiName}
+                            onchange={handleDynamicChange}>
+                        </lightning-input>
+                    </template>
+
+                    <!-- DATETIME -->
+                    <template if:true={field.isDateTime}>
+                        <lightning-input
+                            variant="label-hidden"
+                            type="datetime-local"
+                            value={field.value}
+                            data-field={field.apiName}
+                            onchange={handleDynamicChange}>
+                        </lightning-input>
+                    </template>
+
+                </div>
+
+            </template>
+
+        </div>
+
+    </div>
+
+</template>
+ 
+</div>
+   <footer class="slds-modal__footer maison-footer">
+
+    <button class="cancel-btn" onclick={closeModal}>
+        Cancel
+    </button>
+
+    <button class="submit-btn" onclick={handleSubmit}>
+        Submit
+    </button>
+
+</footer>
+
+        </div>
+    </section>
+
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+<!-- Staff Rating Modal -->
+<template if:true={showRatingModal}>
+    <section role="dialog" class="slds-modal slds-fade-in-open maison-modal">
+        <div class="slds-modal__container">
+
+            <!-- HEADER -->
+            <header class="slds-modal__header maison-header">
+                <h2>Rate Staff</h2>
+            </header>
+
+            <!-- BODY -->
+            <div class="slds-modal__content maison-body">
+
+                <template if:true={staffList.length}>
+
+    <template for:each={staffList} for:item="staff">
+        <div key={staff.id} class="staff-rating-row">
+
+            <div class="staff-header">
+
+                <!-- Avatar -->
+                <template if:true={staff.photoUrl}>
+                    <img src={staff.photoUrl} class="avatar"/>
+                </template>
+
+                <template if:false={staff.photoUrl}>
+                    <div class="avatar-fallback">{staff.initial}</div>
+                </template>
+
+                <!-- Name -->
+                <div class="staff-name">{staff.name}</div>
+
+            </div>
+
+            <!-- Stars -->
+            <div class="star-container">
+                <template for:each={staff.stars} for:item="star">
+                    <span 
+                        key={star.value}
+                        class={star.class}
+                        data-id={staff.id}
+                        data-value={star.value}
+                        onclick={handleStarClick}>
+                        ★
+                    </span>
+                </template>
+            </div>
+
+            <!-- Comments -->
+            <lightning-textarea
+                label="Comments"
+                value={staff.comment}
+                data-id={staff.id}
+                onchange={handleCommentChange}>
+            </lightning-textarea>
+
+        </div>
+    </template>
+
+</template>
+
+<!-- EMPTY STATE -->
+<template if:false={staffList.length}>
+    <div class="empty-state">
+        No staff available for this event
+    </div>
+</template>
+
+            </div>
+
+            <!-- FOOTER -->
+            <footer class="slds-modal__footer maison-footer">
+                <button class="cancel-btn" onclick={closeRatingModal}>Cancel</button>
+                <button class="submit-btn" onclick={submitRatings}>Submit</button>
+            </footer>
+
+        </div>
+    </section>
+
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+<!-- FEEDBACK MODAL -->
+<template if:true={showFeedbackModal}>
+    <section class="slds-modal slds-fade-in-open maison-modal">
+        <div class="slds-modal__container">
+
+            <header class="slds-modal__header maison-header">
+                <h2>Submit Feedback</h2>
+            </header>
+
+            <div class="slds-modal__content maison-body">
+
+              <div class="feedback-row">
+    <div class="label">Service</div>
+    <div class="star-container">
+        
+        <template if:true={feedback.serviceStars.length}>
+        <template for:each={feedback.serviceStars} for:item="star">
+            <span
+                key={star.value}
+                class={star.class}
+                data-field="service"
+                data-value={star.value}
+                onclick={handleFeedbackStarClick}>
+                ★
+            </span>
+        </template>
+        </template>
+    </div>
+</div>
+
+               <div class="feedback-row">
+    <div class="label">Food</div>
+    <div class="star-container">
+        
+        <template if:true={feedback.foodStars.length}>
+        <template for:each={feedback.foodStars} for:item="star">
+            <span
+                key={star.value}
+                class={star.class}
+                data-field="food"
+                data-value={star.value}
+                onclick={handleFeedbackStarClick}>
+                ★
+            </span>
+        </template>
+        </template>
+    </div>
+</div>
+
+               <div class="feedback-row">
+    <div class="label">Experience</div>
+    <div class="star-container">
+        <template if:true={feedback.experienceStars.length}>
+    <template for:each={feedback.experienceStars} for:item="star">
+            <span
+                key={star.value}
+                class={star.class}
+                data-field="experience"
+                data-value={star.value}
+                onclick={handleFeedbackStarClick}>
+                ★
+            </span>
+        </template>
+        </template>
+    </div>
+</div>
+
+                <lightning-textarea
+                    label="Comments"
+                    name="comments"
+                    value={feedback.comments}
+                    onchange={handleFeedbackChange}>
+                </lightning-textarea>
+
+            </div>
+
+            <footer class="slds-modal__footer maison-footer">
+                <button class="cancel-btn" onclick={closeFeedbackModal}>Cancel</button>
+                <button class="submit-btn" onclick={submitFeedback}>Submit</button>
+            </footer>
+
+        </div>
+    </section>
+
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>
+    </div>
+</template>

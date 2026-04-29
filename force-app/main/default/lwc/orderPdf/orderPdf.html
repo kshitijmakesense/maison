@@ -1,0 +1,43 @@
+<template>
+    <lightning-quick-action-panel header="Dispatch PDF Preview">
+        <div class="slds-p-around_medium">
+            <!-- VF page loaded in iframe -->
+            <iframe src={vfPageUrl} width="100%" height="500px" frameborder="0"></iframe>
+        </div>
+ 
+        <div slot="footer">
+            <lightning-button
+                variant="neutral"
+                label="Cancel"
+                onclick={handleCancel}>
+            </lightning-button>
+           
+            <lightning-button
+                variant="brand"
+                label="Download PDF"
+                onclick={handleDownload}
+                class="slds-m-left_x-small">
+            </lightning-button>
+           
+            <lightning-button
+                variant="brand"
+                label="Save PDF"
+                onclick={handleSave}
+                class="slds-m-left_x-small">
+            </lightning-button>
+        </div>
+ 
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Processing..."></lightning-spinner>
+        </template>
+       
+        <template if:true={message}>
+            <div class="slds-text-color_success slds-p-around_small">{message}</div>
+        </template>
+       
+        <template if:true={error}>
+            <div class="slds-text-color_error slds-p-around_small">{error}</div>
+        </template>
+ 
+    </lightning-quick-action-panel>
+</template>

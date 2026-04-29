@@ -1,0 +1,165 @@
+/* =========================================================
+   GRID DEFINITION — SINGLE SOURCE OF TRUTH
+========================================================= */
+:host {
+    --quote-grid: 3fr 1.2fr 1.4fr 1fr 1.4fr;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+.recent-quotes {
+    background: #F6F3EE;
+    border-radius: 18px;
+    padding: 24px;
+}
+
+/* =========================================================
+   HEADER TITLE
+========================================================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.header h2 {
+    font-family: 'MaisonHeading';
+    font-size: 24px;
+}
+
+.pill {
+    background: #D9E6EC;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-family: 'MaisonHeading';
+}
+
+/* =========================================================
+   TABLE HEADER + ROW GRID
+========================================================= */
+.table-header,
+.quote-row {
+    display: grid;
+    grid-template-columns: var(--quote-grid);
+    align-items: center;
+    padding: 20px;
+}
+
+/* Header background */
+.table-header {
+    background: #DCE9EF;
+    border-radius: 16px;
+    font-family: 'MaisonHeading';
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+}
+
+/* =========================================================
+   COLUMN ALIGNMENT (SHARED)
+========================================================= */
+.col-details {
+    text-align: left;
+}
+
+.col-valid {
+    text-align: left;
+    white-space: nowrap;
+}
+
+.col-status {
+    text-align: left;
+}
+
+.col-amount {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.col-actions {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* =========================================================
+   DETAILS CONTENT
+========================================================= */
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.details .title {
+    font-family: 'MaisonHeading';
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.details .sub {
+    font-family: 'MaisonBody';
+    font-size: 14px;
+    opacity: 0.75;
+}
+
+/* =========================================================
+   STATUS PILL
+========================================================= */
+.status-pill {
+    background: #D9E6EC;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-family: 'MaisonHeading';
+    display: inline-block;
+}
+
+/* =========================================================
+   AMOUNT
+========================================================= */
+.col-amount {
+    font-family: 'MaisonHeading';
+    font-size: 18px;
+}
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+.btn {
+    background: #D9E6EC;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 24px;
+    cursor: pointer;
+    font-family: 'MaisonHeading';
+}
+
+.btn.primary {
+    background: #CFE0E8;
+}
+
+/* Move Amount column slightly LEFT */
+.col-amount {
+    transform: translateX(-20px); /* adjust: -12px to -20px if needed */
+}
+
+.btn.pending {
+    background: #F3F3F3;
+    color: #9A9A9A;
+    font-size: 12px;
+    padding: 8px 14px;
+    cursor: not-allowed;
+}
+
+.no-records {
+    text-align: center;
+    padding: 40px 0;
+    font-family: 'MaisonBody';
+    opacity: 0.7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}

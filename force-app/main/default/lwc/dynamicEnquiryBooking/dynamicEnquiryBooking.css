@@ -1,0 +1,138 @@
+/* dynamicEnquiryBooking.css */
+
+.enquiry-container {
+    background: #f9fafb;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+}
+
+.book-btn {
+    background-color: #0f172a;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-size: 14px;
+}
+
+.book-btn:hover {
+    background-color: #1e293b;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.form-wrapper {
+    margin-top: 20px;
+}
+
+.form-content {
+    padding: 20px;
+    position: relative;
+}
+
+.record-type-section {
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.form-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.back-button-container {
+    margin-bottom: 20px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e5;
+}
+
+/* Make the form look cleaner */
+lightning-card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Input field spacing */
+lightning-input,
+lightning-combobox,
+lightning-textarea,
+lightning-dual-listbox,
+lightning-input-field {
+    margin-bottom: 4px;
+}
+
+/* Responsive design for tablets */
+@media (max-width: 1024px) {
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .enquiry-container {
+        padding: 10px;
+    }
+    
+    .form-content {
+        padding: 15px;
+    }
+    
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .section-title {
+        font-size: 14px;
+    }
+}
+
+/* Loading spinner overlay */
+lightning-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+/* Dual listbox styling */
+lightning-dual-listbox {
+    margin: 16px 0;
+}
+
+/* Checkbox alignment */
+lightning-input[type="checkbox"] {
+    display: flex;
+    align-items: center;
+}

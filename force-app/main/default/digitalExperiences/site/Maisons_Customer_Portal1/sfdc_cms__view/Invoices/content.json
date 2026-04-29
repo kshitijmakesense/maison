@@ -1,0 +1,67 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Invoices",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"e32c11b9-c0c3-4723-b73d-a0f119b10810\",\"columns\":[{\"UUID\":\"a81dfd94-c86f-4e03-baba-06a953b03309\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : { },
+              "definition" : "c:invoiceListPage",
+              "id" : "313dbea5-75de-4b14-9f83-9ad3becedcb4",
+              "type" : "component"
+            } ],
+            "id" : "a81dfd94-c86f-4e03-baba-06a953b03309",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "e32c11b9-c0c3-4723-b73d-a0f119b10810",
+          "type" : "component"
+        } ],
+        "id" : "91c79a6f-8ecf-4284-9e35-8bad3138dea4",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Invoices",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "f3a73331-96c9-410a-b5d3-cd88218e4936",
+          "type" : "component"
+        } ],
+        "id" : "3fab57e7-4684-40d6-9253-fb20fcb75dd2",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "407acaea-6535-47b7-9d84-2b43a8ceb14b",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-invoices"
+  },
+  "urlName" : "invoices"
+}

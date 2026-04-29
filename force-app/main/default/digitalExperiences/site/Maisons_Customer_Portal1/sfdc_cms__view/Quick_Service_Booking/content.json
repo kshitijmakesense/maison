@@ -1,0 +1,67 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Quick Service Booking",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"aa56d8a9-c3c0-435c-8950-181d9b68ae64\",\"columns\":[{\"UUID\":\"5f1ef987-398d-4f1c-b17b-6df50b7c37c9\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : { },
+              "definition" : "c:quickServiceBookingPage",
+              "id" : "04d16fc3-7b41-461a-a151-d53eab6be60d",
+              "type" : "component"
+            } ],
+            "id" : "5f1ef987-398d-4f1c-b17b-6df50b7c37c9",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "aa56d8a9-c3c0-435c-8950-181d9b68ae64",
+          "type" : "component"
+        } ],
+        "id" : "77aee289-4db8-4646-8209-c1b3a600db78",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Quick Service Booking",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "e09bdda6-a39c-4b39-9f77-bd92dc0be162",
+          "type" : "component"
+        } ],
+        "id" : "26048dde-f0f3-4c0b-a625-d711537c4806",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "8c09e9ef-9fce-43e0-92d0-b9f3babf61c0",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-quick-service-booking"
+  },
+  "urlName" : "quick-service-booking"
+}

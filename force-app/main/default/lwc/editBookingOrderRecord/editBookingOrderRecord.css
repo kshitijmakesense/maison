@@ -1,0 +1,136 @@
+.enquiry-container {
+    background: #f9fafb;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+}
+
+.form-wrapper {
+    margin-top: 20px;
+}
+
+.form-content {
+    padding: 20px;
+    position: relative;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.form-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.back-button-container {
+    margin-bottom: 20px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e5;
+}
+
+lightning-card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+lightning-input,
+lightning-combobox,
+lightning-textarea,
+lightning-dual-listbox,
+lightning-input-field {
+    margin-bottom: 4px;
+}
+
+.rich-text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.rt-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+@media (max-width: 1024px) {
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .enquiry-container {
+        padding: 10px;
+    }
+
+    .form-content {
+        padding: 15px;
+    }
+
+    .two-column {
+        grid-template-columns: 1fr;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .section-title {
+        font-size: 14px;
+    }
+}
+
+lightning-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+lightning-dual-listbox {
+    margin: 16px 0;
+}
+
+lightning-input[type='checkbox'] {
+    display: flex;
+    align-items: center;
+}
+
+.record-type-header {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #16325c;
+}
+
+/* View-only mode styling */
+.read-only lightning-input,
+.read-only lightning-textarea,
+.read-only lightning-combobox,
+.read-only lightning-input-rich-text,
+.read-only lightning-dual-listbox {
+    pointer-events: none;
+    opacity: 0.8;
+}

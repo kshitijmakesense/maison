@@ -1,0 +1,67 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Edit or View Orders",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"22c08403-70ac-49d7-afc0-8ac7e1c4c6b3\",\"columns\":[{\"UUID\":\"0d464dbe-0590-4323-847d-ac635914b6e0\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : { },
+              "definition" : "c:bookingOrderRecordPage",
+              "id" : "98de31ae-d7aa-4c1a-80f5-0836fb324c17",
+              "type" : "component"
+            } ],
+            "id" : "0d464dbe-0590-4323-847d-ac635914b6e0",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "22c08403-70ac-49d7-afc0-8ac7e1c4c6b3",
+          "type" : "component"
+        } ],
+        "id" : "259cc72d-5649-41f7-9ec9-9b86fcf64586",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Edit or View Orders",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "a30e36a4-fd21-4e01-ad9c-3ee833ea049a",
+          "type" : "component"
+        } ],
+        "id" : "edf5bafc-6385-4d28-a536-242fbd6ff242",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "75dc0924-bc50-4892-8135-f73954edd1e0",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-edit-or-view-orders"
+  },
+  "urlName" : "edit-or-view-orders"
+}

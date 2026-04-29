@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Dashboard Page",
+  "contentBody" : {
+    "activeViewId" : "Dashboard_Page",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-dashboard-page",
+    "urlPrefix" : "dashboard-page"
+  },
+  "urlName" : "dashboard-page"
+}

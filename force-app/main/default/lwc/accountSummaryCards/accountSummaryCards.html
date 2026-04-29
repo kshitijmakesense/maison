@@ -1,0 +1,33 @@
+<template>
+    <div class="dashboard-grid">
+        <!-- Total Events -->
+        <div class="dashboard-card">
+            <p class="card-label">Total Events</p>
+            <h2 class="card-value">{totalEvents}</h2>
+        </div>
+
+        <!-- Upcoming Events -->
+        <div class="dashboard-card upcoming-events">
+            <p class="card-label">Upcoming Events</p>
+            <template if:true={upcomingEvents}>
+                <ul class="events-list">
+                    <template for:each={upcomingEvents} for:item="ev">
+                        <li key={ev.Id} class="event-item">
+                            <a href={ev.link} class="event-link">{ev.EventTitle}</a>
+                            <span class="event-date">{ev.EventDate}</span>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <template if:false={upcomingEvents}>
+                <p class="no-events">No upcoming events</p>
+            </template>
+        </div>
+
+        <!-- Pending Quotes / Active Orders -->
+        <div class="dashboard-card">
+            <p class="card-label">Pending Quotes</p>
+            <h2 class="card-value">{pendingQuotes}</h2>
+        </div>
+    </div>
+</template>

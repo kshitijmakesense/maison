@@ -1,0 +1,113 @@
+.list-container {
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.header-row {
+    margin-bottom: 1rem;
+}
+
+.header {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+/* Filters */
+.filter-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.filter-box {
+    flex: 1;
+}
+
+/* TIMELINE ITEM STYLE (same as your component) */
+.timeline-item {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.timeline-item:hover {
+    background: #f3f4f6;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.timeline-left {
+    display: flex;
+    gap: 1rem;
+}
+
+.timeline-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;   /* circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.activity-subject {
+    font-weight: 600;
+    text-decoration: underline;
+    color: #2563eb;
+}
+
+.activity-details {
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+.activity-timeago {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+/* PAGINATION */
+.pagination {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.page-info {
+    font-weight: 600;
+}
+
+.filter-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.filter-box {
+    width: 200px;  /* or 250px */
+    flex: none;    /* prevent stretching */
+}
+.record-type-badge {
+    display: inline-block;
+    background: #eef2ff;        /* Light purple */
+    color: #4f46e5;             /* Indigo text */
+    font-size: 0.65rem;         /* small font */
+    padding: 2px 6px;
+    border-radius: 8px;
+    margin: 2px 0 4px 0;
+    font-weight: 500;
+}
+.activity-icon {
+    --sds-c-icon-color-foreground-default: white;
+    --sds-c-icon-color-background: transparent;
+}

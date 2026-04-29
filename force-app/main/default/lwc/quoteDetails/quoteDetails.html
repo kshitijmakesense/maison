@@ -1,0 +1,135 @@
+<template>
+    <template if:true={quote}>
+
+        <div class="page">
+
+            <!-- ===== PAGE TITLE ===== -->
+            <h1 class="header-title">Quote Details</h1>
+            <button class="back-btn" onclick={handleBack}>
+    ◀ Back
+</button>
+
+
+            <!-- ===== BASIC INFO ===== -->
+            <div class="section-card">
+                <h2 class="section-heading">Basic Information</h2>
+
+                <div class="info-grid">
+                    <div class="info-item">
+                        <label>Enquiry Name</label>
+                        <div>{quote.Opportunity.Name}</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Quote Name</label>
+                        <div>{quote.Name}</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Quote Number</label>
+                        <div>{quote.Quotient_Quote_Number__c}</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Status</label>
+                        <div>{quote.Status}</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Sent Date</label>
+                        <div>{formattedSentDate}</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Expiration Date</label>
+                        <div>{formattedExpiry}</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Contact Name</label>
+                        <div>{quote.Contact.Name}</div>
+                    </div>
+
+                    <div class="info-item">
+                        <label>Active?</label>
+                        <div>{quote.Active__c}</div>
+                    </div>
+
+                    <div class="info-item full-width">
+                        <label>Quotient Quote URL</label>
+                        <div>
+                            <a href={quote.Quotient_Quote_URL__c} target="_blank" class="link">
+                                Open Link
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== PRICE SECTION ===== -->
+            <div class="section-card">
+                <h2 class="section-heading">Pricing</h2>
+
+                <div class="price-row">
+                    <div class="price-box">
+                        <label>Total Price</label>
+                        <p class="price-value">{formattedTotal}</p>
+                    </div>
+
+                    <div class="price-box">
+                        <label>Total Including Tax</label>
+                        <p class="price-value">{formattedTotalTax}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== LINE ITEMS SECTION ===== -->
+            <div class="section-card">
+                <h2 class="section-heading">
+                    Quote Line Items ({lineItemCount})
+                </h2>
+
+                <div class="line-items-grid">
+                    <template for:each={lineItems} for:item="item">
+                        <div key={item.Id} class="line-card">
+
+                            <h3 class="line-title">{item.PricebookEntry.Product2.Name}</h3>
+
+                            <div class="line-row">
+                                <label>Sales Price</label>
+                                <span>{item.formattedPrice}</span>
+                            </div>
+
+                            <div class="line-row">
+                                <label>Quantity</label>
+                                <span>{item.Quantity}</span>
+                            </div>
+
+                            <div class="line-row">
+                                <label>Subtotal</label>
+                                <span>{item.formattedSubtotal}</span>
+                            </div>
+
+                            <div class="line-row">
+                                <label>Tax Rate</label>
+                                <span>{item.Tax_Rate__c}%</span>
+                            </div>
+
+                            <div class="line-row">
+                                <label>Tax Amount</label>
+                                <span>{item.Tax_Amount__c}</span>
+                            </div>
+
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+        </div>
+
+    </template>
+
+    <template if:true={error}>
+        <p class="error">Unable to load quote details.</p>
+    </template>
+</template>

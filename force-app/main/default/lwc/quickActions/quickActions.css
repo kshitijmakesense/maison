@@ -1,0 +1,42 @@
+.action-buttons {
+    display: flex;
+    gap: 1rem; /* spacing between buttons */
+    margin-top: 1rem;
+    flex-wrap: wrap; /* responsive for smaller screens */
+    justify-content: flex-end; /* <-- move buttons to the right */
+}
+
+/* Common button styling */
+.action-btn {
+    border-radius: 0.75rem; /* rounded corners */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.12); /* subtle shadow */
+    padding: 0.65rem 1.5rem;
+    font-weight: 500;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Brand button styling */
+.brand-btn {
+    background: linear-gradient(90deg, #3b82f6 0%, #4f46e5 100%);
+    color: white;
+    border: none;
+}
+
+/* Neutral button styling overrides */
+.neutral-btn {
+    background-color: #f9fafb; /* gray-50 */
+    color: #374151; /* gray-700 */
+    border: 1px solid #d1d5db; /* gray-300 */
+}
+
+/* Responsive tweaks for small screens */
+@media screen and (max-width: 480px) {
+    .action-buttons {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,70 @@
+<template>
+    <lightning-card>
+        <div class="slds-grid slds-wrap slds-gutters slds-p-around_medium">
+            <template if:true={data}>
+   
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4">
+                    <div class="slds-box slds-box_x-small slds-text-align_center">
+                        <div class="slds-text-heading_large slds-text-color_default">{data.totalEnquiries}</div>
+                        <div class="slds-text-body_small slds-m-top_xx-small">Total Enquiries</div>
+                    </div>
+                </div>
+
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4">
+                    <div class="slds-box slds-box_x-small slds-text-align_center">
+                        <div class="slds-text-heading_large slds-text-color_default">{data.totalOrders}</div>
+                        <div class="slds-text-body_small slds-m-top_xx-small">Total Orders</div>
+                    </div>
+                </div>
+
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4">
+                    <div class="slds-box slds-box_x-small slds-text-align_center">
+                        <div class="slds-text-heading_large slds-text-color_default">{formattedRevenue}</div>
+                        <div class="slds-text-body_small slds-m-top_xx-small">Total Revenue</div>
+                    </div>
+                </div>
+
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4">
+                    <div class="slds-box slds-box_x-small slds-text-align_center">
+                        <div class="slds-text-heading_large slds-text-color_default">{formattedInvoiceDue}</div>
+                        <div class="slds-text-body_small slds-m-top_xx-small">Total Invoice Due</div>
+                    </div>
+                </div>
+
+            </template>
+        </div>
+    </lightning-card>
+</template>
+
+<!-- <template>
+    <lightning-card>
+        
+        <div class="kpi-container">
+
+            <template if:true={data}>
+   
+                <div class="kpi-card">
+                    <div class="kpi-value">{data.totalEnquiries}</div>
+                    <div class="kpi-label">Total Enquiries</div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-value">{data.totalOrders}</div>
+                    <div class="kpi-label">Total Orders</div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-value">{formattedRevenue}</div>
+                    <div class="kpi-label">Total Revenue</div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-value">{formattedInvoiceDue}</div>
+                    <div class="kpi-label">Total Invoice Due</div>
+                </div>
+
+            </template>
+
+        </div>
+    </lightning-card>
+</template> -->

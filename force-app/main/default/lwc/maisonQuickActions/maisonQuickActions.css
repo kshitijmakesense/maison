@@ -1,0 +1,44 @@
+.quick-actions {
+    background: #f6f3ee;
+    border-radius: 18px;
+    padding: 24px;
+}
+
+.title {
+    font-family: 'MaisonHeading';
+    font-size: 26px;
+    margin-bottom: 18px;
+}
+
+/* Action Card */
+.action-card {
+    background: #f7c7a1;
+    border-radius: 20px;
+    padding: 26px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+.action-text {
+    font-family: 'MaisonHeading';
+    font-size: 20px;
+}
+
+/* Helper */
+.helper {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.icon {
+    font-size: 18px;
+}

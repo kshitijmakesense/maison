@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Positions__c</fullName>
+    <label>Positions</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>7 Rosemont Ave Woollahra</fullName>
+                <default>false</default>
+                <label>7 Rosemont Ave Woollahra</label>
+            </value>
+            <value>
+                <fullName>Bar Back</fullName>
+                <default>false</default>
+                <label>Bar Back</label>
+            </value>
+            <value>
+                <fullName>Bar Supervisor</fullName>
+                <default>false</default>
+                <label>Bar Supervisor</label>
+            </value>
+            <value>
+                <fullName>Barista</fullName>
+                <default>false</default>
+                <label>Barista</label>
+            </value>
+            <value>
+                <fullName>Bartender - Bump In Support</fullName>
+                <default>false</default>
+                <label>Bartender - Bump In Support</label>
+            </value>
+            <value>
+                <fullName>Bathroom attendant</fullName>
+                <default>false</default>
+                <label>Bathroom attendant</label>
+            </value>
+            <value>
+                <fullName>Boardroom waiter</fullName>
+                <default>false</default>
+                <label>Boardroom waiter</label>
+            </value>
+            <value>
+                <fullName>booked ext</fullName>
+                <default>false</default>
+                <label>booked ext</label>
+            </value>
+            <value>
+                <fullName>Breakfast FW</fullName>
+                <default>false</default>
+                <label>Breakfast FW</label>
+            </value>
+            <value>
+                <fullName>Chef</fullName>
+                <default>false</default>
+                <label>Chef</label>
+            </value>
+            <value>
+                <fullName>Cnr Bridge Street &amp;, Phillip St, Sydney NSW 2000, Australia</fullName>
+                <default>false</default>
+                <label>Cnr Bridge Street &amp;, Phillip St, Sydney NSW 2000, Australia</label>
+            </value>
+            <value>
+                <fullName>COFFEE CART AT EVENT</fullName>
+                <default>false</default>
+                <label>COFFEE CART AT EVENT</label>
+            </value>
+            <value>
+                <fullName>Concierge</fullName>
+                <default>false</default>
+                <label>Concierge</label>
+            </value>
+            <value>
+                <fullName>Corporate Area BB</fullName>
+                <default>false</default>
+                <label>Corporate Area BB</label>
+            </value>
+            <value>
+                <fullName>Corporate Area FW</fullName>
+                <default>false</default>
+                <label>Corporate Area FW</label>
+            </value>
+            <value>
+                <fullName>Corporate Area SB</fullName>
+                <default>false</default>
+                <label>Corporate Area SB</label>
+            </value>
+            <value>
+                <fullName>Delivery</fullName>
+                <default>false</default>
+                <label>Delivery</label>
+            </value>
+            <value>
+                <fullName>Dishwasher</fullName>
+                <default>false</default>
+                <label>Dishwasher</label>
+            </value>
+            <value>
+                <fullName>Event Waiter</fullName>
+                <default>false</default>
+                <label>Event Waiter</label>
+            </value>
+            <value>
+                <fullName>Function Waiter</fullName>
+                <default>false</default>
+                <label>Function Waiter</label>
+            </value>
+            <value>
+                <fullName>Head Waiter</fullName>
+                <default>false</default>
+                <label>Head Waiter</label>
+            </value>
+            <value>
+                <fullName>Heat &amp; Serve</fullName>
+                <default>false</default>
+                <label>Heat &amp; Serve</label>
+            </value>
+            <value>
+                <fullName>Host</fullName>
+                <default>false</default>
+                <label>Host</label>
+            </value>
+            <value>
+                <fullName>Junior bar</fullName>
+                <default>false</default>
+                <label>Junior bar</label>
+            </value>
+            <value>
+                <fullName>Junior waiter</fullName>
+                <default>false</default>
+                <label>Junior waiter</label>
+            </value>
+            <value>
+                <fullName>KitchenHand</fullName>
+                <default>false</default>
+                <label>KitchenHand</label>
+            </value>
+            <value>
+                <fullName>Level 2 Training</fullName>
+                <default>false</default>
+                <label>Level 2 Training</label>
+            </value>
+            <value>
+                <fullName>Maitre D&apos;</fullName>
+                <default>false</default>
+                <label>Maitre D&apos;</label>
+            </value>
+            <value>
+                <fullName>Mixologist</fullName>
+                <default>false</default>
+                <label>Mixologist</label>
+            </value>
+            <value>
+                <fullName>Nanny</fullName>
+                <default>false</default>
+                <label>Nanny</label>
+            </value>
+            <value>
+                <fullName>office</fullName>
+                <default>false</default>
+                <label>office</label>
+            </value>
+            <value>
+                <fullName>On call</fullName>
+                <default>false</default>
+                <label>On call</label>
+            </value>
+            <value>
+                <fullName>Pantry Manager</fullName>
+                <default>false</default>
+                <label>Pantry Manager</label>
+            </value>
+            <value>
+                <fullName>Pick up</fullName>
+                <default>false</default>
+                <label>Pick up</label>
+            </value>
+            <value>
+                <fullName>Powerhouse Cafe</fullName>
+                <default>false</default>
+                <label>Powerhouse Cafe</label>
+            </value>
+            <value>
+                <fullName>Prebooking</fullName>
+                <default>false</default>
+                <label>Prebooking</label>
+            </value>
+            <value>
+                <fullName>Promo Staff</fullName>
+                <default>false</default>
+                <label>Promo Staff</label>
+            </value>
+            <value>
+                <fullName>Senior Bartender</fullName>
+                <default>false</default>
+                <label>Senior Bartender</label>
+            </value>
+            <value>
+                <fullName>Senior Waiter</fullName>
+                <default>false</default>
+                <label>Senior Waiter</label>
+            </value>
+            <value>
+                <fullName>Sommelier</fullName>
+                <default>false</default>
+                <label>Sommelier</label>
+            </value>
+            <value>
+                <fullName>Stewardess</fullName>
+                <default>false</default>
+                <label>Stewardess</label>
+            </value>
+            <value>
+                <fullName>Supervisor</fullName>
+                <default>false</default>
+                <label>Supervisor</label>
+            </value>
+            <value>
+                <fullName>Team Leader</fullName>
+                <default>false</default>
+                <label>Team Leader</label>
+            </value>
+            <value>
+                <fullName>Training</fullName>
+                <default>false</default>
+                <label>Training</label>
+            </value>
+            <value>
+                <fullName>Travel Compensation</fullName>
+                <default>false</default>
+                <label>Travel Compensation</label>
+            </value>
+            <value>
+                <fullName>Vending Machine</fullName>
+                <default>false</default>
+                <label>Vending Machine</label>
+            </value>
+            <value>
+                <fullName>VIP Host</fullName>
+                <default>false</default>
+                <label>VIP Host</label>
+            </value>
+            <value>
+                <fullName>No positions</fullName>
+                <default>false</default>
+                <label>No positions</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,122 @@
+<template>
+    <section class="recent-invoices">
+
+        <!-- Header -->
+        <div class="header">
+            <h2>Recent Invoices</h2>
+            <span class="pill">{outstandingCount} Due</span>
+        </div>
+  <!-- If Invoices Exist -->
+    <template if:true={hasInvoices}>
+        <!-- Table Header -->
+        <div class="table-header">
+            <div class="col-details">Invoice Details</div>
+            <div class="col-date">Date</div>
+            <div class="col-status">Status</div>
+            <div class="col-amount">Amount</div>
+            <div class="col-actions">Actions</div>
+        </div>
+
+        <!-- Rows -->
+        <template for:each={invoices} for:item="inv">
+            <div key={inv.id} class="invoice-row">
+
+                <!-- Details -->
+                <div class="col-details details">
+                    <div class="title">{inv.title}</div>
+                    <div class="sub">{inv.invoiceNumber}</div>
+                </div>
+
+                <!-- Date -->
+                <div class="col-date">{inv.dateLabel}</div>
+
+                <!-- Status -->
+                <div class="col-status">
+                    <span class="status-pill">{inv.status}</span>
+                </div>
+
+                <!-- Amount -->
+                <div class="col-amount">${inv.amount}</div>
+
+                <!-- Actions -->
+                <div class="col-actions actions">
+
+    <!-- View always -->
+    <button
+        class="btn"
+        data-url={inv.xeroUrl}
+        onclick={viewInvoice}>
+        View
+    </button>
+
+    <!-- Pay -->
+    <template if:true={inv.showPay}>
+        <button
+            class="btn primary"
+            data-url={inv.xeroUrl}
+            onclick={payInvoice}>
+            Pay
+        </button>
+    </template>
+
+    <!-- Pending Approval -->
+    <template if:true={inv.showPending}>
+        <button
+            class="btn pending"
+            disabled>
+            Invoice Pending Approval
+        </button>
+    </template>
+
+</div>
+
+
+            </div>
+        </template>
+
+        <template if:true={showOutstanding}>
+    <section class="outstanding-section">
+
+        <div class="outstanding-content">
+
+            <div class="outstanding-left">
+                <div class="outstanding-title">
+                    Total Outstanding Balance
+                </div>
+
+                <div class="outstanding-amount">
+                    ${totalOutstanding}
+                </div>
+
+                <div class="outstanding-sub">
+                    {outstandingCount} invoice requires immediate attention
+                </div>
+            </div>
+
+           <div class="outstanding-right">
+    <div class="icon-wrapper">
+        <img
+            src={outstandingIcon}
+            alt="Outstanding decoration"
+            class="outstanding-icon"
+        />
+    </div>
+</div>
+
+
+
+        </div>
+
+    </section>
+</template>
+
+</template>
+ <!-- If No Invoices -->
+    <template if:false={hasInvoices}>
+        <div class="no-records">
+            <lightning-icon icon-name="utility:money" size="large"></lightning-icon>
+            <p>No recent invoices found</p>
+        </div>
+    </template>
+    </section>
+</template>

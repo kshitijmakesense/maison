@@ -1,0 +1,106 @@
+/* ===============================
+   FONT DEFINITIONS
+================================ */
+@font-face {
+    font-family: 'MaisonHeading';
+    src: url('/sfsites/c/resource/MaisonFonts/PlayfairDisplay-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'MaisonBody';
+    src: url('/sfsites/c/resource/MaisonFonts/Inter-Regular.woff2') format('woff2');
+}
+
+/* ===============================
+   HEADER LAYOUT
+================================ */
+.header {
+    display: grid;
+   grid-template-columns: 280px 1fr 260px;
+    align-items: center;
+    padding: 24px 40px;
+    background: #ffffff;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+/* ===============================
+   LOGO
+================================ */
+.logo img {
+    height: 72px;          /* increased from 56px */
+    width: auto;
+    object-fit: contain;
+}
+
+
+/* ===============================
+   WELCOME TEXT
+================================ */
+.welcome h1 {
+    font-family: 'MaisonHeading';
+    font-size: 28px;
+    font-weight: 600;
+    color: #1F1F1F;
+    margin: 0;
+}
+
+.welcome p {
+    font-family: 'MaisonBody';
+    font-size: 15px;
+    color: #6F6F6F;
+    margin-top: 6px;
+}
+
+/* ===============================
+   PROFILE
+================================ */
+.profile {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-email {
+    font-family: 'MaisonBody';
+    font-size: 14px;
+    color: #1F1F1F;
+}
+
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #D8D8D8;
+}
+
+/* ===============================
+   PROFILE AVATAR (EXACT MATCH)
+================================ */
+
+.avatar-outer {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #2B2B2B;   /* dark outer ring */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-inner {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #FFFFFF;   /* inner white ring */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-inner img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+}

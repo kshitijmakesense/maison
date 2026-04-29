@@ -1,0 +1,5 @@
+{
+  "apiName" : "Service_Bookings",
+  "type" : "sfdc_cms__view",
+  "path" : "views"
+}

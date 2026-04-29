@@ -1,0 +1,325 @@
+<apex:page standardController="Order" renderAs="pdf" showHeader="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<head>
+    <meta charset="utf-8" />
+    <title>Equipment on Site | {!Order.OrderNumber}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #000;
+            margin: 0;
+            padding: 20px;
+            font-size: 11px;
+            line-height: 1.4;
+        }
+        
+        .container {
+            width: 100%;
+            background: white;
+            padding: 20px;
+        }
+        
+        /* Header Styles */
+        .header-warning {
+            text-align: center;
+            color: #ff0000;
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 2px solid #ff0000;
+        }
+        
+        .page-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 20px;
+            text-decoration: underline;
+        }
+        
+        /* Client Info Section */
+        .client-info {
+            margin-bottom: 20px;
+        }
+        
+        .info-row {
+            margin-bottom: 8px;
+            display: table;
+            width: 100%;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            display: inline-block;
+            width: 150px;
+        }
+        
+        .info-value {
+            display: inline-block;
+            border-bottom: 1px solid #000;
+            min-width: 400px;
+        }
+        
+        /* Equipment Table */
+        .equipment-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .equipment-table th {
+            background-color: #4472C4;
+            color: white;
+            text-align: center;
+            padding: 8px;
+            border: 1px solid #000;
+            font-weight: bold;
+            font-size: 11px;
+        }
+        
+        .equipment-table td {
+            padding: 15px 3px;
+            border: 1px solid #000;
+            text-align: center;
+            min-height: 40px;
+        }
+        
+        .equipment-table .notes-column {
+            width: 35%;
+        }
+        
+        .equipment-table .equipment-column {
+            width: 20%;
+        }
+        
+        .equipment-table .quantity-column {
+            width: 12%;
+        }
+        
+        .equipment-table .delivered-column {
+            width: 12%;
+        }
+        
+        .equipment-table .pickedup-column {
+            width: 12%;
+        }
+        
+        
+        /* Page Break */
+        .page-break {
+            page-break-after: always;
+        }
+        
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Page 1 -->
+        <div class="header-warning">
+            ****** COPY THIS DOCUMENT AND THEN EDIT *****
+        </div>
+        
+        <div class="page-title">
+            Equipment on Site - Maison Hospitality
+        </div>
+        
+        <!-- Client Information -->
+        <div class="client-info">
+            <div class="info-row">
+                <span class="info-label">Client Brief</span>
+                <span class="info-value">{!Order.Client_Breif__c}</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label">Date:</span>
+                <span class="info-value">{!TEXT(Order.Event_Date__c)}</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label">Address:</span>
+                <span class="info-value">{!Order.Venue_Address__c}</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label">Contact on Site:</span>
+                <span class="info-value">{!Order.Contact__r.Name}</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label">Guest Arrival:</span>
+                <span class="info-value">
+                    <apex:outputText value="{0,date,dd/MM/yyyy HH:mm}">
+                        <apex:param value="{!Order.Guest_arrival_time__c}" />
+                    </apex:outputText>
+                </span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label">Guest Departure:</span>
+                <span class="info-value">
+                    <apex:outputText value="{0,date,dd/MM/yyyy HH:mm}">
+                        <apex:param value="{!Order.Guest_departure_time__c}" />
+                    </apex:outputText>
+                </span>
+            </div>
+        </div>
+        
+        <!-- Delivery/Pickup Info -->
+        <div class="client-info">
+            <div class="info-row">
+                <span class="info-label">Delivered by:</span>
+                <span class="info-value">{!Order.Delivered_by__c}</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="info-label">Picked up by:</span>
+                <span class="info-value">{!Order.Picked_up_by__c}</span>
+            </div>
+        </div>
+        
+        <!-- Equipment Table -->
+        <table class="equipment-table">
+            <thead>
+                <tr>
+                    <th class="equipment-column">Equipment</th>
+                    <th class="quantity-column">Quantity</th>
+                    <th class="delivered-column">Delivered</th>
+                    <th class="pickedup-column">Picked Up</th>
+                    <th class="notes-column">Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Generate 15 rows for first page -->
+                <apex:variable var="rowCount" value="{!0}" />
+                <apex:repeat value="{!Order.Order_Line_Items__r}" var="item" first="0" rows="15">
+                    <tr>
+                        <td>{!item.Name}</td>
+                        <td>{!ROUND(item.Quantity__c, 0)}</td>
+                        <td>{!Order.Delivered_by__c}</td>
+                        <td>{!Order.Picked_up_by__c}</td>
+                        <td>{!item.Description__c}</td>
+                    </tr>
+                    <apex:variable var="rowCount" value="{!rowCount + 1}" />
+                </apex:repeat>
+                
+                <!-- Fill remaining rows if less than 15 items 
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>  -->
+            </tbody>
+        </table>
+        
+        
+        
+    </div>
+</body>
+</html>
+</apex:page>

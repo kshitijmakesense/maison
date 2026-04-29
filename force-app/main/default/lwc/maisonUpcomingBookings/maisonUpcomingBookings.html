@@ -1,0 +1,44 @@
+<template>
+    <section class="upcoming-bookings">
+
+        <!-- Header -->
+        <div class="header">
+            <h2>Upcoming Bookings</h2>
+            <span class="pill">{totalCount}</span>
+        </div>
+ <!-- If Bookings Exist -->
+    <template if:true={hasBookings}>
+
+        <!-- List -->
+        <template for:each={bookings} for:item="b">
+            <div key={b.id} class="booking-row">
+
+                <!-- Left -->
+                <div class="details">
+                    <div class="title">{b.title}</div>
+                    <div class="sub">#{b.bookingNumber}</div>
+                    <div class="meta">
+                        {b.eventDate}
+                        <span class="dot">•</span>
+                        {b.guests} Guests
+                    </div>
+                </div>
+
+                <!-- Right -->
+                <div class="status-pill">
+                    {b.status}
+                </div>
+
+            </div>
+        </template>
+        </template>
+        <!-- If No Bookings -->
+    <template if:false={hasBookings}>
+        <div class="no-records">
+            <lightning-icon icon-name="utility:event" size="large"></lightning-icon>
+            <p>No upcoming bookings found</p>
+        </div>
+    </template>
+
+    </section>
+</template>

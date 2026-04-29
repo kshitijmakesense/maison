@@ -1,0 +1,46 @@
+<template>
+    <div class="page-container">
+
+        <!-- Header -->
+        <div class="page-header">
+            <h1>Reorder</h1>
+            <p>Select a past booking to reorder your event</p>
+        </div>
+
+        <!-- Empty State -->
+        <template if:true={isEmpty}>
+            <div class="empty-state">
+                No past bookings available for reorder.
+            </div>
+        </template>
+
+        <!-- Booking Cards -->
+        <div class="card-grid">
+            <template for:each={bookings} for:item="booking">
+                <div key={booking.id} class="booking-card">
+
+                    <div class="card-header">
+                        <h2>{booking.name}</h2>
+                        <span class="status">{booking.status}</span>
+                    </div>
+
+                    <div class="card-body">
+                        <p><strong>Date:</strong> {booking.date}</p>
+                        <p><strong>Guests:</strong> {booking.guests}</p>
+                        <p><strong>Amount:</strong> ${booking.amount}</p>
+                    </div>
+
+                    <div class="card-footer">
+                        <button class="reorder-btn"
+                                data-id={booking.id}
+                                onclick={handleReorder}>
+                            Reorder
+                        </button>
+                    </div>
+
+                </div>
+            </template>
+        </div>
+
+    </div>
+</template>

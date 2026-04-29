@@ -1,0 +1,144 @@
+/* userHeader.css - Updated with higher z-index */
+.user-header-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.profile-button-container {
+    position: relative;
+    /* Add z-index to the container as well */
+    z-index: 9999;
+}
+
+.profile-button {
+    background: transparent;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.profile-button:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.profile-image {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 8px;
+}
+
+.profile-initials {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #0176d3;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.user-name {
+    margin-right: 8px;
+    font-weight: 500;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dropdown-icon {
+    --sds-c-icon-color-foreground-default: #747474;
+}
+
+.user-menu-dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10000; /* Increased from 1000 to 10000 */
+    min-width: 220px;
+    overflow: hidden;
+    /* Add these properties for better layering */
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.user-menu-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.user-menu-dropdown li {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.user-menu-dropdown li:last-child {
+    border-bottom: none;
+}
+
+.user-menu-dropdown a {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.user-menu-dropdown a lightning-icon {
+    margin-right: 10px;
+}
+
+.user-menu-dropdown a:hover {
+    background-color: #f7f7f7;
+}
+
+.logout-item a {
+    color: #c23934;
+}
+
+.login-button {
+    margin-right: 10px;
+}
+
+:host {
+    --sds-c-button-radius-border: 20px;
+    --sds-c-button-brand-color-background: #0176d3;
+    --sds-c-button-brand-color-border: #0176d3;
+    --sds-c-button-brand-text-color: white;
+}
+
+/* Additional styles to ensure dropdown appears above everything */
+.user-header-container:has(.user-menu-dropdown) {
+    z-index: 10001;
+}
+
+/* Alternative approach using CSS custom properties for z-index management */
+:host {
+    --dropdown-z-index: 10000;
+    --container-z-index: 9999;
+}
+
+/* Apply the custom properties */
+.profile-button-container {
+    z-index: var(--container-z-index);
+}
+
+.user-menu-dropdown {
+    z-index: var(--dropdown-z-index);
+}

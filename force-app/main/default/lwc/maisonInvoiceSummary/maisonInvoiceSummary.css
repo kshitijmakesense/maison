@@ -1,0 +1,23 @@
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.summary-card {
+    background: #F6B98C;
+    border-radius: 22px;
+    padding: 22px;
+}
+
+.card-title {
+    font-family: 'MaisonHeading';
+    font-size: 18px;
+    margin-bottom: 14px;
+}
+
+.card-value {
+    font-family: 'MaisonHeading';
+    font-size: 32px;
+    font-weight: 600;
+}

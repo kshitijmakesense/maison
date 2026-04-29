@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Signage_requirement__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Would you like any additional signage or menu boards to be provided with the coffee cart?</inlineHelpText>
+    <label>Signage requirement</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

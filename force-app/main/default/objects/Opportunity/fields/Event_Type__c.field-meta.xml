@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Type__c</fullName>
+    <label>Event Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Self Serve Buffet</fullName>
+                <default>false</default>
+                <label>Self Serve Buffet</label>
+            </value>
+            <value>
+                <fullName>Boardroom</fullName>
+                <default>false</default>
+                <label>Boardroom</label>
+            </value>
+            <value>
+                <fullName>Barista Service</fullName>
+                <default>false</default>
+                <label>Barista Service</label>
+            </value>
+            <value>
+                <fullName>Promo Staff</fullName>
+                <default>false</default>
+                <label>Promo Staff</label>
+            </value>
+            <value>
+                <fullName>Sit Down Service</fullName>
+                <default>false</default>
+                <label>Sit Down Service</label>
+            </value>
+            <value>
+                <fullName>Standing Event/ Cocktail Party</fullName>
+                <default>false</default>
+                <label>Standing Event/ Cocktail Party</label>
+            </value>
+            <value>
+                <fullName>Pantry Manager</fullName>
+                <default>false</default>
+                <label>Pantry Manager</label>
+            </value>
+            <value>
+                <fullName>High Tea</fullName>
+                <default>false</default>
+                <label>High Tea</label>
+            </value>
+            <value>
+                <fullName>Concierge</fullName>
+                <default>false</default>
+                <label>Concierge</label>
+            </value>
+            <value>
+                <fullName>Boat Charter</fullName>
+                <default>false</default>
+                <label>Boat Charter</label>
+            </value>
+            <value>
+                <fullName>BBQ</fullName>
+                <default>false</default>
+                <label>BBQ</label>
+            </value>
+            <value>
+                <fullName>Conference</fullName>
+                <default>false</default>
+                <label>Conference</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>5</visibleLines>
+</CustomField>

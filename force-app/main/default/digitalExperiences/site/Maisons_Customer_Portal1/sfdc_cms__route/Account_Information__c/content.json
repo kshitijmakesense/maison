@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Account Information",
+  "contentBody" : {
+    "activeViewId" : "Account_Information",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-account-information",
+    "urlPrefix" : "account-information"
+  },
+  "urlName" : "account-information"
+}

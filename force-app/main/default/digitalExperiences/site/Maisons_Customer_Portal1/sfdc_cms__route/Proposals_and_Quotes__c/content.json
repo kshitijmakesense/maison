@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Proposals and Quotes",
+  "contentBody" : {
+    "activeViewId" : "Proposals_and_Quotes",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-proposals-and-quotes",
+    "urlPrefix" : "proposals-and-quotes"
+  },
+  "urlName" : "proposals-and-quotes"
+}

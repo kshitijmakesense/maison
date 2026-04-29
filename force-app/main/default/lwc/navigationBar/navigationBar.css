@@ -1,0 +1,102 @@
+/* FULL SIDEBAR */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: #1e1d1b;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* BRAND HEADER */
+.sidebar-header {
+    padding: 0 0.5rem 2rem;
+}
+
+.brand-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #d2b26f; /* gold */
+    margin: 0;
+}
+
+.brand-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    color: #b8b8b8;
+    margin-top: 0.2rem;
+}
+
+/* NAV LIST */
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin-bottom: 0.8rem;
+}
+
+/* NAV LINK */
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.9rem 1rem;
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+/* ICON STYLE */
+.icon {
+    width: 22px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #d2b26f; /* gold */
+}
+
+/* LABEL */
+.label {
+    color: #ffffff;
+}
+
+/* ACTIVE STATE → BROWN BUTTON (matches screenshot) */
+.nav-link.active,
+.nav-link:hover {
+    background: #9a602c;
+    color: white;
+}
+
+.nav-link.active .icon,
+.nav-link:hover .icon {
+    color: white !important;
+}
+
+.nav-link.active {
+    background: #9a602c;           /* Brown background */
+    color: #ffffff !important;
+}
+
+.nav-link.active .icon {
+    color: #ffffff !important;
+}
+
+.nav-link.active .label {
+    color: #ffffff !important;
+}
+
+.nav-link,
+.nav-link:visited,
+.nav-link:hover,
+.nav-link:focus {
+    text-decoration: none !important;
+}
+
+.icon {
+    text-decoration: none !important;
+}

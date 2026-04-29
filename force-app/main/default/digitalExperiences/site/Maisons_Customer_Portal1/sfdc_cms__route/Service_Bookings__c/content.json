@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Service Bookings",
+  "contentBody" : {
+    "activeViewId" : "Service_Bookings",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-service-bookings",
+    "urlPrefix" : "service-bookings"
+  },
+  "urlName" : "service-bookings"
+}

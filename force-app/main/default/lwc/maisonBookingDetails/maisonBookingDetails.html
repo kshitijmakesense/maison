@@ -1,0 +1,361 @@
+<template>
+    <div class="header-section">
+        <h2 class="section-title">Event Details</h2>
+    </div>
+    
+  <div class="header-actions">
+
+    <div class="right-actions">
+    <template if:true={isUpcoming}>
+    <c-booking-menu-upload record-id={recordId}></c-booking-menu-upload>
+</template>
+
+<template if:true={isPast}>
+    <c-booking-photo-upload record-id={recordId}></c-booking-photo-upload>
+</template>
+
+      <button class="menu-btn" onclick={handleBack}>Back</button>
+    </div>
+
+</div>
+
+
+<br/>
+
+    <lightning-card>
+        <div class="container">
+            
+            <!-- Info Cards Section -->
+            <template if:true={order}>
+                <div class="info-cards-container">
+                    <div class="info-card">
+                        <div class="card-icon">✓</div>
+                        <div class="card-content">
+                            <div class="card-label">Booking No</div>
+                            <div class="card-value">{order.OrderNumber}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="card-icon">✓</div>
+                        <div class="card-content">
+                            <div class="card-label">Event Date</div>
+                            <div class="card-value">{formattedEventDate}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="card-icon">✓</div>
+                        <div class="card-content">
+                            <div class="card-label">Status</div>
+                            <div class="card-value">{order.Status}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="card-icon">✓</div>
+                        <div class="card-content">
+                            <div class="card-label">Order Total Amount</div>
+                            <div class="card-value">{formattedAmount}</div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <div class="header-section">
+                <h2 class="section-title">Basic Info</h2>
+            </div>
+
+            <template if:true={order}>
+                <div class="table-container">
+                    <table class="booking-table">
+                        <thead>
+                            <tr class="table-header">
+                                <th>Booking No</th>
+                                <th>Enquiry</th>
+                                <th>Status</th>
+                                <th>Contact</th>
+                                <th>Order Total Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-row">
+                                <td>{order.OrderNumber}</td>
+                                <td>{formattedEnquiryDate}</td>
+                                <td>{order.Status}</td>
+                                <td>{contactPhone}</td>
+                                <td>{formattedAmount}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Event Details Section -->
+                <div class="header-section" style="margin-top: 40px;">
+                    <h2 class="section-title">Event Details</h2>
+                </div>
+
+                <div class="table-container">
+                    <table class="booking-table">
+                        <thead>
+                            <tr class="table-header">
+                                <th>Personal / Corporate</th>
+                                <th>Event Date</th>
+                                <th>Event Type</th>
+                                <th>Venue Address</th>
+                                <th>Occasion</th>
+                                <th>No of Guests</th>
+                                <th>No of Staffs Required</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-row">
+                                <td>{personalOrCorporate}</td>
+                                <td>{formattedEventDate}</td>
+                                <td>{eventType}</td>
+                                <td>{venueAddress}</td>
+                                <td>{occasion}</td>
+                                <td>{numberOfGuests}</td>
+                                <td>{numberOfStaff}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Product/Service Section -->
+                <div class="header-section" style="margin-top: 40px;">
+                    <h2 class="section-title">Product/Service</h2>
+                </div>
+
+                <template if:true={orderLineItems}>
+                    <template if:true={orderLineItems.length}>
+                        <div class="modern-table-container">
+                            <table class="modern-table">
+                                <thead>
+                                    <tr class="modern-header">
+                                        <th>Product/Service</th>
+                                        <th>Quantity</th>
+                                        <th>Sales Price</th>
+                                        <th>Tax Rate</th>
+                                        <th>Tax Amount</th>
+                                        <th>Line Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={orderLineItems} for:item="item">
+                                        <tr class="modern-row" key={item.Id}>
+                                            <td>{item.Name}</td>
+                                            <td>{item.Quantity__c}</td>
+                                            <td>{item.formattedUnitPrice}</td>
+                                            <td>{item.formattedTaxRate}</td>
+                                            <td>{item.formattedTaxAmount}</td>
+                                            <td>{item.formattedLineTotal}</td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    </template>
+                    <template if:false={orderLineItems.length}>
+                        <div class="no-data-message">
+                            No product/service items found for this order.
+                        </div>
+                    </template>
+                </template>
+
+                <!-- Staff Details Section -->
+                <div class="header-section" style="margin-top: 40px;">
+                    <h2 class="section-title">Staff Details</h2>
+                </div>
+
+                    <template if:true={staffAssignments.length}>
+                        <div class="modern-table-container">
+                            <table class="modern-table">
+                                <thead>
+                                    <tr class="modern-header">
+                                       <th>Photo</th>
+<th>Staff: First Name</th>
+<th>Staff: Last Name</th>
+<th>Staff Type</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={staffAssignments} for:item="staff">
+                                        <tr class="modern-row" key={staff.Id}>
+
+    <!-- PHOTO -->
+    <td>
+        <template if:true={staff.photoUrl}>
+            <img src={staff.photoUrl} class="avatar-small"/>
+        </template>
+        <template if:false={staff.photoUrl}>
+            <div class="avatar-fallback-small">
+                {staff.initial}
+            </div>
+        </template>
+    </td>
+
+    <td>{staff.staffFirstName}</td>
+<td>{staff.staffLastName}</td>
+<td>{staff.staffType}</td>
+
+</tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    </template>
+                    <template if:false={staffAssignments.length}>
+                        <div class="no-data-message">
+                            No staff assignments found for this order.
+                        </div>
+                    </template>
+                
+
+                <!-- Quote Section -->
+                <div class="header-section" style="margin-top: 40px;">
+                    <h2 class="section-title">Quote</h2>
+                </div>
+
+                <template if:true={quotes}>
+                    <template if:true={quotes.length}>
+                        <div class="modern-table-container">
+                            <table class="modern-table">
+                                <thead>
+                                    <tr class="modern-header">
+                                        <th>Quote Details</th>
+                                        <th>Venue</th>
+                                        <th>Valid Until</th>
+                                        <th>Status</th>
+                                        <th>Amount</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={quotes} for:item="quote">
+                                        <tr class="modern-row" key={quote.Id}>
+                                            <td>
+                                                <div class="quote-details">
+                                                    <div class="quote-occasion">{quote.occasion}</div>
+                                                    <div class="quote-number">{quote.quoteNumber}</div>
+                                                </div>
+                                            </td>
+                                            <td>{quote.venue}</td>
+                                            <td>{quote.formattedExpirationDate}</td>
+                                            <td>
+                                                <span class="status-badge">{quote.Status}</span>
+                                            </td>
+                                            <td>{quote.formattedAmount}</td>
+                                            <td>
+                                                <button 
+                                                    class="view-quote-btn" 
+                                                    data-url={quote.quoteUrl} 
+                                                    onclick={viewQuote}>
+                                                    View Quote
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    </template>
+                    <template if:false={quotes.length}>
+                        <div class="no-data-message">
+                            No quotes found for this order.
+                        </div>
+                    </template>
+                </template>
+
+                <!-- Invoice Section -->
+                <div class="header-section" style="margin-top: 40px;">
+                    <h2 class="section-title">Invoice</h2>
+                </div>
+
+                <template if:true={invoices}>
+                    <template if:true={invoices.length}>
+                        <div class="modern-table-container">
+                            <table class="modern-table">
+                                <thead>
+                                    <tr class="modern-header">
+                                        <th>Event Details</th>
+                                        <th>Related Booking</th>
+                                        <th>Issue Date</th>
+                                        <th>Due Date</th>
+                                        <th>Status</th>
+                                        <th>Amount</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <template for:each={invoices} for:item="invoice">
+                                        <tr class="modern-row" key={invoice.Id}>
+                                            <td>
+                                                <div class="quote-details">
+                                                    <div class="quote-occasion">{invoice.occasion}</div>
+                                                    <div class="quote-number">{invoice.invoiceNumber}</div>
+                                                </div>
+                                            </td>
+                                            <td>{invoice.relatedBooking}</td>
+                                            <td>{invoice.formattedIssueDate}</td>
+                                            <td>{invoice.formattedDueDate}</td>
+                                            <td>
+                                                <span class="status-badge status-paid">{invoice.Payment_Status__c}</span>
+                                            </td>
+                                            <td>{invoice.formattedAmount}</td>
+                                            <td>
+                                                <button 
+                                                    class="view-quote-btn" 
+                                                    data-url={invoice.invoiceUrl} 
+                                                    onclick={viewInvoice}>
+                                                    View
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </template>
+                                </tbody>
+                            </table>
+                        </div>
+                    </template>
+                    <template if:false={invoices.length}>
+                        <div class="no-data-message">
+                            No invoices found for this order.
+                        </div>
+                    </template>
+                </template>
+
+                   <!-- Menu Details Section -->
+                
+                    <div class="header-section" style="margin-top: 40px;">
+                        <h2 class="section-title">Menu Details</h2>
+                    </div>
+                    <template if:true={hasMenuDetails}>
+                        <div class="table-container">
+                            <div class="menu-details-box">
+                                <lightning-formatted-rich-text value={menuDetails}></lightning-formatted-rich-text>
+                            </div>
+                        </div>
+                    </template>
+
+                    <template if:false={hasMenuDetails}>
+                        <div class="no-data-message">
+                            No menu details available.
+                        </div>
+                    </template>
+            </template>
+
+            <template if:true={error}>
+                <div class="error-message">
+                    <lightning-icon icon-name="utility:error" size="small"></lightning-icon>
+                    <span>{error}</span>
+                </div>
+            </template>
+
+            <template if:true={isLoading}>
+                <div class="spinner-container">
+                    <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,72 @@
+/* Flexbox Container for 5 Equal Columns */
+.custom-stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.custom-stat-item {
+    flex: 1 1 calc(20% - 1rem); /* 5 columns with gap */
+    min-width: 200px; /* Prevents items from getting too small */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .custom-stat-item {
+        flex: 1 1 calc(33.333% - 1rem); /* 3 columns on smaller desktops */
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-stat-item {
+        flex: 1 1 calc(50% - 1rem); /* 2 columns on tablet */
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-stat-item {
+        flex: 1 1 100%; /* 1 column on mobile */
+    }
+}
+
+/* Text Styling */
+.slds-text-heading_large {
+    font-weight: 700;
+}
+
+/* Box Hover Effect */
+.slds-box:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease;
+}
+
+/* Staff Photo Styling */
+.staff-photo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5rem;
+} 
+
+.staff-photo-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #0176d3;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Center the avatar icon when no photo */
+.slds-avatar {
+    margin: 0 auto;
+}
+
+/* Ensure consistent height for all boxes */
+.slds-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 120px;
+}

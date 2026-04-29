@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Melbourne_Bookings</fullName>
+    <active>true</active>
+    <businessProcess>Melbourne Bookings</businessProcess>
+    <label>Melbourne Bookings</label>
+    <picklistValues>
+        <picklist>Beverages_Coffee_Type__c</picklist>
+        <values>
+            <fullName>Coffee %2F Tea</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot Chocolate %2F Chai Latte</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Juice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Soft drinks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Water</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Client_Breif__c</picklist>
+        <values>
+            <fullName>All Done Labels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NEW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TO DO</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Do_you_have_a_budget__c</picklist>
+        <values>
+            <fullName>No %2F Not Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Event_Type__c</picklist>
+        <values>
+            <fullName>Barista Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boardroom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concierge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pantry Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promo Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sit Down Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standing Event%2F Cocktail Party</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ForecastCategoryName</picklist>
+        <values>
+            <fullName>Best Case</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pipeline</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Advertisement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google AdWords</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchased List</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Loss_Reason__c</picklist>
+        <values>
+            <fullName>Lost to Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Budget %2F Lost Funding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Decision %2F Non-Responsive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Need_extra_services__c</picklist>
+        <values>
+            <fullName>Catering Options</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cocktail Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coffee Cart Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equipment Hire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Glassware Hire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Juice Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Slushie Machine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wine Package</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Personal_or_Corporate_Event__c</picklist>
+        <values>
+            <fullName>Corporate Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal Event</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority__c</picklist>
+        <values>
+            <fullName>New Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VIP</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Progress__c</picklist>
+        <values>
+            <fullName>ADDED TO SLING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>All done labels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CANCELED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NEW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NOT GOING AHEAD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Posponed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STAFF BOOKED</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Quote_Status__c</picklist>
+        <values>
+            <fullName>Accepted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Draft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Viewed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Service_Requirements__c</picklist>
+        <values>
+            <fullName>Bar Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Catering</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coffee Cart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equipment Hire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event Coordination</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Glassware Hire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Setup%2FBreakdown</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiter Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wine Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>mobile bar</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Existing Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Business</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Uniform_Required__c</picklist>
+        <values>
+            <fullName>Black Shirt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black Shirt %2B Black Tie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black Shirt %2B Black Tie %2B Black Vest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TBC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White Shirt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White Shirt %2B Black Tie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White Shirt %2B Black Tie %2B Black Vest</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

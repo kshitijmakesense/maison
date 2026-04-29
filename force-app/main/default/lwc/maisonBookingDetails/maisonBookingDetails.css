@@ -1,0 +1,372 @@
+.container {
+    padding: 20px;
+    background-color: #F6F3EE;
+}
+
+.header-section {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    font-family: 'MaisonHeading';
+}
+
+/* Override lightning-card styles */
+lightning-card {
+    --slds-c-card-heading-font-size: 28px;
+    --slds-c-card-heading-font-family: 'MaisonHeading';
+    --slds-c-card-heading-font-weight: 600;
+    --slds-c-card-color-background: #F6F3EE;
+}
+
+.slds-card {
+    background: #F6F3EE;
+    border-radius: 18px;
+    border: none;
+    box-shadow: none;
+}
+
+.slds-card__body {
+    padding: 24px;
+}
+
+/* Table Container */
+.table-container,
+.modern-table-container {
+    overflow-x: auto;
+    background-color: #F6F3EE;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.header-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; /* 🔥 vertical alignment */
+}
+
+.right-actions {
+    display: flex;
+    align-items: center; /* 🔥 keeps same line */
+    gap: 12px;
+    flex-wrap: nowrap;   /* 🔥 prevent breaking line */
+}
+/* keep menu natural */
+.menu-section {
+    flex: 1;
+}
+
+.menu-details-box {
+    background: #fff;
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px solid #e5e5e5;
+    line-height: 1.8;
+}
+
+.menu-btn {
+    background: #c9d6df;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 18px;
+    cursor: pointer;
+}
+
+/* push button to right */
+.back-button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Base Table Styles */
+.booking-table,
+.modern-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 14px;
+}
+
+/* Table Header */
+.table-header,
+.modern-header {
+    background-color: #DCE9EF;
+}
+
+.table-header th,
+.modern-header th {
+    padding: 16px 20px;
+    text-align: left;
+    font-family: 'MaisonHeading';
+    font-size: 16px;
+    font-weight: 600;
+    color: #4A5568;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.table-header th:first-child,
+.modern-header th:first-child {
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
+    padding-left: 32px;
+}
+
+.table-header th:last-child,
+.modern-header th:last-child {
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+}
+
+/* Table Body Rows */
+.table-row,
+.modern-row {
+    border: none;
+    background: transparent;
+}
+
+.table-row td,
+.modern-row td {
+    padding: 18px 20px;
+    color: #2D3748;
+    font-size: 14px;
+    background-color: #F6F3EE;
+    font-family: 'MaisonHeading';
+    vertical-align: middle;
+}
+
+.table-row:not(:last-child) td,
+.modern-row:not(:last-child) td {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.table-row td:first-child,
+.modern-row td:first-child {
+    padding-left: 32px;
+}
+
+/* Quote Details Specific Styles */
+.quote-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.quote-occasion {
+    font-weight: 600;
+    color: #1A202C;
+    font-size: 14px;
+    font-family: 'MaisonHeading';
+}
+
+.quote-number {
+    font-size: 13px;
+    color: #718096;
+    font-family: 'MaisonHeading';
+}
+
+/* Status Badge */
+.status-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    background-color: #CFE0E8;
+    color: #2D3748;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'MaisonHeading';
+}
+
+.status-paid {
+    background-color: #CFE0E8;
+    color: #2D3748;
+}
+
+/* View Quote/Invoice Button */
+.view-quote-btn {
+    background-color: #CFE0E8;
+    border: none;
+    border-radius: 24px;
+    padding: 8px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2D3748;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: 'MaisonHeading';
+}
+
+.view-quote-btn:hover {
+    background-color: #BDD4DE;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.view-quote-btn:active {
+    transform: translateY(0);
+    background-color: #B0CADB;
+}
+
+/* Error Message */
+.error-message {
+    padding: 16px;
+    background-color: #fee;
+    border-left: 4px solid #c00;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #c00;
+    font-family: 'MaisonHeading';
+}
+
+/* No Data Message */
+.no-data-message {
+    padding: 40px 20px;
+    text-align: center;
+    color: #718096;
+    background-color: #F6F3EE;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-family: 'MaisonHeading';
+}
+
+/* Spinner Container */
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* Info Cards Container */
+.info-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.info-card {
+    background-color: #f4c6a0;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+    width: 26px;
+    height: 26px;
+    border: 2px solid #000;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.card-content {
+    flex: 1;
+}
+
+.card-label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 8px;
+    font-family: 'MaisonHeading';
+}
+
+.card-value {
+    font-size: 28px;
+    color: #000;
+    font-weight: 600;
+    font-family: 'MaisonHeading';
+}
+
+/* Back Button Container */
+.back-button-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.view-details-btn {
+    background: #CFE0E8;
+    border: none;
+    border-radius: 24px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2D3748;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: none;
+    font-family: 'MaisonHeading';
+}
+
+.view-details-btn:hover {
+    background: #BDD4DE;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.view-details-btn:active {
+    transform: translateY(0);
+    background: #B0CADB;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .table-header th,
+    .modern-header th,
+    .table-row td,
+    .modern-row td {
+        font-size: 13px;
+        padding: 14px 16px;
+    }
+    
+    .table-header th:first-child,
+    .modern-header th:first-child,
+    .table-row td:first-child,
+    .modern-row td:first-child {
+        padding-left: 20px;
+    }
+    
+    .view-details-btn,
+    .view-quote-btn {
+        padding: 6px 16px;
+        font-size: 12px;
+    }
+
+    .info-cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+    }
+}
+
+.avatar-small {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar-fallback-small {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #e0ddd7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}

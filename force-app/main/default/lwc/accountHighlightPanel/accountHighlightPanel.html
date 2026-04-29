@@ -1,0 +1,57 @@
+<template>
+    <lightning-card title="Account Overview" icon-name="standard:account">
+        <template if:true={isLoading}>
+            <div class="slds-align_absolute-center slds-p-around_medium">
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </div>
+        </template>
+
+        <template if:true={error}>
+            <div class="slds-p-around_medium">
+                <div class="slds-text-color_error">
+                    <lightning-icon icon-name="utility:error" size="small" variant="error" class="slds-m-right_x-small"></lightning-icon>
+                    {error}
+                </div>
+            </div>
+        </template>
+
+        <template if:false={isLoading}>
+            <template if:false={error}>
+                <div class="slds-grid slds-wrap slds-p-around_small">
+                    <!-- Number of Orders -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-around_x-small">
+                        <div class="highlight-panel clickable" onclick={handleOrderClick}>
+                            <lightning-icon icon-name="standard:orders" size="small"></lightning-icon>
+                            <div class="slds-m-top_xx-small">
+                                <div class="metric-value">{orderCount}</div>
+                                <div class="metric-label">Total Orders</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Number of Enquiries -->
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-p-around_x-small">
+                        <div class="highlight-panel clickable" onclick={handleEnquiryClick}>
+                            <lightning-icon icon-name="standard:opportunity" size="small"></lightning-icon>
+                            <div class="slds-m-top_xx-small">
+                                <div class="metric-value">{enquiryCount}</div>
+                                <div class="metric-label">Enquiries</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Credit Limit
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-p-around_x-small">
+                        <div class="highlight-panel">
+                            <lightning-icon icon-name="standard:account" size="small"></lightning-icon>
+                            <div class="slds-m-top_xx-small">
+                                <div class="metric-value">{formattedCreditLimit}</div>
+                                <div class="metric-label">Credit Limit</div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </template>
+        </template>
+    </lightning-card>
+</template>

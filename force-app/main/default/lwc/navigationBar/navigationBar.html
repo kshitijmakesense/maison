@@ -1,0 +1,24 @@
+<template>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2 class="brand-title">MAISON</h2>
+            <p class="brand-subtitle">HOSPITALITY</p>
+        </div>
+
+        <ul class="nav-list">
+            <template for:each={navigationItems} for:item="item">
+                <li key={item.name} class="nav-item">
+                    <a href="#"
+   class="nav-link {item.isActive ? 'active' : ''}"
+   data-name={item.name}
+   data-url={item.url}
+   onclick={handleNavigation}>
+    <span class="icon">{item.icon}</span>
+    <span class="label">{item.label}</span>
+</a>
+
+                </li>
+            </template>
+        </ul>
+    </nav>
+</template>

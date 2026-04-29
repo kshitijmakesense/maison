@@ -1,0 +1,214 @@
+<template>
+    <div class="dashboard-container">
+
+        <!-- SEARCH BAR -->
+        <div class="search-row">
+            <lightning-input 
+                type="search"
+                label="Search"
+                placeholder="Search by name, venue, service..."
+                value={searchText}
+                onchange={handleSearch}>
+            </lightning-input>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="filters-row">
+
+            <!-- STATUS PICKLIST (dynamic) -->
+            <div class="filter-box">
+                <lightning-combobox
+                    label="Status"
+                    value={status}
+                    options={statusOptions}
+                    onchange={handleStatusChange}>
+                </lightning-combobox>
+            </div>
+
+            <!-- DATE RANGE DROPDOWN -->
+            <div class="filter-box">
+                <div class="dropdown-header" onclick={toggleDateRange}>
+                    <span class="filter-heading">Date Range</span>
+                    <span class="dropdown-arrow">{dateRangeIcon}</span>
+                </div>
+
+                <template if:true={showDateRange}>
+                    <div class="date-range-container">
+
+                        <lightning-input
+                            type="date"
+                            label="From Date"
+                            value={startDate}
+                            onchange={handleStartDate}>
+                        </lightning-input>
+
+                        <lightning-input
+                            type="date"
+                            label="To Date"
+                            value={endDate}
+                            onchange={handleEndDate}>
+                        </lightning-input>
+
+                    </div>
+                </template>
+            </div>
+
+            <!-- SERVICE PICKLIST -->
+            <div class="filter-box">
+                <lightning-combobox
+                    label="Services"
+                    value={selectedService}
+                    options={serviceOptions}
+                    placeholder="All services"
+                    onchange={handleServiceChange}>
+                </lightning-combobox>
+            </div>
+
+             <div class="filter-box clear-btn-box">
+        <lightning-button 
+            variant="destructive-text"
+            label="Clear Filters"
+            onclick={clearFilters}>
+        </lightning-button>
+    </div>
+        </div>
+
+<!-- LIST OF ENQUIRIES -->
+<template if:true={hasEnquiries}>
+    <template for:each={enquiries} for:item="enq">
+        <div key={enq.id} class="card">
+
+            <!-- LEFT AREA -->
+            <div class="left">
+                <!-- Record Type -->
+<p class="record-type">{enq.recordTypeLabel}</p>
+                <!-- Title -->
+                <h2 class="title">{enq.name}</h2>
+                
+
+              
+                <!-- DATE & TIME -->
+<!-- DATE & TIME -->
+<div class="section">
+    <p class="section-label">Date & Time</p>
+
+    <p>{enq.eventDate}</p>
+
+    <!-- BOTH arrival AND departure -->
+    <template if:true={enq.arrivalTimeFormatted}>
+        <template if:true={enq.departureTimeFormatted}>
+            <p>{enq.arrivalTimeFormatted} - {enq.departureTimeFormatted}</p>
+        </template>
+    </template>
+
+    <!-- ONLY arrival (no departure) -->
+    <template if:true={enq.arrivalTimeFormatted}>
+        <template if:false={enq.departureTimeFormatted}>
+            <p>{enq.arrivalTimeFormatted}</p>
+        </template>
+    </template>
+
+    <!-- NO arrival time -->
+    <template if:false={enq.arrivalTimeFormatted}>
+        <!--<p>No time specified</p>-->
+    </template>
+</div>
+
+
+
+                <!-- VENUE & GUESTS -->
+                <div class="section">
+                    <p class="section-label">Venue & Guests</p>
+                    <p>{enq.venue}</p>
+                    <p>{enq.guests} guests</p>
+                </div>
+
+                <!-- SERVICES REQUIRED -->
+                <div class="section">
+                    <p class="section-label">Services Required</p>
+
+                    <template if:true={enq.serviceListArray}>
+                        <template for:each={enq.serviceListArray} for:item="service">
+                            <span key={service} class="service-pill">{service}</span>
+                        </template>
+                    </template>
+
+                    <template if:false={enq.serviceListArray}>
+                        <p>No services added</p>
+                    </template>
+                </div>
+            </div>
+
+            <!-- RIGHT AREA -->
+            <div class="right">
+
+                <!-- Budget -->
+                <div class="budget-box">
+                    <p class="budget-label">Budget</p>
+                    <p class="budget-value">${enq.budget}</p>
+                </div>
+
+                <!-- Actions -->
+                <div class="action-row">
+                   <!-- STATUS BADGE -->
+    <span class={enq.statusBadgeClass}>{enq.stage}</span>
+
+
+
+                    <!-- VIEW RECORD -->
+<lightning-icon 
+    icon-name="utility:preview" 
+    size="small" 
+    class="action-icon"
+    data-id={enq.id}
+    onclick={viewDetails}>
+</lightning-icon>
+
+<!-- EDIT RECORD -->
+<template if:true={enq.canEdit}>
+    <lightning-icon
+        icon-name="utility:edit"
+        size="small"
+        class="action-icon"
+        onclick={navigateToEdit}
+        data-id={enq.id}>
+    </lightning-icon>
+</template>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </template>
+</template>
+
+<!-- Pagination Controls -->
+<template if:true={hasEnquiries}>
+     <!-- PAGINATION CONTROLS -->
+    <div class="pagination-row">
+        <lightning-button
+            label="Previous"
+            onclick={handlePrev}
+            disabled={isFirstPage}>
+        </lightning-button>
+
+        <span class="page-info">
+            Page {page} of {totalPages}
+        </span>
+
+        <lightning-button
+            label="Next"
+            onclick={handleNext}
+            disabled={isLastPage}>
+        </lightning-button>
+    </div>
+</template>
+
+<template if:false={hasEnquiries}>
+    <p>No Enquiries found.</p>
+</template>
+    </div>
+</template>

@@ -1,0 +1,94 @@
+<template>
+    <section class="outstanding-payments">
+
+        <h2>Outstanding Payments</h2>
+         <template if:true={hasPayments}>
+        <!-- Header -->
+        <div class="table-header">
+            <div>Description</div>
+            <div>Due Date</div>
+            <div class="amount-col">Amount Due</div>
+            <div class="actions-col">Actions</div>
+        </div>
+
+          
+
+        <!-- Rows -->
+        <template for:each={payments} for:item="p">
+            <div key={p.invoiceNumber} class="row">
+
+                <!-- Description -->
+                <div class="desc">
+                    <div class="title">{p.description}</div>
+                    <div class="sub">{p.invoiceNumber}</div>
+                </div>
+
+                <!-- Due Date -->
+                <div>
+                    <template if:true={p.isOnCompletion}>
+                        On completion
+                    </template>
+                    <template if:false={p.isOnCompletion}>
+                        {p.dueDateFormatted}
+                    </template>
+                </div>
+
+                <!-- Amount -->
+                <div class="amount">
+                    ${p.amountFormatted}
+                </div>
+
+                <!-- Action -->
+            <div>
+    <button
+        class={p.buttonClass}
+        data-url={p.payUrl}
+        onclick={payNow}
+        disabled={p.isDisabled}
+    >
+        {p.buttonLabel}
+    </button>
+</div>
+
+            </div>
+        </template>
+
+<template if:true={showPagination}>
+    <div class="pagination-container">
+
+        <div class="pagination-info">
+            {paginationInfo}
+        </div>
+
+        <div class="pagination-controls">
+            <button 
+                class="pagination-btn"
+                onclick={handlePrevious}
+                disabled={isPreviousDisabled}>
+                Previous
+            </button>
+
+            <span class="page-number">
+                {pageInfo}
+            </span>
+
+            <button 
+                class="pagination-btn"
+                onclick={handleNext}
+                disabled={isNextDisabled}>
+                Next
+            </button>
+        </div>
+
+    </div>
+</template>
+</template>
+<!-- If No Payments -->
+    <template if:false={hasPayments}>
+        <div class="no-records">
+            <lightning-icon icon-name="utility:money" size="large"></lightning-icon>
+            <p>No outstanding payments</p>
+        </div>
+    </template>
+    </section>
+</template>

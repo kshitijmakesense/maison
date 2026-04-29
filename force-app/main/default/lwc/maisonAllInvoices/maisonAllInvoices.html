@@ -1,0 +1,128 @@
+<template>
+    <section class="all-invoices">
+
+        <!-- Header -->
+        <div class="header">
+            <h2>All Invoices</h2>
+        </div>
+
+          <!-- If Invoices Exist -->
+    <template if:true={hasInvoices}>
+        <!-- Table Header -->
+        <div class="table-header">
+            <div class="col-details">Event Details</div>
+            <div class="col-booking">Related Booking</div>
+            <div class="col-issue">Issue Date</div>
+            <div class="col-due">Due Date</div>
+            <div class="col-status">Status</div>
+            <div class="col-amount">Amount</div>
+            <div class="col-actions">Actions</div>
+        </div>
+
+        <!-- Rows -->
+        <template for:each={invoices} for:item="inv">
+            <div key={inv.id} class="invoice-row">
+
+                <!-- Event -->
+                <div class="col-details details">
+                    <div class="title">{inv.eventTitle}</div>
+                    <div class="sub">{inv.invoiceNumber}</div>
+                </div>
+
+                <!-- Booking -->
+                <div class="col-booking">{inv.relatedBookingDisplay}</div>
+
+
+                <!-- Issue -->
+                <div class="col-issue">{inv.issueDateFormatted}</div>
+
+                <!-- Due -->
+                <div class="col-due">{inv.dueDateFormatted}</div>
+
+                <!-- Status -->
+                <div class="col-status">
+                    <span class={inv.statusClass}>
+                        <template if:true={inv.showIcon}>
+                            <span class="status-icon">{inv.statusIcon}</span>
+                        </template>
+                        {inv.status}
+                    </span>
+                </div>
+
+                <!-- Amount -->
+                <div class="col-amount">${inv.amountFormatted}</div>
+
+                <!-- Actions -->
+                <div class="col-actions actions">
+                   <button
+                            class="btn primary"
+                            data-url={inv.xeroUrl}
+                            onclick={viewInvoice}>
+                            View
+                        </button>
+
+                    <!-- Pay -->
+<template if:true={inv.showPay}>
+    <button
+        class="btn primary"
+        data-url={inv.xeroUrl}
+        onclick={payInvoice}>
+        Pay
+    </button>
+</template>
+
+<!-- Pending Approval -->
+<template if:true={inv.showPending}>
+    <button
+        class="btn pending"
+        disabled>
+        Invoice Pending Approval
+    </button>
+</template>
+
+                </div>
+
+            </div>
+        </template>
+        
+        <template if:true={showPagination}>
+    <div class="pagination-container">
+
+        <div class="pagination-info">
+            {paginationInfo}
+        </div>
+
+        <div class="pagination-controls">
+            <button 
+                class="pagination-btn"
+                onclick={handlePrevious}
+                disabled={isPreviousDisabled}>
+                Previous
+            </button>
+
+            <span class="page-number">
+                {pageInfo}
+            </span>
+
+            <button 
+                class="pagination-btn"
+                onclick={handleNext}
+                disabled={isNextDisabled}>
+                Next
+            </button>
+        </div>
+
+    </div>
+</template>
+</template>
+        <!-- If No Invoices -->
+    <template if:false={hasInvoices}>
+        <div class="no-records">
+            
+             <lightning-icon icon-name="utility:money" size="large"></lightning-icon>
+            <p>No invoices found</p>
+        </div>
+    </template>
+
+    </section>
+</template>

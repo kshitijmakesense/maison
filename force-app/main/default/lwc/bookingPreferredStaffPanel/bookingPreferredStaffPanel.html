@@ -1,0 +1,35 @@
+<template>
+    <div class="preferred-container">
+
+        <!-- HEADER -->
+        <h3 class="section-title">Preferred Staff</h3>
+
+        <!-- STAFF LIST -->
+        <template if:true={preferredStaffList.length}>
+            <div class="staff-list">
+                <template for:each={preferredStaffList} for:item="s">
+                    <div key={s.staffId} class="staff-card">
+                        <span class="star">⭐</span>
+                        <span class="name">{s.staffName}</span>
+                    </div>
+                </template>
+            </div>
+        </template>
+
+        <template if:false={preferredStaffList.length}>
+            <div class="empty">
+                No preferred staff found
+            </div>
+        </template>
+
+        <!-- BUTTON -->
+        <div class="actions">
+            <lightning-button 
+                label={buttonLabel}
+                class={buttonClass}
+                onclick={handleClick}>
+            </lightning-button>
+        </div>
+
+    </div>
+</template>

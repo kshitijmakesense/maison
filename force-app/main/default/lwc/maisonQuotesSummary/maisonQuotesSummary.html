@@ -1,0 +1,37 @@
+<template>
+    <div class="summary-row">
+
+        <div class="summary-card">
+            <div class="card-header">
+                <span class="check">✓</span>
+                <span class="label">Total Quotes</span>
+            </div>
+            <div class="value">{totalQuotes}</div>
+        </div>
+
+        <div class="summary-card">
+            <div class="card-header">
+                <span class="check">✓</span>
+                <span class="label">Pending Review</span>
+            </div>
+            <div class="value">{pendingReview}</div>
+        </div>
+
+        <div class="summary-card">
+            <div class="card-header">
+                <span class="check">✓</span>
+                <span class="label">Accepted</span>
+            </div>
+            <div class="value">{accepted}</div>
+        </div>
+
+        <div class="summary-card">
+            <div class="card-header">
+                <span class="check">✓</span>
+                <span class="label">Total Value</span>
+            </div>
+            <div class="value">${formattedValue}</div>
+        </div>
+
+    </div>
+</template>

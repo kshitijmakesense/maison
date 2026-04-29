@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Quick Service Booking",
+  "contentBody" : {
+    "activeViewId" : "Quick_Service_Booking",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-quick-service-booking",
+    "urlPrefix" : "quick-service-booking"
+  },
+  "urlName" : "quick-service-booking"
+}

@@ -1,0 +1,43 @@
+<template>
+   
+
+             <!-- 🔥 REUSABLE HEADER -->
+            <c-maison-page-header
+                active-page={activePage}>
+            </c-maison-page-header>
+
+         <div class="shell">
+           <c-maison-sidebar-nav
+            active-page={activePage}
+            onnavigate={handleNavigate}
+        ></c-maison-sidebar-nav>
+
+          <section class="content">
+
+     
+  
+
+           <template if:true={isDashboard}>
+                <c-maison-dashboard-page></c-maison-dashboard-page>
+            </template>
+
+         
+             <template if:true={isQuotes}>
+                <c-maison-quotes-page></c-maison-quotes-page>
+            </template>
+<template if:true={isBookings}>
+                <c-maison-bookings-page></c-maison-bookings-page>
+            </template>
+
+             <template if:true={isInvoices}>
+                <c-maison-invoices-page></c-maison-invoices-page>
+            </template>
+             <template if:true={isPayments}>
+                <c-maison-payments-page></c-maison-payments-page>
+            </template>
+           <!-- <template if:true={isReorder}>
+                <c-maison-reorder-page></c-maison-reorder-page>
+            </template>-->
+        </section>
+    </div>
+</template>

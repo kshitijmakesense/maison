@@ -1,0 +1,144 @@
+.menu-container {
+    background: #F6F3EE;
+    
+    border-radius: 16px;
+    margin-top: 20px;
+     margin: 0; /* remove extra vertical push */
+    padding: 0;
+    display: block;
+    justify-content: flex-end;
+}
+
+.menu-container.internal-center {
+    display: flex;
+    justify-content: center;
+}
+
+/* HEADER */
+.menu-header h2 {
+    font-size: 22px;
+    margin-bottom: 16px;
+}
+
+/* UPLOAD CARD */
+.upload-card {
+    background: #e7c19f;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: left;
+}
+
+.upload-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+/* MENU CARD */
+.menu-card {
+    background: #e7c19f;
+    padding: 18px 20px;   /* 🔥 increase padding */
+    border-radius: 18px;  /* match photo */
+    max-width: 720px;     /* 🔥 match photo width */
+    
+    display: flex;
+    flex-direction: column; /* already fixed earlier */
+    gap: 12px;              /* spacing between label + row */
+}
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+/* LEFT */
+.menu-left {
+    display: flex;
+    flex-direction: column; /* 🔥 KEY FIX */
+    gap: 8px;
+}
+
+.menu-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.menu-container {
+    margin: 0; /* remove extra vertical push */
+    padding: 0;
+}
+
+.menu-right {
+    margin-left: auto; /* 🔥 pushes buttons right */
+    display: flex;
+    gap: 12px;
+}
+
+/* BUTTON */
+.menu-right button {
+    background: #c9d6df;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 18px;
+    cursor: pointer;
+}
+
+.menu-right a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.upload-btn {
+    background: #c9d6df;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 18px;
+    cursor: pointer;
+
+    
+}
+.menu-label {
+    font-size: 16px;        /* 🔥 increase */
+    font-weight: 600;
+    margin-bottom: 0px;    /* match photo spacing */
+}
+.menu-header-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* 🔥 keeps same line */
+    gap: 20px;
+}
+
+.menu-left-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Optional: keep card compact */
+
+
+
+/* File section */
+.menu-file {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;  /* 🔥 slightly bigger */
+}
+
+.upload-btn:hover {
+    background: #b7c9d6;
+}
+
+.spinner-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.6);
+    z-index: 9999;
+}

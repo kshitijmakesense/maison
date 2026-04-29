@@ -1,0 +1,103 @@
+<template>
+    <div class="upcoming-events-container">
+        <h1 class="title">Upcoming Events</h1>
+
+        <!-- Loading Spinner -->
+        <template if:true={isLoading}>
+            <div class="spinner-container">
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </div>
+        </template>
+
+        <!-- Error Message -->
+        <template if:true={error}>
+            <div class="error-message">
+                <p>Error loading events: {error.body.message}</p>
+            </div>
+        </template>
+
+        <!-- Events Table -->
+        <template if:false={isLoading}>
+            <template if:true={hasEvents}>
+                <div class="table-container">
+                    <!-- Table Header -->
+                    <div class="table-header">
+                        <div class="header-cell event-details-col">Event Details</div>
+                        <div class="header-cell venue-col">Venue</div>
+                        <div class="header-cell date-col">Date</div>
+                        <div class="header-cell guests-col">Guests</div>
+                        <div class="header-cell status-col">Status</div>
+                        <div class="header-cell amount-col">Amount</div>
+                        <div class="header-cell actions-col">Actions</div>
+                    </div>
+
+                    <!-- Table Body -->
+                    <template for:each={displayedEvents} for:item="event">
+                        <div key={event.Id} class="table-row">
+                            <div class="table-cell event-details-col">
+                                <div class="event-name">{event.Occasion__c}</div>
+                                <div class="event-id">{event.Name}</div>
+                            </div>
+                            <div class="table-cell venue-col">
+                                <div class="venue-line">{event.venueLines.line1}</div>
+                                <template if:true={event.venueLines.line2}>
+                                    <div class="venue-line secondary">{event.venueLines.line2}</div>
+                                </template>
+                            </div>
+                            <div class="table-cell date-col">
+                                {event.formattedDate}
+                            </div>
+                            <div class="table-cell guests-col">
+                                {event.Number_of_Guests__c}
+                            </div>
+                            <div class="table-cell status-col">
+                                <span class="status-badge">{event.Status}</span>
+                            </div>
+                            <div class="table-cell amount-col">
+                                {event.formattedAmount}
+                            </div>
+                            <div class="table-cell actions-col">
+                                <button 
+                                    class="view-details-btn" 
+                                    data-id={event.Id}
+                                    onclick={handleViewDetails}>
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination-container">
+                    <div class="pagination-info">
+                        {showingText}
+                    </div>
+                    <div class="pagination-controls">
+                        <button 
+                            class="pagination-btn" 
+                            onclick={handlePrevious}
+                            disabled={hasPrevious}>
+                            Previous
+                        </button>
+                        <span class="page-number">{pageInfo}</span>
+                        <button 
+                            class="pagination-btn" 
+                            onclick={handleNext}
+                            disabled={hasNext}>
+                            Next
+                        </button>
+                    </div>
+                </div>
+            </template>
+
+            <!-- No Records Message -->
+            <template if:false={hasEvents}>
+                <div class="no-records">
+                    <lightning-icon icon-name="utility:event" size="large"></lightning-icon>
+                    <p>No upcoming events found</p>
+                </div>
+            </template>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,94 @@
+<template>
+    <section class="recent-quotes">
+
+        <!-- Header -->
+        <div class="header">
+            <h2>Recent Quotes</h2>
+            <span class="pill">{activeCount} Active</span>
+        </div>
+
+        <!-- If Quotes Exist -->
+    <template if:true={hasQuotes}>
+      
+    
+<!-- TABLE HEADER -->
+<div class="table-header">
+    <div class="col-details">Quote Details</div>
+    <div class="col-valid">Valid Until</div>
+    <div class="col-status">Status</div>
+    <div class="col-amount">Amount</div>
+    <div class="col-actions">Actions</div>
+</div>
+
+
+
+        <!-- Rows -->
+    <template for:each={quotes} for:item="q">
+    <div key={q.id} class="quote-row">
+
+        <!-- Quote Details -->
+      <div class="col-details details">
+    <div class="title">{q.occasion}</div>
+    <div class="sub">
+        Quotient Quote # {q.quoteNumber}
+    </div>
+</div>
+
+
+        <!-- Valid Until -->
+        <div class ="col-valid">{q.validUntil}</div>
+
+        <!-- Status -->
+        <div class="col-status"><span class="status-pill">{q.status}</span></div>
+
+        <!-- Amount (NEVER MOVES) -->
+        <div class="col-amount">
+            ${q.amount}
+        </div>
+
+        <!-- Actions -->
+        <div class="col-actions actions">
+
+    <!-- View always -->
+    <button
+        class="btn"
+        data-url={q.quoteUrl}
+        onclick={viewQuote}>
+        View
+    </button>
+
+    <!-- Pay -->
+    <template if:true={q.showPay}>
+        <button
+            class="btn primary"
+            data-url={q.xeroUrl}
+            onclick={payQuote}>
+            Pay
+        </button>
+    </template>
+
+    <!-- Pending Approval -->
+    <template if:true={q.showPending}>
+        <button
+            class="btn pending"
+            disabled>
+            Invoice Pending Approval
+        </button>
+    </template>
+
+</div>
+
+
+    </div>
+      </template>
+</template>
+<!-- If No Quotes -->
+    <template if:false={hasQuotes}>
+        <div class="no-records">
+            <lightning-icon icon-name="utility:quote" size="large"></lightning-icon>
+            <p>No recent quotes found</p>
+        </div>
+    </template>
+
+    </section>
+</template>

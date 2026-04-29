@@ -1,0 +1,55 @@
+<template>
+    <section class="welcome-banner">
+        <!-- Header Row -->
+        <div class="banner-header">
+            <div class="banner-content">
+                <h1 class="banner-title">Welcome back, {userName}</h1>
+                <p class="banner-subtitle">
+                    {accountName}
+                    <template if:true={accountManager}>
+                        &nbsp;•&nbsp;Account Manager: {accountManager}
+                    </template>
+                </p>
+            </div>
+
+            <div class="banner-actions">
+                <button class="book-btn" onclick={handleBookNewService}>
+                    + Book New Service
+                </button>
+            </div>
+        </div>
+
+        <!-- Dashboard Cards -->
+        <div class="dashboard-grid">
+            <div class="card">
+                <p class="card-label">Active Bookings</p>
+                <h2 class="card-value">{dashboard.activeBookings}</h2>
+            </div>
+            <div class="card">
+                <p class="card-label">Outstanding Invoices Due</p>
+                <h2 class="card-value">${dashboard.outstandingAmount}</h2>
+            </div>    
+            <div class="card">
+                <p class="card-label">Events Complete</p>
+                <h2 class="card-value">{dashboard.eventsComplete}</h2>
+            </div> 
+            <div class="card">
+                <p class="card-label">Pending Signatures</p>
+                <h2 class="card-value">{dashboard.pendingSignatures}</h2>
+            </div> 
+      
+            <!--
+       
+            <div class="card">
+                <p class="card-label">Response Time</p>
+                <h2 class="card-value">{dashboard.avgResponse} hrs</h2>
+            </div>
+            <div class="card">
+                <p class="card-label">Satisfaction</p>
+                <h2 class="card-value">{dashboard.satisfaction}</h2>
+            </div>-->
+        </div>
+
+        
+    </section>
+</template>

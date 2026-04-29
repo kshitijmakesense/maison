@@ -1,0 +1,58 @@
+.preferred-container {
+    background: #F6F3EE;
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+}
+
+/* Title */
+.section-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Staff cards */
+.staff-list {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.staff-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.star {
+    font-size: 14px;
+}
+
+.name {
+    font-size: 14px;
+}
+
+/* Empty state */
+.empty {
+    color: #6b7280;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+/* Button styles */
+.add-btn {
+    --slds-c-button-brand-color-background: #c9d6df;
+    --slds-c-button-brand-color-border: #c9d6df;
+    --slds-c-button-brand-text-color: #000;
+}
+
+.remove-btn {
+    --slds-c-button-brand-color-background: #e5e7eb;
+    --slds-c-button-brand-color-border: #e5e7eb;
+    --slds-c-button-brand-text-color: #374151;
+}

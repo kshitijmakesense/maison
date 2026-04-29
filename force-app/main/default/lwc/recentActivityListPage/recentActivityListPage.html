@@ -1,0 +1,102 @@
+<template>
+    <div class="list-container">
+
+        <!-- HEADER -->
+        <!--<div class="header-row">
+            <h2 class="header">All Recent Activities</h2>
+        </div>-->
+
+        <!-- FILTERS -->
+        <div class="filter-container">
+            <lightning-combobox
+                class="filter-box"
+                label="Type"
+                value={filterType}
+                options={typeOptions}
+                onchange={handleTypeChange}>
+            </lightning-combobox>
+
+           <!-- <lightning-combobox
+                class="filter-box"
+                label="Status"
+                value={filterStatus}
+                options={statusOptions}
+                onchange={handleStatusChange}>
+            </lightning-combobox>
+
+            <lightning-input 
+                class="filter-box"
+                type="date"
+                label="From Date"
+                value={fromDate}
+                onchange={handleFromDate}>
+            </lightning-input>
+
+            <lightning-input 
+                class="filter-box"
+                type="date"
+                label="To Date"
+                value={toDate}
+                onchange={handleToDate}>
+            </lightning-input> -->
+        </div>
+
+        <!-- LIST -->
+ <template if:true={hasActivities}>
+           <template for:each={paginatedActivities} for:item="act">
+                <div 
+                    key={act.Id}
+                    class="timeline-item"
+                    onclick={handleNavigate}
+                    data-id={act.Id}
+                    data-type={act.Type}
+                >
+                    <div class="timeline-left">
+                        <div class="timeline-icon" style={act.iconStyle}>
+                            <lightning-icon
+                                icon-name={act.iconData.iconName}
+                                size="x-small"
+                                 class="activity-icon">
+                            </lightning-icon>
+                        </div>
+
+                        <div class="timeline-content">
+                            <p class="activity-subject">{act.Name} - {act.Status}</p>
+                            <p class="record-type-badge">{act.Type}</p>
+                            <p class="activity-details">{act.ActivityDate}</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-right">
+                        <template if:true={act.FormattedAmount}>
+                            <p class="activity-amount">{act.FormattedAmount}</p>
+                        </template>
+                        <p class="activity-timeago">{act.TimeAgo}</p>
+                    </div>
+                </div>
+            </template>
+        </template>
+
+ <template if:false={hasActivities}>
+           <p class="no-activity">No Activities Found</p>
+        </template>
+
+        <!-- PAGINATION -->
+        <div class="pagination">
+            <lightning-button 
+                label="Previous" 
+                onclick={prevPage} 
+                disabled={isPrevDisabled}>
+            </lightning-button>
+
+            <span class="page-info">Page {pageNumber} of {totalPages}</span>
+
+            <lightning-button 
+                label="Next" 
+                onclick={nextPage} 
+                disabled={isNextDisabled}>
+            </lightning-button>
+        </div>
+
+    </div>
+</template>

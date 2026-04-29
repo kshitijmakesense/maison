@@ -1,0 +1,56 @@
+.activities-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+/* Card */
+.activity-card {
+    background-color: #F6C39B;
+    border-radius: 20px;
+    padding: 22px 26px;
+
+    /* ✅ FIX */
+    display: flex;
+    flex-direction: column;
+    min-height: 140px;   /* ensures equal card height */
+}
+
+
+/* Title */
+.activity-title {
+    font-family: 'MaisonHeading';
+    font-size: 16px;
+    color: #000000;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    /* ✅ FORCE SINGLE LINE */
+    white-space: nowrap;
+}
+
+
+/* Check icon */
+.check-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    border: 2px solid #000000;
+    font-size: 14px;
+    line-height: 1;
+}
+
+/* Value */
+.activity-value {
+    margin-top: auto;   /* ✅ pushes value to bottom */
+    font-family: 'MaisonHeading';
+    font-size: 28px;
+    color: #000000;
+    font-weight: 600;
+}

@@ -1,0 +1,194 @@
+<template>
+    <div class="dashboard-container">
+
+        <!-- SEARCH BAR -->
+        <div class="search-row">
+            <lightning-input
+                type="search"
+                label="Search"
+                placeholder="Search by order, service..."
+                value={searchText}
+                onchange={handleSearch}>
+            </lightning-input>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="filters-row">
+
+            <!-- STATUS PICKLIST (dynamic from Order.Status) -->
+            <div class="filter-box">
+                <lightning-combobox
+                    label="Status"
+                    value={status}
+                    options={statusOptions}
+                    onchange={handleStatusChange}>
+                </lightning-combobox>
+            </div>
+
+            <!-- DATE RANGE DROPDOWN -->
+            <div class="filter-box">
+                <div class="dropdown-header" onclick={toggleDateRange}>
+                    <span class="filter-heading">Event Date Range</span>
+                    <span class="dropdown-arrow">{dateRangeIcon}</span>
+                </div>
+
+                <template if:true={showDateRange}>
+                    <div class="date-range-container">
+                        <lightning-input
+                            type="date"
+                            label="From Date"
+                            value={startDate}
+                            onchange={handleStartDate}>
+                        </lightning-input>
+
+                        <lightning-input
+                            type="date"
+                            label="To Date"
+                            value={endDate}
+                            onchange={handleEndDate}>
+                        </lightning-input>
+                    </div>
+                </template>
+            </div>
+
+            <!-- SERVICE PICKLIST (Item Name values) -->
+            <div class="filter-box">
+                <lightning-combobox
+                    label="Services"
+                    value={selectedService}
+                    options={serviceOptions}
+                    placeholder="All services"
+                    onchange={handleServiceChange}>
+                </lightning-combobox>
+            </div>
+
+            <!-- CLEAR FILTERS -->
+            <div class="filter-box clear-btn-box">
+                <lightning-button
+                    variant="destructive-text"
+                    label="Clear Filters"
+                    onclick={clearFilters}>
+                </lightning-button>
+            </div>
+        </div>
+
+        <!-- LIST OF ORDERS -->
+        <template if:true={hasOrders}>
+            <template for:each={orders} for:item="ord">
+                <div key={ord.id} class="card">
+
+    <!-- LEFT SECTION -->
+    <div class="left">
+
+        <!-- Enquiry Name -->
+        <h2 class="title">{ord.enquiryName}</h2>
+
+        <!-- Record Type -->
+        <p class="record-type">{ord.recordType}</p>
+
+        <!-- DATE & TIME -->
+        <div class="section">
+            <p class="section-label">Date & Time</p>
+            <p>{ord.eventDate}</p>
+
+            <template if:true={ord.startTime}>
+                <template if:true={ord.endTime}>
+                    <p>{ord.startTime} - {ord.endTime}</p>
+                </template>
+                <template if:false={ord.endTime}>
+                    <p>{ord.startTime}</p>
+                </template>
+            </template>
+        </div>
+
+        <!-- VENUE & GUESTS -->
+        <div class="section">
+            <p class="section-label">Venue & Guests</p>
+            <p>{ord.venue}</p>
+            <p>{ord.guests} guests</p>
+        </div>
+
+        <!-- SERVICES -->
+        <div class="section">
+            <p class="section-label">Services Required</p>
+
+            <template if:true={ord.serviceListArray}>
+                <template for:each={ord.serviceListArray} for:item="service">
+                    <span key={service} class="service-pill">{service}</span>
+                </template>
+            </template>
+
+            <template if:false={ord.serviceListArray}>
+                <p>No services added</p>
+            </template>
+        </div>
+
+    </div>
+
+    <!-- RIGHT SECTION -->
+    <div class="right">
+
+        <div class="budget-box">
+            <p class="budget-label">Budget</p>
+            <p class="budget-value">${ord.totalAmount}</p>
+        </div>
+
+        <div class="action-row">
+
+            <!-- STATUS BADGE -->
+            <span class={ord.statusBadgeClass}>{ord.status}</span>
+
+            <!-- VIEW -->
+            <lightning-icon
+                icon-name="utility:preview"
+                size="small"
+                class="action-icon"
+                data-id={ord.id}
+                onclick={viewDetails}>
+            </lightning-icon>
+
+            <!-- EDIT (only when Draft) -->
+            <template if:true={ord.canEdit}>
+                <lightning-icon
+                    icon-name="utility:edit"
+                    size="small"
+                    class="action-icon"
+                    data-id={ord.id}
+                    onclick={navigateToEdit}>
+                </lightning-icon>
+            </template>
+
+        </div>
+    </div>
+
+</div>
+
+            </template>
+        </template>
+
+        <!-- PAGINATION CONTROLS -->
+        <template if:true={hasOrders}>
+            <div class="pagination-row">
+                <lightning-button
+                    label="Previous"
+                    onclick={handlePrev}
+                    disabled={isFirstPage}>
+                </lightning-button>
+
+                <span class="page-info">
+                    Page {page} of {totalPages}
+                </span>
+
+                <lightning-button
+                    label="Next"
+                    onclick={handleNext}
+                    disabled={isLastPage}>
+                </lightning-button>
+            </div>
+        </template>
+
+        <template if:false={hasOrders}>
+            <p>No orders found.</p>
+        </template>
+    </div>
+</template>

@@ -1,0 +1,70 @@
+<template>
+    <lightning-card>
+        <div class="custom-stats-container slds-p-around_medium">
+            <template if:true={data}>
+
+                <!-- Staff Photo -->
+                <div class="custom-stat-item">
+                    <div class="slds-box slds-box_x-small slds-text-align_center">
+                        <template if:true={staffPhotoUrl}>
+                            <div class="staff-photo-container">
+                                <img src={staffPhotoUrl} alt="Staff Photo" class="staff-photo-circle" />
+                            </div>
+                        </template>
+                        <template if:false={staffPhotoUrl}>
+                            <div class="staff-photo-container">
+                                <div class="slds-avatar slds-avatar_large slds-avatar_circle">
+                                    <lightning-icon icon-name="standard:avatar" alternative-text="No Photo" size="medium"></lightning-icon>
+                                </div>
+                            </div>
+                        </template>
+                        <div class="slds-text-body_small slds-m-top_xx-small">Profile</div>
+                    </div>
+                </div>
+   
+                <!-- Total Bookings -->
+                <div class="custom-stat-item">
+                    <div class="slds-box slds-box_x-small slds-text-align_center">
+                        <div class="slds-text-heading_large slds-text-color_default">{data.totalBookings}</div>
+                        <div class="slds-text-body_small slds-m-top_xx-small">Total Bookings</div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Events -->
+                <div class="custom-stat-item">
+                    <div class="slds-box slds-box_x-small slds-text-align_center">
+                        <div class="slds-text-heading_large slds-text-color_default">{data.upcomingEvents}</div>
+                        <div class="slds-text-body_small slds-m-top_xx-small">Upcoming Events</div>
+                    </div>
+                </div>
+
+                <!-- Completed Events -->
+                <div class="custom-stat-item">
+                    <div class="slds-box slds-box_x-small slds-text-align_center">
+                        <div class="slds-text-heading_large slds-text-color_default">{data.completedEvents}</div>
+                        <div class="slds-text-body_small slds-m-top_xx-small">Completed Events</div>
+                    </div>
+                </div>
+
+                <!-- Events This Month -->
+                <div class="custom-stat-item">
+                    <div class="slds-box slds-box_x-small slds-text-align_center">
+                        <div class="slds-text-heading_large slds-text-color_default">{data.eventsThisMonth}</div>
+                        <div class="slds-text-body_small slds-m-top_xx-small">Events This Month</div>
+                    </div>
+                </div>
+
+            </template>
+
+            <!-- Error Handling -->
+            <template if:true={error}>
+                <div class="custom-stat-item" style="flex: 1 1 100%;">
+                    <div class="slds-text-color_error slds-text-align_center">
+                        Error loading staff metrics
+                    </div>
+                </div>
+            </template>
+
+        </div>
+    </lightning-card>
+</template>

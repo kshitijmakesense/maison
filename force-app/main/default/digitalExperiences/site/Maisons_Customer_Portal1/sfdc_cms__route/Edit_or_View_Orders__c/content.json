@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Edit or View Orders",
+  "contentBody" : {
+    "activeViewId" : "Edit_or_View_Orders",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-edit-or-view-orders",
+    "urlPrefix" : "edit-or-view-orders"
+  },
+  "urlName" : "edit-or-view-orders"
+}

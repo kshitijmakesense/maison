@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "All Recent Activity",
+  "contentBody" : {
+    "activeViewId" : "All_Recent_Activity",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-all-recent-activity",
+    "urlPrefix" : "all-recent-activity"
+  },
+  "urlName" : "all-recent-activity"
+}

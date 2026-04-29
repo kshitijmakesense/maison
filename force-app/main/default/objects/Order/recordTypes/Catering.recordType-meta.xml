@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Catering</fullName>
+    <active>true</active>
+    <label>Catering</label>
+    <picklistValues>
+        <picklist>Beverages_Coffee_Type__c</picklist>
+        <values>
+            <fullName>Coffee %2F Tea</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hot Chocolate %2F Chai Latte</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Juice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Soft drinks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Water</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Client_Breif__c</picklist>
+        <values>
+            <fullName>All Done Labels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NEW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SENT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TO DO</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Do_you_have_a_budget__c</picklist>
+        <values>
+            <fullName>No %2F Not Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Event_Outcome__c</picklist>
+        <values>
+            <fullName>Event Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Event Completed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Event_Type__c</picklist>
+        <values>
+            <fullName>Barista Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boardroom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Boat Charter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concierge</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High Tea</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pantry Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Promo Staff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sit Down Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standing Event%2F Cocktail Party</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Need_extra_services__c</picklist>
+        <values>
+            <fullName>Catering Options</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cocktail package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coffee cart package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Equipment Hire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Glassware Hire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff Only</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wine Package</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eau</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>mobile bar</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Payment_Status__c</picklist>
+        <values>
+            <fullName>Not Invoiced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Overdue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Paid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partially Paid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Synced from Xero%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Personal_or_Corporate_Event__c</picklist>
+        <values>
+            <fullName>Corporate Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal Event</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority__c</picklist>
+        <values>
+            <fullName>New Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VIP</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Progress__c</picklist>
+        <values>
+            <fullName>ADDED TO SLING</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>All done labels</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Blank</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CANCELED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NEW</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>NOT GOING AHEAD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Posponed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>STAFF BOOKED</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status</picklist>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invoice Paid</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invoiced</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Staff Booked</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Uniform_Required__c</picklist>
+        <values>
+            <fullName>All Black</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black Shirt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black Shirt %2B Black Tie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black Shirt %2B Black Tie %2B Black Vest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black Shirt %2B White Sneakers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black Suit %2B White Shirt %2B Tie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black T-shirt %2B Jeans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black t shirt%2C Black pants%2C Sneakers %28white requested%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bowtie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client supplying uniform%2E Staff to wear own sneakers%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jeans%2C black tee%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maison en Blanc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maison en Noir</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Suit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>TBC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White Shirt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White Shirt %2B Black Tie</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White Shirt %2B Black Tie %2B Black Vest</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White T-Shirt</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White T-shirt %2B Black Pants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>black pants</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>jeans</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>vest</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

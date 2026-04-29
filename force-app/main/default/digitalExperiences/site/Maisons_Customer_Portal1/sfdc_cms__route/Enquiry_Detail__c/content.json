@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Enquiry Detail",
+  "contentBody" : {
+    "activeViewId" : "Enquiry_Detail",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "detail-006",
+    "urlPrefix" : "opportunity"
+  },
+  "urlName" : "enquiry-detail"
+}

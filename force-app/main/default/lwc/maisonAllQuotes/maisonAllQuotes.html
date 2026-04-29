@@ -1,0 +1,118 @@
+<template>
+    <section class="all-quotes">
+
+        <!-- Header -->
+        <div class="header">
+            <h2>All Quotes</h2>
+            <span class="pill">{totalCount} Quotes</span>
+        </div>
+
+        <!-- DATA -->
+        <template if:false={isEmpty}>
+
+            <!-- Table Header -->
+            <div class="table-header">
+                <div class="col-details">Quote Details</div>
+                <div class="col-venue">Venue</div>
+                <div class="col-valid">Valid Until</div>
+                <div class="col-status">Status</div>
+                <div class="col-amount">Amount</div>
+                <div class="col-actions">Actions</div>
+            </div>
+
+            <!-- Rows -->
+            <template for:each={quotes} for:item="q">
+                <div key={q.id} class="quote-row">
+
+                    <div class="col-details details">
+                        <div class="title">{q.title}</div>
+                        <div class="sub">
+                            Quotient Quote # {q.quoteNumber}
+                        </div>
+                    </div>
+
+                    <div class="col-venue">{q.venue}</div>
+
+                    <div class="col-valid">{q.validUntil}</div>
+
+                    <div class="col-status">
+                        <span class="status-pill">{q.status}</span>
+                    </div>
+
+                    <div class="col-amount">${q.amount}</div>
+
+                    <div class="col-actions">
+
+    <!-- View -->
+    <button class="btn" data-url={q.quoteUrl} onclick={viewQuote}>
+        View
+    </button>
+
+    <!-- Pay -->
+    <template if:true={q.showPay}>
+        <button class="btn primary" data-url={q.xeroUrl} onclick={payQuote}>
+            Pay
+        </button>
+    </template>
+
+    <!-- Pending -->
+    <template if:true={q.showPending}>
+        <button class="btn pending" disabled>
+            Invoice Pending Approval
+        </button>
+    </template>
+
+    <!-- Paid -->
+    <template if:true={q.showPaid}>
+        <button class="btn paid" disabled>
+            Invoice Paid
+        </button>
+    </template>
+
+</div>
+                </div>
+            </template>
+
+            <!-- 🔥 NEW PAGINATION -->
+            <template if:true={showPagination}>
+                <div class="pagination-container">
+
+                    <div class="pagination-info">
+                        {paginationInfo}
+                    </div>
+
+                    <div class="pagination-controls">
+                        <button 
+                            class="pagination-btn"
+                            onclick={handlePrev}
+                            disabled={isFirstPage}>
+                            Previous
+                        </button>
+
+                        <span class="page-number">
+                            Page {pageNumber} of {totalPages}
+                        </span>
+
+                        <button 
+                            class="pagination-btn"
+                            onclick={handleNext}
+                            disabled={isLastPage}>
+                            Next
+                        </button>
+                    </div>
+
+                </div>
+            </template>
+
+        </template>
+
+        <!-- EMPTY -->
+        <template if:true={isEmpty}>
+            <div class="empty-state">
+                <lightning-icon icon-name="utility:quote" size="large"></lightning-icon>
+                <p>No quotes found</p>
+            </div>
+        </template>
+
+    </section>
+</template>

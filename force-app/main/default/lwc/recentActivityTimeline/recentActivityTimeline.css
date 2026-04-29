@@ -1,0 +1,227 @@
+.timeline-container {
+    background-color: #f9fafb;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.timeline-header {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1f2937;
+}
+
+.timeline-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.timeline-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    margin-top: 4px;
+}
+
+.timeline-content {
+    background-color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    flex: 1;
+}
+
+.activity-subject {
+    font-weight: 500;
+    color: #1f2937;
+    margin: 0;
+}
+
+.activity-details {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin: 0.25rem 0 0 0;
+}
+
+.no-activity {
+    text-align: center;
+    color: #9ca3af;
+    font-style: italic;
+}
+
+.timeline-item {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.timeline-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-icon lightning-icon {
+    --sds-c-icon-color-foreground-default: white;
+}
+
+.activity-subject {
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0 0 0.25rem 0;
+}
+
+.activity-lineitems {
+    color: #475569;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.activity-details {
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.timeline-item {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.timeline-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1;
+}
+
+.timeline-right {
+    text-align: right;
+    min-width: 100px;
+}
+
+.activity-amount {
+    font-weight: 600;
+    color: #0f172a;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.activity-timeago {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin: 0.25rem 0 0 0;
+}
+
+.timeline-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-icon lightning-icon {
+    --sds-c-icon-color-foreground-default: white;
+}
+
+.activity-subject {
+    font-weight: 600;
+    color: #0f172a;
+    margin: 0 0 0.25rem 0;
+}
+
+.activity-lineitems {
+    color: #475569;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.activity-details {
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+/* Row that holds "Recent Activity" + "View All" */
+.timeline-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* Style for "View All" link */
+.view-all-link {
+    font-size: 0.9rem;
+    color: #2563eb;       /* blue link */
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.view-all-link:hover {
+    text-decoration: underline;
+}
+
+/* Make entire row look clickable */
+.timeline-item {
+    cursor: pointer;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Hover effect like a link row */
+.timeline-item:hover {
+    background-color: #f3f4f6; /* subtle grey */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.10);
+}
+
+/* Make subject text appear as link */
+.activity-subject {
+    text-decoration: underline;
+    color: #2563eb; /* blue link color */
+}
+
+/* Hover on subject specifically */
+.timeline-item:hover .activity-subject {
+    color: #1d4ed8;
+}
+
+.activity-icon {
+    --sds-c-icon-color-foreground-default: white;
+    --sds-c-icon-color-background: transparent;
+}
+.record-type-badge {
+    display: inline-block;
+    background: #eef2ff;        /* Light purple */
+    color: #4f46e5;             /* Indigo text */
+    font-size: 0.65rem;         /* small font */
+    padding: 2px 6px;
+    border-radius: 8px;
+    margin: 2px 0 4px 0;
+    font-weight: 500;
+}

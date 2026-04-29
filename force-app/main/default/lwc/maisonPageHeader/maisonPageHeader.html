@@ -1,0 +1,42 @@
+<template>
+    <div class="header">
+
+        <!-- LOGO -->
+        <div class="logo">
+            <!--<img src="/sfsites/c/resource/MaisonLogo" alt="Maison Hospitality">-->
+            <img src={logoUrl} alt="Maison Hospitality" />
+
+        </div>
+
+        <!-- DYNAMIC WELCOME -->
+        <div class="welcome">
+            <h1>{title}</h1>
+            <p>{subtitle}</p>
+    
+        </div>
+
+        <!-- PROFILE -->
+       <div class="profile">
+    <span class="profile-email">{userName}</span>
+
+    <div class="profile-wrapper">
+        <div class="avatar-outer" onclick={toggleMenu}>
+            <div class="avatar-inner">
+                <img src={userPhoto} alt="Profile">
+            </div>
+        </div>
+
+        <!-- Dropdown -->
+        <template if:true={showMenu}>
+            <div class="profile-menu">
+                <div class="menu-item" onclick={handleLogout}>
+                    Logout
+                </div>
+            </div>
+        </template>
+    </div>
+</div>
+
+
+    </div>
+</template>

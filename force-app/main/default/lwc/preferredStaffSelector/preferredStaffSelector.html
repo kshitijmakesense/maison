@@ -1,0 +1,177 @@
+<template>
+    <div class="preferred-staff">
+
+        <h2 class="section-title">Preferred Staff</h2>
+
+        <!-- ===================== -->
+        <!-- Preferred Staff -->
+        <!-- ===================== -->
+        <template if:true={hasPreferred}>
+            <div class="preferred-section">
+
+                <h3 class="sub-title">Your Preferred Staff</h3>
+
+                <div class="favorites-grid">
+                    <template for:each={preferredStaffList} for:item="p">
+
+                        <div key={p.staffId} class="staff-card selectable">
+
+                            <!-- Checkbox -->
+                            <input type="checkbox"
+                                   class="select-checkbox"
+                                   value={p.staffId}
+                                   onchange={handlePreferredSelect}/>
+
+                            <!-- Avatar -->
+                            <template if:true={p.photoUrl}>
+                                <img src={p.photoUrl} class="avatar"/>
+                            </template>
+                            <template if:false={p.photoUrl}>
+                                <div class="avatar-fallback">{p.initial}</div>
+                            </template>
+
+                            <!-- Info -->
+                            <div class="info">
+                                <div class="name">{p.staffName}</div>
+                                <div class="stars">{p.stars}</div>
+                               <template if:true={p.avgRating}>
+    <div class="rating-text">{p.roundedRating} star</div>
+</template>
+
+<template if:false={p.avgRating}>
+    <div class="rating-text no-rating">No rating yet</div>
+</template>
+                            </div>
+
+                        </div>
+
+                    </template>
+                </div>
+
+                <!-- Remove Button -->
+                <div class="actions">
+                    <button class={removeButtonClass}
+                            onclick={handleRemoveSelected}
+                            disabled={isRemoveDisabled}>
+                        Remove from Preferred
+                    </button>
+                </div>
+                <div class="pagination-container">
+
+    <div class="pagination-left">
+        Showing {preferredStartRecord} - {preferredEndRecord} of {preferredTotalRecords}
+    </div>
+
+    <div class="pagination-right">
+
+        <button onclick={handlePreferredPrev}
+                disabled={isPreferredPrevDisabled}>
+            Previous
+        </button>
+
+        <span class="page-info">
+            Page {preferredPage} of {preferredTotalPages}
+        </span>
+
+        <button onclick={handlePreferredNext}
+                disabled={isPreferredNextDisabled}>
+            Next
+        </button>
+
+    </div>
+
+</div>
+            </div>
+        </template>
+
+        <template if:false={hasPreferred}>
+    <div class="empty-state">
+        No preferred staff selected yet
+    </div>
+</template>
+
+        <!-- ===================== -->
+        <!-- Other Staff -->
+        <!-- ===================== -->
+        <h3 class="sub-title">Other Staff</h3>
+
+        <template if:true={hasRecords}>
+
+            <div class="favorites-grid">
+
+                <template for:each={staffList} for:item="s">
+
+                    <div key={s.staffId} class="staff-card selectable">
+
+                        <!-- Checkbox -->
+                        <input type="checkbox"
+                               class="select-checkbox"
+                               value={s.staffId}
+                               onchange={handleSelect}/>
+
+                        <!-- Avatar -->
+                        <template if:true={s.photoUrl}> 
+                            <img src={s.photoUrl} class="avatar"/>
+                        </template>
+                        <template if:false={s.photoUrl}>
+                            <div class="avatar-fallback">{s.initial}</div>
+                        </template>
+
+                        <!-- Info -->
+                        <div class="info">
+                            <div class="name">{s.staffName}</div>
+                            <div class="stars">{s.stars}</div>
+                            <div class="rating-text">{s.roundedRating} star</div>
+                        </div>
+
+                    </div>
+
+                </template>
+
+            </div>
+
+            <!-- Mark Preferred -->
+            <div class="actions">
+                <button class={buttonClass}
+                        onclick={handleMarkPreferred}
+                        disabled={isDisabled}>
+                    Mark as Preferred
+                </button>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination-container">
+
+                <div class="pagination-left">
+                    Showing {startRecord} - {endRecord} of {totalRecords}
+                </div>
+
+                <div class="pagination-right">
+
+                    <button onclick={handlePrev} disabled={isPrevDisabled}>
+                        Previous
+                    </button>
+
+                    <span class="page-info">
+                        Page {page} of {totalPages}
+                    </span>
+
+                    <button onclick={handleNext} disabled={isNextDisabled}>
+                        Next
+                    </button>
+
+                </div>
+
+            </div>
+
+        </template>
+
+        <!-- Empty -->
+        <template if:false={hasRecords}>
+            <div class="empty-state">
+                No additional staff available to mark as preferred
+            </div>
+        </template>
+
+    </div>
+</template>

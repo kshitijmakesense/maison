@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_beverages_or_snacks__c</fullName>
+    <inlineHelpText>Would you like any additional beverages or snacks offered with the coffee service?</inlineHelpText>
+    <label>Additional beverages or snacks</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>TextArea</type>
+</CustomField>

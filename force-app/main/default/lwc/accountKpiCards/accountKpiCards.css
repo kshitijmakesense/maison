@@ -1,0 +1,38 @@
+.kpi-container {
+    display: flex;
+    gap: 1rem;
+    padding: 0.5rem;
+}
+
+.kpi-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    min-width: 140px;
+}
+
+.kpi-value {
+    font-size: 28px;
+    font-weight: 700;
+    color: #032d60;
+}
+
+.kpi-label {
+    font-size: 14px;
+    color: #555;
+    margin-top: 0.25rem;
+}
+
+/* Minimal custom CSS - most styling uses SLDS classes */
+
+.slds-text-heading_large {
+    font-weight: 700;
+}
+
+/* Optional: Add subtle hover effect */
+.slds-box:hover {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease;
+}

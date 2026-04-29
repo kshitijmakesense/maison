@@ -1,0 +1,43 @@
+.summary-row {
+    display: flex;
+    gap: 24px;
+    margin: 24px 0;
+}
+
+/* Card */
+.summary-card {
+    background: #F6C39B;
+    border-radius: 26px;
+    padding: 22px 26px;
+    min-width: 220px;
+    flex: 1;
+}
+
+/* Header (icon + label) */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'MaisonHeading';
+    font-size: 18px;
+}
+
+/* Check icon */
+.check {
+    width: 26px;
+    height: 26px;
+    border: 2px solid #000;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Value */
+.value {
+    margin-top: 16px;
+    font-family: 'MaisonHeading';
+    font-size: 28px;
+    font-weight: 600;
+}

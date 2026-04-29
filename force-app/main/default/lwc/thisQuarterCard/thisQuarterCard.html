@@ -1,0 +1,33 @@
+<template>
+    <div class="quarter-card">
+
+        <h2 class="section-title">This Quarter</h2>
+
+        <!-- Row 1 -->
+        <div class="row">
+            <span class="label">Events Completed</span>
+            <span class="value">{completed}</span>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="row">
+            <span class="label">Total Investment</span>
+            <span class="value">${investment}</span>
+        </div>
+
+        <!-- Row 3 -->
+        <div class="row">
+            <span class="label">Avg. Event Size</span>
+            <span class="value">{avgGuests} guests</span>
+        </div>
+
+        <hr class="divider"/>
+
+        <!-- Trend -->
+        <div class="trend">
+            <lightning-icon icon-name="utility:trending_up" size="x-small" class="trend-icon"></lightning-icon>
+            <span class="trend-text">{trend}% vs last quarter</span>
+        </div>
+
+    </div>
+</template>

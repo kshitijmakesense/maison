@@ -1,0 +1,190 @@
+.account-info-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.info-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.bold-label  {
+    font-weight: 700; /* bold */
+      margin-bottom: 0 !important; /* removes space below the label */
+}
+
+.bold-label + lightning-input {
+    margin-top: 0 !important; /* removes extra top space on input */
+}
+
+.info-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #080707;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #0176d3;
+    display: inline-block;
+}
+
+.info-field {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px 0;
+}
+
+.field-icon {
+    margin-right: 12px;
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.field-content {
+    flex-grow: 1;
+}
+
+.field-label {
+    font-size: 12px;
+    color: #706e6b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.field-value {
+    font-size: 14px;
+    color: #080707;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.field-value.highlight {
+    font-weight: 600;
+    color: #0176d3;
+    font-size: 15px;
+}
+
+.action-button {
+    margin-left: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .account-info-container {
+        padding: 12px;
+    }
+    
+    .info-field {
+        padding: 8px 0;
+    }
+    
+    .section-title {
+        font-size: 14px;
+    }
+}
+
+/* Custom styling for lightning card */
+lightning-card {
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form layout improvements */
+.slds-form__row {
+    margin-bottom: 12px;
+}
+
+.slds-form__item {
+    padding: 0 8px;
+}
+
+.toast-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 300px;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+    color: #ffffff; /* default to white text */
+    font-family: SalesforceSans, Arial, sans-serif;
+}
+
+/* Backgrounds based on variant */
+.toast-container.slds-theme_success {
+    background-color: #2e7d32; /* green */
+}
+.toast-container.slds-theme_error {
+    background-color: #c62828; /* red */
+}
+.toast-container.slds-theme_warning {
+    background-color: #ff9800; /* orange */
+}
+.toast-container.slds-theme_info {
+    background-color: #0277bd; /* blue */
+}
+
+/* Text styling */
+.toast-title {
+    font-weight: bold;
+    margin: 0;
+    color: #ffffff;
+}
+
+.toast-message {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #ffffff;
+}
+
+.toast-close-button {
+    color: #ffffff;
+}
+
+.underline-text {
+    border-bottom: 2px solid #0176d3; /* your blue color */
+    display: inline-block;            /* ensures underline fits text width */
+    padding-bottom: 2px;              /* optional spacing */
+}
+
+.custom-underline {
+    border-bottom: 2px solid #0176d3; /* blue underline */
+    display: inline-block;             /* underline fits text width */
+    padding-bottom: 2px;               /* optional spacing */
+    margin: 0;                         /* remove extra spacing */
+    text-align: left;                  /* left-align text */
+}
+
+
+/* Animation for mode switching */
+.info-section {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

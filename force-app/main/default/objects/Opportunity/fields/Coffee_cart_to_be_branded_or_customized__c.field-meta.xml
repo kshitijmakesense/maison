@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Coffee_cart_to_be_branded_or_customized__c</fullName>
+    <defaultValue>false</defaultValue>
+    <inlineHelpText>Would you like the coffee cart to be branded or customized with your event&apos;s logo or theme?</inlineHelpText>
+    <label>Coffee cart to be branded or customized?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Checkbox</type>
+</CustomField>

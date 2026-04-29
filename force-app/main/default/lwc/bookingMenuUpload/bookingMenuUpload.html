@@ -1,0 +1,106 @@
+<template>
+    <div class={containerClass}>
+
+         <!-- 🔥 SPINNER -->
+       <template if:true={isLoading}>
+    <div class="spinner-overlay">
+        <lightning-spinner alternative-text="Processing" size="medium"></lightning-spinner>
+    </div>
+</template>
+
+   <template if:true={isInternalUser}>
+    <div class="slds-box slds-theme_default slds-m-top_medium">
+
+        <!-- EMPTY STATE -->
+        <template if:false={hasMenu}>
+            <div class="slds-text-align_center">
+                <button 
+                    class="slds-button slds-button_neutral"
+                    onclick={triggerFileInput}>
+                    Upload Menu
+                </button>
+
+                <input type="file" onchange={handleFileChange} hidden />
+            </div>
+        </template>
+
+        <!-- FILE EXISTS -->
+        <template if:true={hasMenu}>
+
+            <!-- LEFT -->
+            <div class="slds-grid slds-align_absolute-center slds-m-bottom_small">
+                📄 <span class="slds-m-left_small">{fileName}</span>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="slds-text-align_center">
+                <button 
+                    class="slds-button slds-button_brand slds-m-right_small"
+                    onclick={handleDownload}
+                    disabled={isLoading}>
+                    Download
+                </button>
+
+                <button 
+                    class="slds-button slds-button_destructive-text"
+                    onclick={handleReplace}>
+                    Replace
+                </button>
+            </div>
+
+        </template>
+
+    </div>
+</template>
+
+
+<template if:false={isInternalUser}>
+    
+
+          <!-- EMPTY STATE -->
+        <template if:false={hasMenu}>
+            <div class="custom-upload">
+                <button class="upload-btn" onclick={triggerFileInput}>
+                    Upload Menu
+                </button>
+                <input type="file" onchange={handleFileChange} hidden />
+            </div>
+        </template>
+
+        <!-- FILE PRESENT -->
+        <template if:true={hasMenu}>
+          <div class="menu-header-row">
+
+    <!-- LEFT SIDE -->
+    <div class="menu-left-section">
+ 
+        <div class="menu-card">
+       <div class="menu-left">
+
+    <!-- TOP LABEL -->
+    <div class="menu-label">
+        Menu File
+    </div>
+
+    <!-- BELOW CONTENT -->
+    <div class="menu-row">
+        <span class="menu-file">
+            📄 <span>{fileName}</span>
+        </span>
+
+        <div class="menu-right">
+            <button onclick={handleDownload}>Download</button>
+            <button onclick={handleReplace}>Replace</button>
+        </div>
+    </div>
+
+</div>
+            
+        </div>
+    </div>
+
+  </div>
+        </template>
+</template>
+    </div>
+</template>

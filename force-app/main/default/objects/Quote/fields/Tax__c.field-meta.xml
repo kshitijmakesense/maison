@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tax__c</fullName>
+    <label>Tax %</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No Tax</fullName>
+                <default>false</default>
+                <label>No Tax</label>
+            </value>
+            <value>
+                <fullName>10% GST</fullName>
+                <default>false</default>
+                <label>10% GST</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

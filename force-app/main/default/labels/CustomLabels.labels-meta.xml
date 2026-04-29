@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Booking_Completed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Booking Completed</shortDescription>
+        <value>Booking Completed</value>
+    </labels>
+    <labels>
+        <fullName>Community_Enquiry_Owner</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Community Enquiry Owner</shortDescription>
+        <value>005Bn00000Q49fY</value>
+    </labels>
+    <labels>
+        <fullName>Custom_Customer_Community_User</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Custom Customer Community User</shortDescription>
+        <value>Custom Customer Community User</value>
+    </labels>
+    <labels>
+        <fullName>Invoice_Paid_Email_Template</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invoice Paid Email Template</shortDescription>
+        <value>Invoice Paid Email Template</value>
+    </labels>
+    <labels>
+        <fullName>Staff_Booked_Confirmation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Staff Booked Confirmation</shortDescription>
+        <value>Staff Booked Confirmation</value>
+    </labels>
+</CustomLabels>

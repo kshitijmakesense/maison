@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Order",
+  "contentBody" : {
+    "activeViewId" : "Order",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-order",
+    "urlPrefix" : "order"
+  },
+  "urlName" : "order"
+}

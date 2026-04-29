@@ -1,0 +1,80 @@
+.enquiry-container {
+    background: #f9fafb;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+}
+
+.button-container {
+    margin-bottom: 30px;
+}
+
+.book-btn {
+    background-color: #0f172a; /* black button */
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.book-button {
+    background-color: #1a1a2e;
+    color: white;
+    border-radius: 4px;
+    padding: 12px 24px;
+    font-weight: 600;
+}
+
+.form-wrapper {
+    margin-top: 20px;
+}
+
+.form-content {
+    padding: 20px;
+    position: relative;
+}
+
+.slds-form-element {
+    margin-bottom: 20px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.cancel-button {
+    margin-right: 10px;
+}
+
+/* Make the form look cleaner */
+lightning-card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .enquiry-container {
+        padding: 10px;
+    }
+    
+    .form-content {
+        padding: 15px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .cancel-button {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}

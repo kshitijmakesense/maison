@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Date_Validation</fullName>
+    <active>false</active>
+    <errorConditionFormula>NOT(Event_Date__c &gt; Today())</errorConditionFormula>
+    <errorMessage>Only future dates are allowed for the event date.</errorMessage>
+</ValidationRule>

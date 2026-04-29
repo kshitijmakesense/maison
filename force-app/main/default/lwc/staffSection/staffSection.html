@@ -1,0 +1,38 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_medium">
+            <div class="table-container">
+                <template if:true={hasData}>
+                    <table class="slds-table">
+                        <thead>
+                            <tr>
+                                <th>Staff</th>
+                                <th>Role</th>
+                                <th>Group</th>
+                                <th>Number of Orders</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={data} for:item="item">
+                                <tr key={item.staffId}>
+                                    <td>
+                                        <a data-id={item.staffId} onclick={handleNavigate}>
+                                            {item.staffName}
+                                        </a>
+                                    </td>
+                                    <td>{item.staffRole}</td>
+                                    <td>{item.staffGroup}</td>
+                                    <td>{item.orderCount}</td>
+                                </tr>
+                            </template>
+                        </tbody>
+                    </table>
+                </template>
+
+                <template if:false={hasData}>
+                    <p>No staff assigned to this account.</p>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

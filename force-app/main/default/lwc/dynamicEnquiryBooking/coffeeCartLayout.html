@@ -1,0 +1,251 @@
+<!-- coffeeCartLayout.html -->
+<template>
+    <div class="enquiry-container">
+        <!-- Loading Spinner -->
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+        </template>
+
+        <div class="form-wrapper">
+            <lightning-card title={formTitle}>
+                <div class="form-content">
+                    
+                    <!-- Back Button -->
+                    <div class="back-button-container">
+                        <lightning-button 
+                            icon-name="utility:back" 
+                            label="Back" 
+                            onclick={handleBack}>
+                        </lightning-button>
+                    </div>
+
+                    <!-- Coffee Cart Layout Form -->
+                    <div class="form-grid">
+                        <!-- Event Details Section -->
+                        <h3 class="section-title">Event Details</h3>
+
+                        <div class="two-column">
+                            <lightning-input
+                                type="date"
+                                name="eventDate"
+                                label="Event Date"
+                                value={formData.eventDate}
+                                data-field="eventDate"
+                                onchange={handleInputChange}
+                                required>
+                            </lightning-input>
+
+                            <lightning-input
+                                type="text"
+                                name="occasion"
+                                label="Occasion"
+                                value={formData.occasion}
+                                data-field="occasion"
+                                onchange={handleInputChange}
+                                required>
+                            </lightning-input>
+                        </div>
+
+                        <div class="two-column">
+                            <lightning-input
+                                type="time"
+                                name="coffeeServiceStartTime"
+                                label="Coffee service start time"
+                                value={formData.coffeeServiceStartTime}
+                                data-field="coffeeServiceStartTime"
+                                onchange={handleInputChange}
+                                required>
+                            </lightning-input>
+
+                            <lightning-input
+                                type="time"
+                                name="coffeeServiceEndTime"
+                                label="Coffee service end time"
+                                value={formData.coffeeServiceEndTime}
+                                data-field="coffeeServiceEndTime"
+                                onchange={handleInputChange}
+                                required>
+                            </lightning-input>
+                        </div>
+
+                        <div class="two-column">
+                            <lightning-input
+                                type="number"
+                                name="numberOfGuests"
+                                label="Number of Guests"
+                                value={formData.numberOfGuests}
+                                data-field="numberOfGuests"
+                                onchange={handleInputChange}
+                                min="1"
+                                required>
+                            </lightning-input>
+
+                            <lightning-input
+                                type="number"
+                                name="estimatedBudget"
+                                label="Estimated Budget"
+                                value={formData.estimatedBudget}
+                                data-field="estimatedBudget"
+                                onchange={handleInputChange}
+                                formatter="currency"
+                                required>
+                            </lightning-input>
+                        </div>
+
+                        <lightning-dual-listbox
+                            name="beveragesCoffeeType"
+                            label="Beverages / Coffee Type"
+                            source-label="Available"
+                            selected-label="Chosen"
+                            options={beverageOptions}
+                            value={formData.beveragesCoffeeType}
+                            data-field="beveragesCoffeeType"
+                            onchange={handleDualListChange}
+                            required>
+                        </lightning-dual-listbox>
+
+                        <lightning-input
+                            type="datetime-local"
+                            name="guestArrivalTime"
+                            label="Guest arrival time"
+                            value={formData.guestArrivalTime}
+                            data-field="guestArrivalTime"
+                            onchange={handleInputChange}
+                            required>
+                        </lightning-input>
+                        
+                        <lightning-textarea
+                            name="eventLocation"
+                            label="Event Location"
+                            value={formData.eventLocation}
+                            data-field="eventLocation"
+                            onchange={handleInputChange}
+                            required>
+                        </lightning-textarea>
+
+                        <h3 class="section-title">Service & Requirements</h3>
+
+                        <div class="two-column">
+                            <lightning-input
+                                type="text"
+                                name="cartArea"
+                                label="Cart Area"
+                                value={formData.cartArea}
+                                data-field="cartArea"
+                                onchange={handleInputChange}
+                                required>
+                            </lightning-input>
+
+                            <lightning-input
+                                type="checkbox"
+                                name="coffeeCartBranded"
+                                label="Coffee cart to be branded or customized?"
+                                checked={formData.coffeeCartBranded}
+                                data-field="coffeeCartBranded"
+                                onchange={handleCheckboxChange}>
+                            </lightning-input>
+                        </div>
+
+                        <div class="two-column">
+                            <lightning-input
+                                type="text"
+                                name="setupBreakdown"
+                                label="Setup Breakdown"
+                                value={formData.setupBreakdown}
+                                data-field="setupBreakdown"
+                                onchange={handleInputChange}
+                                required>
+                            </lightning-input>
+
+                            <lightning-input
+                                type="text"
+                                name="brandingPreference"
+                                label="Branding preference"
+                                value={formData.brandingPreference}
+                                data-field="brandingPreference"
+                                onchange={handleInputChange}
+                                required>
+                            </lightning-input>
+                        </div>
+
+                        <div class="two-column">
+                            <lightning-input
+                                type="text"
+                                name="signageRequirement"
+                                label="Signage requirement"
+                                value={formData.signageRequirement}
+                                data-field="signageRequirement"
+                                onchange={handleInputChange}
+                                required>
+                            </lightning-input>
+
+                            <lightning-textarea
+                                name="accessInstructions"
+                                label="Access Instructions"
+                                value={formData.accessInstructions}
+                                data-field="accessInstructions"
+                                onchange={handleInputChange}
+                                required>
+                            </lightning-textarea>
+                        </div>
+
+                        <div class="two-column">
+                            <lightning-textarea
+                                name="additionalBeverages"
+                                label="Additional beverages or snacks"
+                                value={formData.additionalBeverages}
+                                data-field="additionalBeverages"
+                                onchange={handleInputChange}
+                                required>
+                            </lightning-textarea>
+
+                            <lightning-textarea
+                                name="specialRequests"
+                                label="Special Requests"
+                                value={formData.specialRequests}
+                                data-field="specialRequests"
+                                onchange={handleInputChange}
+                                required>
+                            </lightning-textarea>
+                        </div>
+
+                        <lightning-textarea
+                            name="specialityItems"
+                            label="Speciality Items"
+                            value={formData.specialityItems}
+                            data-field="specialityItems"
+                            onchange={handleInputChange}
+                            required>
+                        </lightning-textarea>
+
+                        <!-- Event Logo / Theme Field - Only show if checkbox is checked -->
+                        <template if:true={showEventLogoField}>
+                            <lightning-input-rich-text
+                                name="eventLogoTheme"
+                                label="Event Logo / Theme"
+                                value={formData.eventLogoTheme}
+                                data-field="eventLogoTheme"
+                                onchange={handleInputChange}
+                                formats="font,size,bold,italic,underline,list,link,image,table">
+                            </lightning-input-rich-text>
+                        </template>
+                    </div>
+
+                    <!-- Submit Buttons -->
+                    <div class="button-group">
+                        <lightning-button label="Cancel" onclick={handleCancel}></lightning-button>
+                        <lightning-button 
+                            variant="brand" 
+                            label="Submit Enquiry" 
+                            onclick={handleSubmit}
+                            disabled={isLoading}>
+                        </lightning-button>
+                    </div>
+                </div>
+            </lightning-card>
+        </div>
+    </div>
+
+    <!-- Custom Toast Component -->
+    <c-toast-message></c-toast-message>
+</template>

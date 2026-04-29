@@ -1,0 +1,47 @@
+<template>
+    <div class="favorites-container">
+
+        <h2 class="section-title">Your Team – Favorites</h2>
+
+       <template if:true={hasStaff}>
+            <template for:each={staffList} for:item="staff">
+
+                <div key={staff.staffId} class="staff-card">
+
+                    <!-- Photo -->
+                    <img 
+                        src={staff.photoUrl} 
+                        alt="Staff"
+                        class="avatar"
+                        onerror={handleImageError}
+                    />
+
+                    <!-- Details -->
+                    <div class="info">
+
+                        <div class="name">
+                            {staff.staffName}
+                        </div>
+
+                        <div class="stars">
+                            <template if:true={staff.avgRating}>
+                                ⭐ {staff.avgRating}
+                            </template>
+                            <template if:false={staff.avgRating}>
+                                No rating
+                            </template>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </template>
+        </template>
+
+        <template if:false={hasStaff}>
+    <p>No preferred staff yet</p>
+</template>
+
+    </div>
+</template>

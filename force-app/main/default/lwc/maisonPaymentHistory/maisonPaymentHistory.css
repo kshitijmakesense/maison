@@ -1,0 +1,134 @@
+.payment-history {
+    background: #f6f3ee;
+    border-radius: 18px;
+    padding: 24px;
+}
+
+.title {
+    font-family: 'MaisonHeading';
+    font-size: 26px;
+    margin-bottom: 18px;
+}
+
+/* Grid */
+.table-header,
+.row {
+    display: grid;
+    grid-template-columns: 1.2fr 2.5fr 1fr;
+    align-items: center;
+    padding: 18px 20px;
+}
+
+.table-header {
+    background: #dce9ef;
+    border-radius: 18px;
+    font-family: 'MaisonHeading';
+    font-weight: 600;
+}
+
+.row {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.row:last-child {
+    border-bottom: none;
+}
+
+/* Columns */
+.date {
+    white-space: nowrap;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.desc-title {
+    font-family: 'MaisonHeading';
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.desc-sub {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.amount {
+    text-align: right;
+    font-family: 'MaisonHeading';
+}
+
+.empty {
+    padding: 20px;
+    text-align: center;
+    opacity: 0.6;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    gap: 16px;
+    opacity: 0.85;
+}
+
+.empty-state lightning-icon {
+    --sds-c-icon-color-foreground-default: #B8B2A9;
+}
+
+.empty-state p {
+    font-family: 'MaisonBody';
+    font-size: 18px;
+    color: #7B756C;
+}
+
+/* 🔥 Pagination Styles */
+
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px 24px;
+    background: #F6F3EE;
+}
+
+.pagination-info {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.pagination-btn {
+    background: #c8dce8;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: #b5d0e0;
+}
+
+.pagination-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: #e0e0e0;
+}
+
+.page-number {
+    font-size: 14px;
+    font-weight: 500;
+}

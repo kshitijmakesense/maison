@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "New Enquiry Form",
+  "contentBody" : {
+    "activeViewId" : "New_Enquiry_Form",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-new-enquiry-form",
+    "urlPrefix" : "new-enquiry-form"
+  },
+  "urlName" : "new-enquiry-form"
+}

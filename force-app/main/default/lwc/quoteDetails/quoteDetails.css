@@ -1,0 +1,112 @@
+.page {
+    padding: 1.5rem 2rem;
+}
+
+/* PAGE TITLE */
+.header-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+}
+
+/* SECTION WRAPPER */
+.section-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.section-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* GRID FOR BASIC INFO */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 24px;
+}
+
+.info-item label {
+    font-weight: 600;
+    color: #444;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+/* PRICING */
+.price-row {
+    display: flex;
+    gap: 2rem;
+}
+
+.price-box {
+    flex: 1;
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.price-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+/* LINE ITEMS */
+.line-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.line-card {
+    padding: 1rem;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+}
+
+.line-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    text-decoration: underline;
+    margin-bottom: 0.5rem;
+}
+
+.line-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.line-row label {
+    font-weight: 600;
+    color: #555;
+}
+
+/* LINKS */
+.link {
+    color: #0070d2;
+    text-decoration: underline;
+}
+.back-btn {
+    background: #f4f4f4;
+    border: 1px solid #dcdcdc;
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    transition: 0.2s;
+}
+
+.back-btn:hover {
+    background: #e9e9e9;
+}

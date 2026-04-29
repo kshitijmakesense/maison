@@ -1,0 +1,90 @@
+<template>
+    <div class="page-container">
+
+        <h1 class="page-title">Invoice History</h1>
+
+        <template if:true={noInvoices}>
+            <p>No invoices found.</p>
+        </template>
+
+        <template if:true={paginatedInvoices}>
+            <template for:each={paginatedInvoices} for:item="inv">
+                <div key={inv.Id} class="card">
+
+                    <!-- TITLE -->
+                    <h2 class="invoice-title">{inv.Xero_Invoice_Number__c}</h2>
+
+                    <!-- DETAILS -->
+                    <div class="details">
+                        <p>{inv.Event_Title__c}</p>
+                       <p>{inv.services}</p>
+                        <p class="dates">Issued: {inv.formattedIssued} — Due: {inv.formattedDue}</p>
+                    </div>
+
+                    <hr>
+
+                    <!-- AMOUNT + STATUS -->
+                    <div class="bottom-row">
+                        <div class="amount-section">
+                            <p class="amount-value">{inv.formattedAmount}</p>
+                        </div>
+
+                        <div class="status-wrapper">
+
+                            <!-- STATUS BADGE -->
+                            <span class={inv.statusClass}>
+                                {inv.Payment_Status__c}
+                            </span>
+
+                            <!-- VIEW BUTTON -->
+                            <button class="icon-btn"
+                                data-id={inv.Id}
+                                onclick={handleViewDetails}>
+                                👁
+                            </button>
+
+                         
+                            <!-- PAY NOW -->
+                            <template if:true={inv.isOutstanding}>
+                                <button class="pay-btn"
+                                    data-url={inv.Xero_URL__c}
+                                    onclick={handlePay}>
+                                    Pay Now
+                                </button>
+                            </template>
+
+                        </div>
+                    </div>
+
+                </div>
+            </template>
+
+            <!-- PAGINATION -->
+            <div class="pagination">
+
+                <button class="page-btn"
+                        onclick={handlePrevious}
+                        disabled={isPrevDisabled}>
+                    ◀ Previous
+                </button>
+
+                <template for:each={totalPagesArray} for:item="pg">
+                    <button key={pg.number}
+                            class={pg.className}
+                            data-page={pg.number}
+                            onclick={handlePageClick}>
+                        {pg.number}
+                    </button>
+                </template>
+
+                <button class="page-btn"
+                        onclick={handleNext}
+                        disabled={isNextDisabled}>
+                    Next ▶
+                </button>
+
+            </div>
+        </template>
+
+    </div>
+</template>

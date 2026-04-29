@@ -1,0 +1,62 @@
+/* GLOBAL TOAST CONTAINER */
+.global-toast-container {
+    position: fixed;
+    top: 1.2rem;
+    right: 1.2rem;
+    z-index: 99999999 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* BASE TOAST STYLE */
+.global-toast {
+    min-width: 300px;
+    max-width: 380px;
+    padding: 1rem 1.25rem;
+    border-radius: 8px;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    animation: slideIn 0.3s ease-out;
+    position: relative;
+    font-family: SalesforceSans, Arial, sans-serif;
+}
+
+/* VARIANTS */
+.global-toast.success { background: #2e7d32; }
+.global-toast.error   { background: #c62828; }
+.global-toast.warning { background: #ff9800; }
+.global-toast.info    { background: #0277bd; }
+
+/* CLOSE BUTTON */
+.toast-close {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* TITLE STYLE */
+.toast-header {
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+/* ANIMATIONS */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+.fade-out {
+    animation: fadeOut 0.3s forwards ease-in;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; transform: translateX(20px); }
+}

@@ -1,0 +1,52 @@
+.quarter-card {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+/* Title */
+.section-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+}
+
+/* 2-column clean rows */
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.8rem 0;
+}
+
+.label {
+    color: #475569;
+    font-size: 1rem;
+}
+
+.value {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 1.1rem;
+}
+
+/* Divider line */
+.divider {
+    margin: 1.5rem 0;
+    border: none;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Trend row */
+.trend {
+    display: flex;
+    align-items: center;
+    color: #16a34a;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.trend-icon {
+    margin-right: 0.4rem;
+}

@@ -1,0 +1,75 @@
+<template>
+    <section class="payment-history">
+
+        <h2 class="title">Payment History</h2>
+         <template if:true={payments.length}>
+        <!-- Header -->
+        <div class="table-header">
+            <div>Date</div>
+            <div>Description</div>
+            <div class="amount">Amount</div>
+        </div>
+
+        <!-- Rows -->
+        <template for:each={payments} for:item="p">
+            <div key={p.invoiceNumber} class="row">
+
+                <div class="date">
+                    {p.dateFormatted}
+                </div>
+
+                <div class="description">
+                    <div class="desc-title">{p.description}</div>
+                    <div class="desc-sub">{p.invoiceNumber}</div>
+                </div>
+
+                <div class="amount">
+                    ${p.amountFormatted}
+                </div>
+
+            </div>
+        </template>
+        <template if:true={showPagination}>
+    <div class="pagination-container">
+
+        <div class="pagination-info">
+            {paginationInfo}
+        </div>
+
+        <div class="pagination-controls">
+            <button 
+                class="pagination-btn"
+                onclick={handlePrevious}
+                disabled={isPreviousDisabled}>
+                Previous
+            </button>
+
+            <span class="page-number">
+                {pageInfo}
+            </span>
+
+            <button 
+                class="pagination-btn"
+                onclick={handleNext}
+                disabled={isNextDisabled}>
+                Next
+            </button>
+        </div>
+
+    </div>
+</template>
+</template>
+      <template if:false={payments.length}>
+    <div class="empty-state">
+        <lightning-icon
+            icon-name="utility:money"
+            size="large"
+            alternative-text="No payments">
+        </lightning-icon>
+        <p>No payments found</p>
+    </div>
+</template>
+
+
+    </section>
+</template>

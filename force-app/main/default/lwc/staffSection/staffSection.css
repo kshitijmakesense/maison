@@ -1,0 +1,50 @@
+/* Remove outer table border */
+.slds-table {
+    border: none !important;
+    background: transparent;
+    width: 100%;
+}
+
+/* HEADER styling like Salesforce detail */
+.slds-table thead th {
+    background-color: #f3f3f3;  /* light grey header */
+    font-weight: 600;
+    border: none !important;
+    padding: 8px 12px;
+    color: #444;
+}
+
+/* White rows like record detail page */
+.slds-table tbody tr td {
+    background: white !important;
+    padding: 8px 12px;
+    border: none !important;
+    color: #000;
+}
+
+/* Remove hover highlight */
+.slds-table tbody tr:hover > td,
+.slds-table tbody tr:hover {
+    background: white !important;
+}
+
+/* Make values align neatly with header */
+.slds-table td,
+.slds-table th {
+    border: none !important;
+}
+/* Alternate row shading */
+.slds-table tbody tr:nth-child(odd) td {
+    background-color: #ffffff !important;   /* white */
+}
+
+.slds-table tbody tr:nth-child(even) td {
+    background-color: #f9f9f9 !important;   /* light grey */
+}
+.slds-table tbody tr:nth-child(even) td {
+    background-color: #fafafa !important;
+}
+/* Add an underline between each row */
+.slds-table tbody tr td {
+    border-bottom: 1px solid #e5e5e5 !important;
+}

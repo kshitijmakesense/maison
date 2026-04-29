@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Need_extra_services__c</fullName>
+    <label>Need extra services?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Catering Options</fullName>
+                <default>false</default>
+                <label>Catering Options</label>
+            </value>
+            <value>
+                <fullName>Cocktail Package</fullName>
+                <default>false</default>
+                <label>Cocktail Package</label>
+            </value>
+            <value>
+                <fullName>Coffee Cart Package</fullName>
+                <default>false</default>
+                <label>Coffee Cart Package</label>
+            </value>
+            <value>
+                <fullName>Equipment Hire</fullName>
+                <default>false</default>
+                <label>Equipment Hire</label>
+            </value>
+            <value>
+                <fullName>Glassware Hire</fullName>
+                <default>false</default>
+                <label>Glassware Hire</label>
+            </value>
+            <value>
+                <fullName>Slushie Machine</fullName>
+                <default>false</default>
+                <label>Slushie Machine</label>
+            </value>
+            <value>
+                <fullName>Staffing</fullName>
+                <default>false</default>
+                <label>Staffing</label>
+            </value>
+            <value>
+                <fullName>Staff Only</fullName>
+                <default>false</default>
+                <label>Staff Only</label>
+            </value>
+            <value>
+                <fullName>Wine Package</fullName>
+                <default>false</default>
+                <label>Wine Package</label>
+            </value>
+            <value>
+                <fullName>Bubble Gun</fullName>
+                <default>false</default>
+                <label>Bubble Gun</label>
+            </value>
+            <value>
+                <fullName>Mobile Bar Hire</fullName>
+                <default>false</default>
+                <label>Mobile Bar Hire</label>
+            </value>
+            <value>
+                <fullName>Ice</fullName>
+                <default>false</default>
+                <label>Ice</label>
+            </value>
+            <value>
+                <fullName>Mocktail Package</fullName>
+                <default>false</default>
+                <label>Mocktail Package</label>
+            </value>
+            <value>
+                <fullName>Liquor Licence Permit</fullName>
+                <default>false</default>
+                <label>Liquor Licence Permit</label>
+            </value>
+            <value>
+                <fullName>Juice Bar</fullName>
+                <default>false</default>
+                <label>Juice Bar</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

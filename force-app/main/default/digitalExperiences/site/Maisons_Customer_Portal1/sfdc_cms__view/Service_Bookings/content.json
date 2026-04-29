@@ -1,0 +1,67 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Service Bookings",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"92b5f995-7f4a-43ad-a7a3-c6f8610c8e46\",\"columns\":[{\"UUID\":\"810bf0be-18c2-4894-9012-fcf84f9aaeeb\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : { },
+              "definition" : "c:serviceBookingsPage",
+              "id" : "6501ec46-b7fb-4361-810d-780cbd937368",
+              "type" : "component"
+            } ],
+            "id" : "810bf0be-18c2-4894-9012-fcf84f9aaeeb",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "92b5f995-7f4a-43ad-a7a3-c6f8610c8e46",
+          "type" : "component"
+        } ],
+        "id" : "c7063093-ec7d-4164-af71-35e8bb2a3aef",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Service Bookings",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "7a7f206c-1745-46bb-bb67-c740a90e3872",
+          "type" : "component"
+        } ],
+        "id" : "5d379e7d-7c39-4ffb-9a08-87c91a73c91f",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "d0cb946d-ef3a-4af2-b7a7-0a01e9ccc11e",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-service-bookings"
+  },
+  "urlName" : "service-bookings"
+}

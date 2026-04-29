@@ -1,0 +1,18 @@
+<template>
+    <!-- List View - Show all components -->
+    <template if:true={showListView}>
+        <c-maison-bookings-summary></c-maison-bookings-summary>
+        <c-maison-upcoming-event onviewdetails={handleViewDetails}></c-maison-upcoming-event>
+        <c-maison-past-events onviewdetails={handleViewDetails}></c-maison-past-events>
+        <c-preferred-staff-selector record-id={contactId}></c-preferred-staff-selector>
+    </template>
+
+    <!-- Detail View - Show only booking details -->
+    <template if:true={showDetailView}>
+        <c-maison-booking-details 
+            record-id={selectedRecordId}
+            booking-type={bookingType}
+            onback={handleBackToList}>
+        </c-maison-booking-details>
+    </template>
+</template>

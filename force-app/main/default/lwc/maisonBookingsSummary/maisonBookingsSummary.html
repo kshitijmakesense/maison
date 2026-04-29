@@ -1,0 +1,37 @@
+<template>
+    <div class="summary-row">
+
+        <div class="summary-card">
+            <div class="card-header">
+                <span class="check">✓</span>
+                <span class="label">Upcoming Bookings</span>
+            </div>
+            <div class="value">{upcomingBookings}</div>
+        </div>
+
+        <div class="summary-card">
+            <div class="card-header">
+                <span class="check">✓</span>
+                <span class="label">Total Guests</span>
+            </div>
+            <div class="value">{totalGuests}</div>
+        </div>
+
+        <div class="summary-card">
+            <div class="card-header">
+                <span class="check">✓</span>
+                <span class="label">Past Bookings</span>
+            </div>
+            <div class="value">{pastBookings}</div>
+        </div>
+
+        <div class="summary-card">
+            <div class="card-header">
+                <span class="check">✓</span>
+                <span class="label">Total Booked Value</span>
+            </div>
+            <div class="value">${formattedValue}</div>
+        </div>
+
+    </div>
+</template>

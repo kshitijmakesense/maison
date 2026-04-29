@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "User Detail (1)",
+  "contentBody" : {
+    "activeViewId" : "User_Detail_1",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "detail-005",
+    "urlPrefix" : "profile"
+  },
+  "urlName" : "user-detail-1"
+}

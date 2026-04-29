@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Date_Validation</fullName>
+    <active>true</active>
+    <description>Making sure Event Date if Future Date.</description>
+    <errorConditionFormula>AND(
+    NOT($Permission.Bypass_Event_Date_Validation),
+    NOT(Event_Date__c &gt; TODAY())
+)</errorConditionFormula>
+    <errorMessage>Event Date Should Be Future Date.</errorMessage>
+</ValidationRule>

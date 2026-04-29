@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Service Requests",
+  "contentBody" : {
+    "activeViewId" : "Service_Requests",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-service-requests",
+    "urlPrefix" : "service-requests"
+  },
+  "urlName" : "service-requests"
+}

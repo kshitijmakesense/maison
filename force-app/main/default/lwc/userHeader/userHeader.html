@@ -1,0 +1,82 @@
+<!-- userHeader.html -->
+<template>
+    <div class="user-header-container">
+        <!-- If guest user - show login button -->
+        <template if:true={isGuestUser}>
+            <lightning-button 
+                variant="brand-outline" 
+                label="Login" 
+                title="Login" 
+                onclick={navigateToLogin} 
+                class="login-button"
+                style="border-radius: 20px; min-width: 100px;">
+            </lightning-button>
+        </template>
+
+        <!-- If logged in - show user profile button -->
+        <template if:false={isGuestUser}>
+            <div class="profile-button-container">
+                <button 
+                    class="profile-button" 
+                    onclick={toggleUserMenu}
+                    aria-haspopup="true"
+                    aria-expanded={showUserMenu}>
+
+                    <!-- Profile image if available, otherwise show initials -->
+                    <template if:true={userProfileImage}>
+                        <img 
+                            src={userProfileImage} 
+                            alt="User profile" 
+                            class="profile-image" />
+                    </template>
+                    <template if:false={userProfileImage}>
+                        <div class="profile-initials">{userInitials}</div>
+                    </template>
+
+                    <span class="user-name">{userName}</span>
+                    <lightning-icon
+                        icon-name="utility:chevrondown"
+                        size="x-small"
+                        class="dropdown-icon">
+                    </lightning-icon>
+                </button>
+
+                <!-- User menu dropdown -->
+                <div if:true={showUserMenu} class="user-menu-dropdown">
+                    <ul>
+                        <li>
+                           
+                            <a onclick={navigateToAccountInformation}>
+                                <lightning-icon icon-name="standard:account" size="small"></lightning-icon>
+                              Account Info
+                            </a>
+                            <a onclick={navigateToMyProfile}>
+                                <lightning-icon icon-name="standard:user" size="small"></lightning-icon>
+                                Profile Info
+                            </a>
+
+                            <!-- <a onclick={navigateToCreateUser}>
+                                <lightning-icon icon-name="utility:add" size="small"></lightning-icon>
+                              Add User
+                            </a> -->
+
+
+                        </li>
+                        <li>
+                            <!--a onclick={navigateToSettings}>
+                                <lightning-icon icon-name="utility:settings" size="small"></lightning-icon>
+                                Settings
+                            </a-->
+                        </li>
+                        <li class="logout-item">
+                            <a onclick={handleLogout}>
+                                <lightning-icon icon-name="utility:logout" size="small"></lightning-icon>
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </template>
+    </div>
+</template>

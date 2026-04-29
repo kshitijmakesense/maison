@@ -1,0 +1,92 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_medium">
+            <div class="account-info-container">
+                <template if:true={isToastVisible}>
+                    <section class={toastClasses}>
+                        <div class="slds-notify__content">
+                            <span class="slds-assistive-text">{toastVariant}</span>
+                            <h2 class="slds-text-heading_small slds-truncate toast-title">{toastTitle}</h2>
+                            <p class="slds-truncate toast-message">{toastMessage}</p>
+                        </div>
+                        <button class="slds-button slds-button_icon slds-button_icon-small slds-notify__close toast-close-button"
+                                title="Close" onclick={handleToastClose}>
+                            <lightning-icon icon-name="utility:close" alternative-text="close" size="x-small"></lightning-icon>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                    </section>
+                </template>
+
+                <template if:true={isLoading}>
+                    <div class="loading-spinner">
+                        <lightning-spinner size="medium" alternative-text="Loading"></lightning-spinner>
+                    </div>
+                </template>
+
+                <template if:false={isLoading}>
+                    <lightning-card title="Account Information" icon-name="standard:account">
+                        <div slot="actions">
+                            <template if:true={showPrevious}>
+                                <lightning-button
+                                    label="Previous"
+                                    onclick={handlePrevious}
+                                    icon-name="utility:chevronleft"
+                                    class="action-button">
+                                </lightning-button>
+                            </template>
+                            <template if:true={showNext}>
+                                <lightning-button
+                                    label="Next"
+                                    onclick={handleNext}
+                                    variant="brand"
+                                    icon-name="utility:chevronright"
+                                    icon-position="right"
+                                    class="action-button">
+                                </lightning-button>
+                            </template>
+                        </div>
+
+                        <div class="slds-card__body slds-card__body_inner">
+                            
+                            <!-- Page 1: Basic Information, Billing Address & shipping Address-->
+                            <template if:true={isPage1}>
+                                <div class="info-section">
+                                    <h3 class="section-title">Basic Information</h3>
+                                    <div class="slds-grid slds-wrap slds-gutters">
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <p><strong>Account Name:</strong> {accountData.Name}</p>
+                                        </div>
+                                            <div class="slds-col slds-size_1-of-2">
+                                            <p><strong>Phone:</strong> {accountData.Phone}</p>
+                                        </div>
+                                            <div class="slds-col slds-size_1-of-2">
+                                            <p><strong>Email:</strong> {accountData.Email__c}</p>
+                                        </div>
+                                            <div class="slds-col slds-size_1-of-2">
+                                            <p><strong>Website:</strong> {accountData.Website}</p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+
+                                
+                                <div class="info-section">
+                                    <h3 class="section-title">Address Information</h3>
+                                        <div class="slds-grid slds-wrap slds-gutters">
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <p><strong>Billing Address</strong></p> {displayBillingAddress}
+                                        </div>
+                                            <div class="slds-col slds-size_1-of-2">
+                                            <p><strong>Shipping Address</strong></p> {displayShippingAddress}
+                                        </div>
+                                    </div>
+                                </div>
+                            </template>
+
+                        </div>
+                    </lightning-card>
+                </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>

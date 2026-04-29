@@ -1,0 +1,29 @@
+<template>
+    <div class="summary-grid">
+
+        <div class="summary-card">
+            <div class="card-title">Pending Invoices</div>
+            <div class="card-value">{summary.pendingInvoices}</div>
+        </div>
+
+        <div class="summary-card">
+            <div class="card-title">Amount Due</div>
+            <div class="card-value">
+                ${formattedAmountDue}
+            </div>
+        </div>
+
+        <div class="summary-card">
+            <div class="card-title">Paid This Year</div>
+            <div class="card-value">
+                ${formattedPaidThisYear}
+            </div>
+        </div>
+
+        <div class="summary-card">
+            <div class="card-title">Total Invoices</div>
+            <div class="card-value">{summary.totalInvoices}</div>
+        </div>
+
+    </div>
+</template>

@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Coffee Cart Booking",
+  "contentBody" : {
+    "activeViewId" : "Coffee_Cart_Booking",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-coffee-cart-booking",
+    "urlPrefix" : "coffee-cart-booking"
+  },
+  "urlName" : "coffee-cart-booking"
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtlClntAppGlobalOauthSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <callbackUrl>https://localhost</callbackUrl>
+    <certificate>MIIEezCCA2OgAwIBAgIOAZxLM6uuAAAAAETvBdEwDQYJKoZIhvcNAQELBQAwgYAx
+GDAWBgNVBAMMD01haXNvbl9KV1RfQ2VydDEYMBYGA1UECwwPMDBEQm4wMDAwMDdC
+R1RYMRcwFQYDVQQKDA5TYWxlc2ZvcmNlLmNvbTEWMBQGA1UEBwwNU2FuIEZyYW5j
+aXNjbzELMAkGA1UECAwCQ0ExDDAKBgNVBAYTA1VTQTAeFw0yNjAyMTEwNTM2NDNa
+Fw0yNzAyMTEwMDAwMDBaMIGAMRgwFgYDVQQDDA9NYWlzb25fSldUX0NlcnQxGDAW
+BgNVBAsMDzAwREJuMDAwMDA3QkdUWDEXMBUGA1UECgwOU2FsZXNmb3JjZS5jb20x
+FjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xCzAJBgNVBAgMAkNBMQwwCgYDVQQGEwNV
+U0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDnY6q3Vb9X0T7JbBs1
+Q9xxez14y9rJ/mPnqMrxAPRAtPwQJTflQNZIxkImwMUVjBSkmuRzvcGTD4cPr6AW
+ykbT1tHZygag0XAIg7fgpB9DSsPLE0mlrFWjwoIO2jCVMsCB8P3iOayB36+7G4Lt
+PQURdtyortj6YRLPb8GUukq8g/pPEzhjUYp5o+oJPeIGG8Eygi0Ng8SNB2rJydVi
+O3vFF2dfAiyjP42pmDFU3qXTmnhlbMiAEOHuVPlyu8AaLb/tyH7WHqTob2CocnCB
+8njQnwpWXaNaU4YepjSzG1sDT6Ze2dBBDLg9z+QC4ahlDrGLZxQPXcpiXeFb/3sB
+0/LXAgMBAAGjgfAwge0wHQYDVR0OBBYEFFeuFDaRtWcBkeJfXcSCGQN3llWLMA8G
+A1UdEwEB/wQFMAMBAf8wgboGA1UdIwSBsjCBr4AUV64UNpG1ZwGR4l9dxIIZA3eW
+VYuhgYakgYMwgYAxGDAWBgNVBAMMD01haXNvbl9KV1RfQ2VydDEYMBYGA1UECwwP
+MDBEQm4wMDAwMDdCR1RYMRcwFQYDVQQKDA5TYWxlc2ZvcmNlLmNvbTEWMBQGA1UE
+BwwNU2FuIEZyYW5jaXNjbzELMAkGA1UECAwCQ0ExDDAKBgNVBAYTA1VTQYIOAZxL
+M6uuAAAAAETvBdEwDQYJKoZIhvcNAQELBQADggEBADVU4jrXSGB7Z1kN3NpP2C9R
+FzL1vJ2mBfJ68mi6NXHu+jGBNuxbxseWm1qyU57AquQbbS/eENyp83mNfEn3eQJ2
+2vnv/SDbLuNr5yMi18KJDKLUKvwCV/snmWUD5VKNcxqJmJvddV9it9KwMCH1RNCy
+YRtuvOQ3aHvIfQB+a83NUQr1OQBA+nK9eRZztd3I3z/A7/O3JeEf1mX3pnW5urkl
+AyhLC5qNhuPcyCqPQ0nOl7omeZiAJe4fj/PlBLjloay3VsDaqVZOTEq9m+XAH4gp
+5ZGbdvHbpLb90PVbNqtHULSprKLykUJ73ELoB2H49eni9o9qV10ywq170bBJ7F8=</certificate>
+    <consumerKey>3MVG9JgJamLaOK53mX0ppz0iz33HOZaWNCD0f3DaSwQD4zj7vMSENyqlUR3p7HvkP0spodo.74jDjJBb2_VxU</consumerKey>
+    <externalClientApplication>Maison_Website_Integration</externalClientApplication>
+    <isClientCredentialsFlowEnabled>false</isClientCredentialsFlowEnabled>
+    <isCodeCredFlowEnabled>false</isCodeCredFlowEnabled>
+    <isCodeCredPostOnly>false</isCodeCredPostOnly>
+    <isConsumerSecretOptional>false</isConsumerSecretOptional>
+    <isDeviceFlowEnabled>false</isDeviceFlowEnabled>
+    <isIntrospectAllTokens>false</isIntrospectAllTokens>
+    <isNamedUserJwtEnabled>false</isNamedUserJwtEnabled>
+    <isPkceRequired>true</isPkceRequired>
+    <isRefreshTokenRotationEnabled>false</isRefreshTokenRotationEnabled>
+    <isSecretRequiredForRefreshToken>true</isSecretRequiredForRefreshToken>
+    <isSecretRequiredForTokenExchange>true</isSecretRequiredForTokenExchange>
+    <isTokenExchangeEnabled>false</isTokenExchangeEnabled>
+    <label>Maison_Website_Integration_glbloauth</label>
+    <shouldRotateConsumerKey>false</shouldRotateConsumerKey>
+    <shouldRotateConsumerSecret>false</shouldRotateConsumerSecret>
+</ExtlClntAppGlobalOauthSettings>

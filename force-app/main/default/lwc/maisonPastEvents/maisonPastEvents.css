@@ -1,0 +1,797 @@
+/* maisonpastevent */
+
+.past-events-container {
+    padding: 40px 20px;
+    background: #F6F3EE;
+    min-height: 400px;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 40px;
+    color: #000;
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: 0.5px;
+}
+
+/* Table Styles */
+.table-container {
+    background: #F6F3EE;
+    border-radius: 0px;
+    overflow: visible;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.past-events-container {
+    overflow: visible;
+}
+.table-header {
+    display: grid;
+    grid-template-columns: 1.8fr 1.5fr 1.2fr 0.7fr 0.9fr 1.4fr;
+      padding: 16px 20px; 
+    background: #DCE9EF;
+    font-weight: 500;
+    font-size: 18px;
+    color: #000;
+    border-radius: 18px;
+}
+
+/*.table-header {
+    background: #DCE9EF;
+    border-radius: 16px;
+    font-family: 'MaisonHeading';
+    font-size: 18px;
+}*/
+
+.view-details-btn {
+    white-space: nowrap;   /* 🔥 KEY FIX */
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 1.8fr 1.5fr 1.2fr 0.7fr 0.9fr 1.4fr;
+    padding: 16px 20px; 
+    border-bottom: 1px solid #F6F3EE;
+    align-items: center;
+    transition: background 0.2s ease;
+    background: #F6F3EE;
+}
+
+.table-row:hover {
+    background: #fafafa;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.table-cell {
+    font-size: 15px;
+    color: #000;
+}
+
+/* Event Details Column */
+.event-name {
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 6px;
+    font-size: 15px;
+}
+
+.event-id {
+    font-size: 13px;
+    color: #6c757d;
+    font-weight: 400;
+}
+
+/* Venue Column */
+.venue-line {
+    font-size: 15px;
+    color: #000;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.venue-line.secondary {
+    color: #000;
+    font-size: 15px;
+}
+
+/* Guests Column */
+.guests-col {
+    text-align: center;
+}
+
+/* Amount Column 
+.amount-col {
+    font-weight: 500;
+    color: #000;
+    font-size: 15px;
+}
+*/
+/* Actions Column */
+.view-details-btn {
+    background: #c8dce8;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: none;
+}
+
+.view-details-btn:hover {
+    background: #b5d0e0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.view-details-btn:active {
+    transform: translateY(0);
+    background: #a8c4d8;
+}
+
+/* Pagination Styles */
+.pagination-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0px;
+    padding: 20px 24px;
+    background: #F6F3EE;
+    border-radius: 0px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.pagination-info {
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.pagination-btn {
+    background: #c8dce8;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pagination-btn:hover:not(:disabled) {
+    background: #b5d0e0;
+    transform: translateY(-1px);
+}
+
+.pagination-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    background: #e0e0e0;
+}
+
+.page-number {
+    font-size: 14px;
+    color: #495057;
+    font-weight: 500;
+}
+
+/* Loading and Error States */
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+}
+
+.error-message {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 8px;
+    padding: 16px;
+    color: #856404;
+    margin-bottom: 20px;
+}
+
+.no-records {
+    text-align: center;
+    padding: 60px 20px;
+    background: #F6F3EE;
+    border-radius: 8px;
+    color: #6c757d;
+    font-size: 16px;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .table-header,
+    .table-row {
+        grid-template-columns: 1.5fr 1.5fr 1fr 0.7fr 0.9fr 1fr;
+        gap: 12px;
+        font-size: 13px;
+    }
+    
+    .view-details-btn {
+        padding: 6px 16px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .table-header {
+        display: none;
+    }
+    
+    .table-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 16px;
+    }
+    
+    .table-cell::before {
+        content: attr(data-label);
+        font-weight: 600;
+        display: block;
+        margin-bottom: 4px;
+        color: #6c757d;
+        font-size: 12px;
+    }
+    
+    .pagination-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+.action-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* 🔥 2 buttons per row */
+    gap: 10px;
+}
+
+.action-buttons button {
+    width: 100%;
+}
+
+.reorder-btn {
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.view-details-btn,
+.reorder-btn,
+.rating-btn,
+.feedback-btn {
+    width: 100%;              /* 🔥 IMPORTANT */
+    text-align: center;
+}
+.view-details-btn,
+.reorder-btn {
+    padding: 8px 16px;   /* reduce from 10px 24px */
+    font-size: 12px;
+}
+.rating-btn {
+    background: #f4c542;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.feedback-btn {
+    background: #e0e0e0;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.reorder-btn:hover {
+    background: #333;
+    transform: translateY(-1px);
+}
+
+/* Backdrop */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Modal Box */
+.modal-container {
+    background: #F6F3EE;
+    width: 500px;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+/* Header */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.modal-header h2 {
+    font-size: 22px;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Body */
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Footer */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.submit-btn {
+    background: #000;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+.cancel-btn {
+    background: #ddd;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+.two-col-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Make textarea full width */
+.two-col-grid lightning-textarea {
+    grid-column: span 2;
+}
+
+/* Optional: make modal wider */
+.modal-container {
+    width: 700px;
+    max-width: 90%;
+}
+
+.modal-container {
+    overflow: visible;  /* 🔥 FIX */
+}
+
+.modal-container {
+    overflow: visible;
+    position: relative;
+    z-index: 1001;
+}
+
+.modal-backdrop {
+    z-index: 1000;
+}
+
+/* Modal container override */
+.maison-modal .slds-modal__container {
+    border-radius: 16px;
+    background: #F6F3EE;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.custom-label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+    color: #1a1a1a;
+}
+
+/* Accordion header background */
+.maison-body .slds-accordion__summary {
+    background-color: #dce9ef;   /* light blue (matches your UI) */
+    border-radius: 8px;
+    padding: 10px 12px;
+}
+
+.custom-section-header {
+    background: #dce9ef;
+    color: #0b3c5d;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.maison-body .slds-accordion__summary {
+    display: none;
+}
+.maison-body .slds-accordion__section {
+    padding-top: 0;
+}
+
+.section-container {
+    margin-top: 10px;
+}
+
+.required {
+    color: red;
+    margin-left: 4px;
+    font-weight: bold;
+}
+
+.custom-label {
+    font-weight: 600;
+}
+
+.custom-section-header {
+    background: #dce9ef;
+    color: #0b3c5d;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+/* Accordion label text */
+.maison-body .slds-accordion__summary-heading {
+    color: #1b4f72 !important; /* darker blue text */
+    font-weight: 600;
+}
+
+.maison-body .slds-accordion__summary {
+    background-color: #dce9ef !important;
+}
+/* Make all field labels bold */
+.maison-body .slds-form-element__label {
+    font-weight: 600 !important;
+}
+/* Make labels bold using SLDS hooks */
+.maison-body lightning-input,
+.maison-body lightning-combobox,
+.maison-body lightning-textarea,
+.maison-body lightning-dual-listbox {
+    
+    --slds-c-form-element-label-font-weight: 600;
+}
+.maison-modal .slds-modal__container {
+    width: 95vw;          /* 🔥 dynamic width */
+    max-width: 1200px;    /* 🔥 increase max */
+    min-width: 800px;     /* optional safety */
+}
+/* Header */
+.maison-header {
+    background: #F6F3EE;
+    border-bottom: none;
+    padding: 20px 24px;
+}
+
+.maison-header h2 {
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Close button */
+.close-btn {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Body */
+.maison-body {
+    background: #F6F3EE;
+    padding: 20px 24px;
+}
+
+/* Footer */
+.maison-footer {
+    background: #F6F3EE;
+    border-top: none;
+    padding: 16px 24px;
+}
+
+/* Buttons */
+.submit-btn {
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+    font-weight: 500;
+}
+
+.submit-btn:hover {
+    background: #333;
+}
+
+.cancel-btn {
+    background: #e0e0e0;
+    padding: 10px 20px;
+    border-radius: 20px;
+    border: none;
+}
+
+/* Grid */
+.two-col-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Full width fields */
+.two-col-grid lightning-textarea {
+    grid-column: span 2;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .two-col-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.staff-rating-row {
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+}
+
+.staff-name {
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+
+
+/* LEFT columns */
+.event-details-col,
+.venue-col,
+.date-col {
+    text-align: left;
+}
+
+/* CENTER */
+.guests-col {
+    text-align: center;
+}
+
+/* RIGHT (IMPORTANT) */
+.amount-col {
+    text-align: right;
+}
+
+/* ACTIONS */
+.actions-col {
+    text-align: center;
+}
+
+
+.header-cell {
+     align-items: center;
+}
+
+
+.common-btn {
+    width: 100%;
+    padding: 8px 16px;        /* 🔥 same as top buttons */
+    font-size: 13px;
+    font-weight: 600;         /* 🔥 make bold */
+    border-radius: 25px;
+    border: none;
+    background: #c8dce8;
+    color: #000;
+    cursor: pointer;
+    white-space: nowrap;      /* 🔥 prevent wrapping */
+    height: 36px;             /* 🔥 FIX uniform height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.star-container {
+    display: flex;
+    gap: 5px;
+    margin: 5px 0;
+}
+
+.star {
+    font-size: 20px;
+    cursor: pointer;
+    color: #ccc;
+}
+
+.star.filled {
+    color: #f4c542;
+}
+
+/* Improve dropdown look */
+lightning-button-menu {
+    --slds-c-button-color-background: #c8dce8;
+    --slds-c-button-text-color: #000;
+    --slds-c-button-radius-border: 20px;
+    --slds-c-button-spacing-inline-start: 16px;
+    --slds-c-button-spacing-inline-end: 16px;
+}
+
+/* Dropdown menu items */
+.slds-dropdown__item a {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* Hover effect */
+.slds-dropdown__item:hover {
+    background: #f2f6f9;
+}
+
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Button */
+.dropdown-btn {
+    background: #c8dce8;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 14px;     /* 🔥 reduced height */
+    font-size: 13px;
+    font-weight: 400;      /* 🔥 NOT bold */
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+/* Arrow */
+.dropdown-btn .arrow {
+    font-size: 12px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    padding: 8px;
+    z-index: 999;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* 🔥 center items */
+    gap: 8px;
+}
+
+/* Each item */
+.dropdown-menu div {
+    background: #c8dce8;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+
+    width: fit-content;    /* 🔥 KEY FIX */
+    min-width: 140px;      /* optional: keep consistent size */
+    text-align: center;
+}
+
+.feedback-row {
+    margin-bottom: 16px;
+}
+
+.feedback-row .label {
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.staff-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover; /* 🔥 prevents blur/stretch */
+}
+.avatar-fallback {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #e0ddd7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.empty-state {
+    text-align: center;
+    color: #9ca3af;
+    font-size: 14px;
+    padding: 20px;
+}
+
+.footer-left {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.footer-right {
+    display: flex;
+    gap: 10px;
+}
+
+.two-col-grid > div {
+    width: 100%;
+}
+
+.two-col-grid > div {
+    min-width: 0;   /* 🔥 CRITICAL FIX */
+}
+.maison-body lightning-accordion {
+    width: 100%;
+}
+
+lightning-dual-listbox {
+    width: 100%;
+}
+
+.two-col-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+
+    /* 🔥 ADD THIS */
+    align-items: start;
+}
+
+.two-col-grid lightning-dual-listbox {
+    grid-column: span 2;
+}

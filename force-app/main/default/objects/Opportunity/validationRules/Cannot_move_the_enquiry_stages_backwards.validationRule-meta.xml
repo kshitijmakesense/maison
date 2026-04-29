@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_move_the_enquiry_stages_backwards</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND(
+    $Profile.Name &lt;&gt; &quot;System Administrator&quot;,
+
+    ISCHANGED(StageName),
+
+    CASE( TEXT(PRIORVALUE(StageName)),
+        &quot;New Enquiry&quot;, 1,
+        &quot;Needs Analysis&quot;, 2,
+        &quot;Quote Creation&quot;, 3,
+        &quot;Quote Accepted&quot;, 4,
+        &quot;Invoiced&quot;, 5,
+        &quot;Invoice Paid&quot;, 6,
+        &quot;Closed Won&quot;, 7,
+        &quot;Closed Lost&quot;, 8,
+        0
+    )
+    &gt;
+    CASE( TEXT(StageName),
+        &quot;New Enquiry&quot;, 1,
+        &quot;Needs Analysis&quot;, 2,
+        &quot;Quote Creation&quot;, 3,
+        &quot;Quote Accepted&quot;, 4,
+        &quot;Invoiced&quot;, 5,
+        &quot;Invoice Paid&quot;, 6,
+        &quot;Closed Won&quot;, 7,
+        &quot;Closed Lost&quot;, 8,
+        0
+    )
+)</errorConditionFormula>
+    <errorMessage>You cannot move the enquiry stage backwards.</errorMessage>
+</ValidationRule>

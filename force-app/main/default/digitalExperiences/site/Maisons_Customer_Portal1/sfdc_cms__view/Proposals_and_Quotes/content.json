@@ -1,0 +1,67 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Proposals and Quotes",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"b6afe168-d9c2-4cdc-b20d-487b0a537fbe\",\"columns\":[{\"UUID\":\"457c4281-9716-4487-8c1a-027093b2efdc\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : { },
+              "definition" : "c:proposalsQuotesPage",
+              "id" : "441ba23c-1a0f-445b-ab7c-9f69d254b377",
+              "type" : "component"
+            } ],
+            "id" : "457c4281-9716-4487-8c1a-027093b2efdc",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "b6afe168-d9c2-4cdc-b20d-487b0a537fbe",
+          "type" : "component"
+        } ],
+        "id" : "8ebe0e5a-fa38-4d07-baa0-2eeef0effd01",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "Proposals and Quotes",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "f37155fc-9f8d-4260-abcc-d0d4276aa244",
+          "type" : "component"
+        } ],
+        "id" : "429e4f63-2ddb-4e38-982c-326949281910",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "984e600e-346b-441e-a170-298312ecafba",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-proposals-and-quotes"
+  },
+  "urlName" : "proposals-and-quotes"
+}

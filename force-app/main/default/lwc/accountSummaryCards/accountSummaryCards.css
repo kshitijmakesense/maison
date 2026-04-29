@@ -1,0 +1,92 @@
+/* Grid container */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+/* Common card styling */
+.dashboard-card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Labels and values */
+.card-label {
+    color: #6b7280; /* gray-500 */
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-value {
+    color: #4f46e5; /* indigo-600 */
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* Upcoming events list */
+.upcoming-events {
+    text-align: left;
+}
+
+.events-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.event-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid #f3f4f6; /* gray-100 */
+}
+
+.event-item:last-child {
+    border-bottom: none;
+}
+
+.event-link {
+    color: #4f46e5;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.event-link:hover {
+    text-decoration: underline;
+    color: #3730a3; /* darker indigo */
+}
+
+.event-date {
+    color: #9ca3af; /* gray-400 */
+    font-size: 0.8rem;
+}
+
+/* No events text */
+.no-events {
+    color: #9ca3af; /* gray-400 */
+    font-size: 0.875rem;
+    font-style: italic;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 480px) {
+    .dashboard-card {
+        padding: 1rem;
+    }
+
+    .card-value {
+        font-size: 1.5rem;
+    }
+}

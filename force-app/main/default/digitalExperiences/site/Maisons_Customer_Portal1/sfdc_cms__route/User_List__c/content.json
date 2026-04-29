@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "User List",
+  "contentBody" : {
+    "activeViewId" : "User_List",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "list-005",
+    "urlPrefix" : "user"
+  },
+  "urlName" : "user-list"
+}

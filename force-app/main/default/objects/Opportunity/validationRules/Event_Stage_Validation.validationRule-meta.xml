@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Event_Stage_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+  ISCHANGED(StageName),
+  OR(
+    AND(ISPICKVAL(StageName, &quot;Quote Sent&quot;), NOT(ISPICKVAL(Quote_Status__c, &quot;Sent&quot;))),
+    AND(ISPICKVAL(StageName, &quot;Quote Under Review&quot;), NOT(ISPICKVAL(Quote_Status__c, &quot;Viewed by Customer&quot;))),
+    AND(ISPICKVAL(StageName, &quot;Quote Accepted&quot;), NOT(ISPICKVAL(Quote_Status__c, &quot;Accepted&quot;)))
+  )
+)</errorConditionFormula>
+    <errorMessage>You cannot change the Opportunity Stage unless the Quote Status matches.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,91 @@
+<template>
+    <div class="dashboard-card">
+
+        <!-- Header -->
+        <h1 class="title">Service Bookings</h1>
+        <p class="subtitle">
+            Manage your event hospitality service bookings and requests
+        </p>
+
+        <!-- Filters -->
+        <div class="filters">
+    <lightning-input
+        type="search"
+        label="Search"
+        placeholder="Search by event name, venue, or services..."
+        onchange={handleSearch}>
+    </lightning-input>
+
+    <lightning-combobox
+        label="Status"
+        value={status}
+        options={getStatusOptions}
+        onchange={handleStatusChange}>
+    </lightning-combobox>
+
+    <lightning-input
+        type="date"
+        label="Start Date"
+        onchange={handleStartDate}>
+    </lightning-input>
+
+    <lightning-input
+        type="date"
+        label="End Date"
+        onchange={handleEndDate}>
+    </lightning-input>
+</div>
+
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <div class={enquiryTabClass} data-tab="enquiries" onclick={handleTabChange}>
+                Enquiries
+            </div>
+            <div class={orderTabClass} data-tab="orders" onclick={handleTabChange}>
+                Orders
+            </div>
+        </div>
+
+        <!-- List -->
+        <template if:true={isEnquiries}>
+            <template if:true={filteredEnquiries}>
+                <template for:each={filteredEnquiries} for:item="item">
+                    <div key={item.id} class="booking-card">
+                        <div class="left">
+                            <h2 class="event-name">{item.name}</h2>
+
+                            <div class="details">
+                                <p><strong>Date & Time:</strong> {item.date}</p>
+                                <p><strong>Venue & Guests:</strong> {item.venue} — {item.guests} guests</p>
+                                <p><strong>Budget:</strong>
+                                    <span class="budget">${item.budget}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>
+        </template>
+
+        <template if:true={isOrders}>
+            <template if:true={filteredOrders}>
+                <template for:each={filteredOrders} for:item="item">
+                    <div key={item.id} class="booking-card">
+                        <div class="left">
+                            <h2 class="event-name">{item.name}</h2>
+
+                            <div class="details">
+                                <p><strong>Date & Time:</strong> {item.date}</p>
+                                <p><strong>Venue & Guests:</strong> {item.venue} — {item.guests} guests</p>
+                                <p><strong>Budget:</strong>
+                                    <span class="budget">${item.budget}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>
+        </template>
+    </div>
+</template>

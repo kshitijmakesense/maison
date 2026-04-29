@@ -1,0 +1,5 @@
+{
+  "apiName" : "Edit_or_View_Orders",
+  "type" : "sfdc_cms__view",
+  "path" : "views"
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExtlClntAppOauthSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <commaSeparatedOauthScopes>Api, RefreshToken</commaSeparatedOauthScopes>
+    <externalClientApplication>Website_BookUs_Integration</externalClientApplication>
+    <isFirstPartyAppEnabled>false</isFirstPartyAppEnabled>
+    <label>Website_BookUs_Integration_oauth</label>
+    <oauthLink>00DBn000007BGTX:888Bn000000IMi1</oauthLink>
+</ExtlClntAppOauthSettings>

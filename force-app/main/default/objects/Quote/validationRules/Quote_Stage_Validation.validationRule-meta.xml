@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Quote_Stage_Validation</fullName>
+    <active>false</active>
+    <errorConditionFormula>CASE(Status,
+    &quot;Draft&quot;, 1,
+    &quot;Sent&quot;, 2,
+    &quot;Viewed&quot;, 3,
+    &quot;Accepted&quot;, 4,
+    &quot;Rejected&quot;, 5,
+    &quot;Expired&quot;, 6,
+    0
+)
+&lt;
+CASE(PRIORVALUE(Status),
+    &quot;Draft&quot;, 1,
+    &quot;Sent&quot;, 2,
+    &quot;Viewed&quot;, 3,
+    &quot;Accepted&quot;, 4,
+    &quot;Rejected&quot;, 5,
+    &quot;Expired&quot;, 6,
+    0
+)</errorConditionFormula>
+    <errorMessage>You cannot move the Quote status to an earlier stage.</errorMessage>
+</ValidationRule>

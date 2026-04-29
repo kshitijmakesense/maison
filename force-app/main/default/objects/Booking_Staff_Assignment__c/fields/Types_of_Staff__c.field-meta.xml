@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Types_of_Staff__c</fullName>
+    <label>Types of Staff</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Senior Waiter</fullName>
+                <default>false</default>
+                <label>Senior Waiter</label>
+            </value>
+            <value>
+                <fullName>Function Waiter</fullName>
+                <default>false</default>
+                <label>Function Waiter</label>
+            </value>
+            <value>
+                <fullName>Simple Bar</fullName>
+                <default>false</default>
+                <label>Simple Bar</label>
+            </value>
+            <value>
+                <fullName>Mixologist</fullName>
+                <default>false</default>
+                <label>Mixologist</label>
+            </value>
+            <value>
+                <fullName>Barista</fullName>
+                <default>false</default>
+                <label>Barista</label>
+            </value>
+            <value>
+                <fullName>Supervisor</fullName>
+                <default>false</default>
+                <label>Supervisor</label>
+            </value>
+            <value>
+                <fullName>Promo Staff</fullName>
+                <default>false</default>
+                <label>Promo Staff</label>
+            </value>
+            <value>
+                <fullName>Boardroom waiter</fullName>
+                <default>false</default>
+                <label>Boardroom waiter</label>
+            </value>
+            <value>
+                <fullName>Senior Bartender</fullName>
+                <default>false</default>
+                <label>Senior Bartender</label>
+            </value>
+            <value>
+                <fullName>Pantry Manager</fullName>
+                <default>false</default>
+                <label>Pantry Manager</label>
+            </value>
+            <value>
+                <fullName>host</fullName>
+                <default>false</default>
+                <label>host</label>
+            </value>
+            <value>
+                <fullName>Bar Staff</fullName>
+                <default>false</default>
+                <label>Bar Staff</label>
+            </value>
+            <value>
+                <fullName>Barback</fullName>
+                <default>false</default>
+                <label>Barback</label>
+            </value>
+            <value>
+                <fullName>mix</fullName>
+                <default>false</default>
+                <label>mix</label>
+            </value>
+            <value>
+                <fullName>Ushers</fullName>
+                <default>false</default>
+                <label>Ushers</label>
+            </value>
+            <value>
+                <fullName>Senior Supervisor</fullName>
+                <default>false</default>
+                <label>Senior Supervisor</label>
+            </value>
+            <value>
+                <fullName>kitchenhand</fullName>
+                <default>false</default>
+                <label>kitchenhand</label>
+            </value>
+            <value>
+                <fullName>Concierge</fullName>
+                <default>false</default>
+                <label>Concierge</label>
+            </value>
+            <value>
+                <fullName>Junior Waiter</fullName>
+                <default>false</default>
+                <label>Junior Waiter</label>
+            </value>
+            <value>
+                <fullName>Security Guard</fullName>
+                <default>false</default>
+                <label>Security Guard</label>
+            </value>
+            <value>
+                <fullName>junior Bartender</fullName>
+                <default>false</default>
+                <label>junior Bartender</label>
+            </value>
+            <value>
+                <fullName>Event Waiter</fullName>
+                <default>false</default>
+                <label>Event Waiter</label>
+            </value>
+            <value>
+                <fullName>sommelier</fullName>
+                <default>false</default>
+                <label>sommelier</label>
+            </value>
+            <value>
+                <fullName>miso</fullName>
+                <default>false</default>
+                <label>miso</label>
+            </value>
+            <value>
+                <fullName>Food Safety Supervisor</fullName>
+                <default>false</default>
+                <label>Food Safety Supervisor</label>
+            </value>
+            <value>
+                <fullName>Dishwasher</fullName>
+                <default>false</default>
+                <label>Dishwasher</label>
+            </value>
+            <value>
+                <fullName>maître d&apos;</fullName>
+                <default>false</default>
+                <label>maître d&apos;</label>
+            </value>
+            <value>
+                <fullName>Manager</fullName>
+                <default>false</default>
+                <label>Manager</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

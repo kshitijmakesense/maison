@@ -1,0 +1,43 @@
+<template>
+    <div class="manager-card">
+
+        <template if:true={hasManager}>
+            <div class="manager-header">
+                <h2>Your Account Manager</h2>
+            </div>
+
+            <div class="manager-body">
+                <div class="avatar-box">
+                    <lightning-icon icon-name="standard:user" size="large"></lightning-icon>
+                </div>
+
+                <div class="info-box">
+                    <p class="name">{manager.Name}</p>
+                    <p class="title">{manager.Title}</p>
+
+                    <p class="detail">
+                 <lightning-icon icon-name="standard:call" size="x-small"></lightning-icon>
+
+                        {manager.Phone}
+                    </p>
+
+                    <p class="detail">
+                        <lightning-icon icon-name="utility:email" size="x-small"></lightning-icon>
+                        {manager.Email}
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <button class="contact-btn" onclick={handleContact}>
+                    Contact {manager.Name}
+                </button>
+            </div>
+        </template>
+
+        <template if:false={hasManager}>
+            <p class="no-manager">No manager assigned.</p>
+        </template>
+
+    </div>
+</template>
