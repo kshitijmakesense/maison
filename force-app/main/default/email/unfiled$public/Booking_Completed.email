@@ -1,0 +1,124 @@
+<messaging:emailTemplate subject="Thank You - Maison Hospitality" 
+                         recipientType="Contact" 
+                         relatedToType="Order">
+<messaging:htmlEmailBody >
+<html>
+<head>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            font-size: 14px; 
+            color: #333; 
+            line-height: 1.6;
+        }
+        .event-details { 
+            background-color: #f9f9f9; 
+            padding: 15px; 
+            border-left: 4px solid #27ae60; 
+            margin: 20px 0; 
+        }
+        .thank-you-message { 
+            background-color: #e8f8f5; 
+            padding: 15px; 
+            border-left: 4px solid #27ae60; 
+            margin: 20px 0; 
+        }
+        .feedback-section { 
+            background-color: #fff9e6; 
+            padding: 15px; 
+            border-left: 3px solid #f39c12; 
+            margin: 20px 0; 
+        }
+        .signature { 
+            margin-top: 30px; 
+        }
+        strong { 
+            color: #2c3e50; 
+        }
+    </style>
+</head>
+<body>
+    
+    <p>Bonjour {!recipient.FirstName},</p>
+    
+    <!-- Thank You Message -->
+    <div class="thank-you-message">
+        <p style="margin: 0; font-size: 15px;">
+            <strong>Thank you for choosing Maison Hospitality!</strong>
+        </p>
+        <p style="margin: 10px 0 0 0;">
+            We truly appreciate the opportunity to be part of your special event. 
+            It was a pleasure working with you, and we hope our team exceeded your expectations.
+        </p>
+    </div>
+    
+    <!-- Event Details Box -->
+    <div class="event-details">
+        <p style="margin: 10px 0 0 0;">
+            <strong>Occasion:</strong> {!relatedTo.Occasion__c}<br/>
+            <strong>Event Type:</strong> {!relatedTo.Event_Type__c}<br/>
+            <strong>Date: </strong>
+            <apex:outputText value="{0,date,MMMM d',' yyyy}">
+                <apex:param value="{!relatedTo.Event_Date__c}" />
+            </apex:outputText><br/>
+            <strong>Venue:</strong> {!relatedTo.Venue_Address__c}
+        </p>
+    </div>
+    
+    <!-- Feedback Section -->
+    <div class="feedback-section">
+        <p style="margin: 0;">
+            <strong>We'd Love Your Feedback!</strong>
+        </p>
+        <p style="margin: 10px 0 0 0;">
+            Your feedback helps us continue to improve our services. If you have a moment, 
+            we would greatly appreciate it if you could share your experience with us. 
+            Please feel free to reply to this email or contact us directly.
+        </p>
+    </div>
+    
+    <p>We look forward to working with you again in the future. Thank you once again for 
+    trusting Maison Hospitality with your event.</p>
+    
+    <p>{!recipient.FirstName}.</p>
+    
+    <!-- Signature 
+    <div class="signature">
+        <p style="margin: 0;">
+            --------------------<br/>
+            Kind regards,<br/>
+            <strong>Jamie</strong><br/>
+            Office Admin Assistant
+        </p>
+        <p style="font-style: italic; color: #666; font-size: 13px; margin-top: 10px;">
+            *Please note, my working days are Mon-Fri 9am to 1pm
+        </p>
+    </div>   -->
+
+    <!-- Footer Image
+    <table width="100%" cellpadding="0" cellspacing="0" style="margin-top: 20px;">
+        <tr>
+            <td align="left">
+                <img src="https://drive.google.com/uc?export=view&id=1jXXbQpRM9F-USzqTkxjUFqUtH1REiO-N" 
+                     alt="Maison Hospitality Footer" 
+                     style="max-width: 100%; height: auto; display: block;" />
+            </td>
+
+        </tr>
+    </table> -->
+    
+    <!-- Footer Image -->
+    <table width="100%" cellpadding="0" cellspacing="0" style="margin-top: 20px;">
+        <tr>
+            <td align="left">
+                <img src="https://drive.google.com/uc?export=view&id=12z8d0w5AbnwcVKMAyuR7paxZfKBztxev" 
+                     alt="Maison Hospitality Footer" 
+                     style="max-width: 100%; height: auto; display: block;" />
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
+</messaging:htmlEmailBody>
+</messaging:emailTemplate>

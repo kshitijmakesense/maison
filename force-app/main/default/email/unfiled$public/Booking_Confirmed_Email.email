@@ -1,0 +1,16 @@
+Hello {!Order.Opportunity},
+
+Your booking "{!Order.EffectiveDate}" has been confirmed.
+
+Booking Details:
+• Order Number: {!Order.OrderNumber}
+• Order Name: {!Order.Name}
+• Order Date: {!TEXT(Order.EffectiveDate)}
+• Total Amount: {!TEXT(Order.TotalAmount)}
+• Status: {!Order.Status}
+
+You can view the record here:
+https://{!$Organization.DomainUrl}/{!Order.Id}
+
+Thank you,
+Operations Team

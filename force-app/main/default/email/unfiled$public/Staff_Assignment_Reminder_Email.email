@@ -1,0 +1,14 @@
+Hello {!Order.OwnerId__r},
+
+Please remind about the following event to the assigned staffs:
+
+📅 **Event:** {!Order.Event_Title__c}  
+📆 **Date:** {!Order.Event_Date__c}  
+🏠 **Venue:** {!Order.Venue_Address__c}  
+
+Please confirm their availability and ensure all assigned tasks are completed as per schedule.
+
+Thank you.
+
+Best regards,  
+Operations Team

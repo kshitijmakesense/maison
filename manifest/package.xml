@@ -1,36 +1,35 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    
+    <!-- Profiles -->
     <types>
         <members>*</members>
-        <name>ApexClass</name>
+        <name>Profile</name>
     </types>
+
+    <!-- FlexiPages (Lightning Pages) -->
     <types>
         <members>*</members>
-        <name>ApexComponent</name>
+        <name>FlexiPage</name>
     </types>
+
+    <!-- Email Templates -->
     <types>
-        <members>*</members>
-        <name>ApexPage</name>
+        <members>unfiled$public/Booking_Confirmed_Email</members>
+        <members>unfiled$public/Operations_Team_Reminder_Email</members>
+        <members>unfiled$public/Customer_Reminder_Email</members>
+        <members>unfiled$public/Staff_Assignment_Reminder_Email</members>
+        <members>unfiled$public/Staff_Booked_Confirmation</members>
+        <members>unfiled$public/Booking_Completed</members>
+        <members>unfiled$public/Invoice_Paid_Email_Template</members>
+        <name>EmailTemplate</name>
     </types>
+
+    <!-- Email Template Folders (Required for Metadata API) -->
     <types>
-        <members>*</members>
-        <name>ApexTestSuite</name>
+        <members>unfiled$public</members>
+        <name>EmailFolder</name>
     </types>
-    <types>
-        <members>*</members>
-        <name>ApexTrigger</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>AuraDefinitionBundle</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>LightningComponentBundle</name>
-    </types>
-    <types>
-        <members>*</members>
-        <name>StaticResource</name>
-    </types>
-    <version>65.0</version>
+
+    <version>60.0</version>
 </Package>

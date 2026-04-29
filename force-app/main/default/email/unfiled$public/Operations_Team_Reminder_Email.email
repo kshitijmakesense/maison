@@ -1,0 +1,21 @@
+Hello Operations Team,
+
+Please find the preparation details for tomorrow’s event:
+
+📅 **Event:** {!Order.Event_Title__c}  
+🏠 **Venue:** {!Order.Venue_Address__c}  
+👤 **Customer:** {!Order.Contact__r}  
+🎁 **Package:** {!Order.Event_Package__c}  
+🔧 **Assigned Staff(s):** {!Order.Staff_Summary__c}
+
+✅ **Pre-Event Tasks:**
+- Confirm venue readiness  
+- Check equipment setup  
+- Finalize menu and service items  
+- Review logistics and transport arrangements  
+- Coordinate with customer for final confirmations
+
+Let’s ensure everything is in place for a successful event.
+
+Best,  
+**Maison Operations Team**

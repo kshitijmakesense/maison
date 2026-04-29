@@ -1,0 +1,17 @@
+Dear {!Order.Contact__r},
+
+We’re excited about your upcoming event scheduled for tomorrow!
+
+📅 **Event Date:** {!Order.Event_Date__c}  
+🏠 **Venue:** {!Order.Venue_Address__c}  
+🎉 **Package Booked:** {!Order.Event_Package__c}  
+💰 **Total Amount:** {!Order.Total_Amount__c}
+
+Our team is making sure everything is perfectly arranged.
+
+If you have any last-minute updates or questions, please contact us at {!Order.Account_Manager_Email__c}.
+
+We look forward to making your event special!
+
+Warm regards,  
+Maison Events Team

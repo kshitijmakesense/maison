@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <available>true</available>
+    <description>Email sent to contacts when staff is booked for their event</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Staff Booked Confirmation</name>
+    <style>none</style>
+    <subject>Maison Hospitality - Staff Booked</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <available>true</available>
+    <description>In the Enquiry when the StageName is Invoice paid , send the Email with this template.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Invoice Paid Email Template</name>
+    <style>none</style>
+    <subject>Payment Confirmed - Thank You - Maison Hospitality</subject>
+    <type>visualforce</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>
